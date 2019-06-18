@@ -1,6 +1,6 @@
 // font
-$ff-sans-serif: "PingFang TC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
-$ff-serif: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", "Microsoft YaHei", serif;
+$ff-sans-serif: 'PingFang TC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+$ff-serif: 'Noto Serif TC', 'PingFang TC', 'Microsoft JhengHei', 'Microsoft YaHei', serif;
 
 // view-width
 // view-height
@@ -10,10 +10,16 @@ $vw-mbl: 320;
 $vh-mbl: 568;
 
 // color
-$c-p-1: #ea5404;
+$c-p-1: #ceb178;
+
+// grey
+$c-g-1: #777;
+$c-g-2: #5e5e5e;
 
 $colors: (
-  "fff": #fff,
-  "000": #000,
-  "p-1": $c-p-1
+  'fff': #fff,
+  '000': #000,
+  'p-1': $c-p-1,
+  'g-1': $c-g-1,
+  'g-2': $c-g-2
 );

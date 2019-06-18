@@ -1,0 +1,38 @@
+.common-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: initial;
+  }
+
+  .logo {
+    margin-top: vh-dsk(96);
+    margin-left: vw-dsk(126);
+  }
+
+  .menu-toggle {
+    position: absolute;
+    top: vh-dsk(148);
+    right: vw-dsk(126);
+    margin-top: -20px;
+    margin-right: -20px;
+    padding: 20px;
+    cursor: pointer;
+
+    &__bar {
+      width: 38px;
+      height: 3px;
+
+      & + .menu-toggle__bar {
+        margin-top: 10px;
+      }
+    }
+  }
+}

@@ -1,16 +1,16 @@
 // rwd
-$bkp-dsk: "min-width: 1024px";
-$bkp-mbl: "max-width: 1023.98px";
-$bkp-8l: "max-width: 1800px";
-$bkp-7l: "max-width: 1700px";
-$bkp-6l: "max-width: 1600px";
-$bkp-5l: "max-width: 1500px";
-$bkp-4l: "max-width: 1400px";
-$bkp-3l: "max-width: 1300px";
-$bkp-2l: "max-width: 1200px";
-$bkp-l: "max-width: 1100px";
-$bkp-m: "max-width: 800px";
-$bkp-s: "max-width: 600px";
+$bkp-dsk: 'min-width: 1024px';
+$bkp-mbl: 'max-width: 1023.98px';
+$bkp-8l: 'max-width: 1800px';
+$bkp-7l: 'max-width: 1700px';
+$bkp-6l: 'max-width: 1600px';
+$bkp-5l: 'max-width: 1500px';
+$bkp-4l: 'max-width: 1400px';
+$bkp-3l: 'max-width: 1300px';
+$bkp-2l: 'max-width: 1200px';
+$bkp-l: 'max-width: 1100px';
+$bkp-m: 'max-width: 800px';
+$bkp-s: 'max-width: 600px';
 
 @mixin mq($bkp) {
   @if $bkp == dsk {
@@ -83,4 +83,28 @@ $bkp-s: "max-width: 600px";
 }
 @function vh-mbl($px) {
   @return #{$px / $vh-mbl * 100}vh;
+}
+
+// swiper
+@mixin pagination {
+  .swiper-pagination-bullet {
+    padding: 12px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 10px;
+      width: 10px;
+      border: 1px solid $c-g-1;
+      border-radius: 50%;
+    }
+
+    &-active {
+      &::before {
+        background-color: #fff;
+        border-color: #fff;
+      }
+    }
+  }
 }

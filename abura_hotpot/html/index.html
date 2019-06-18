@@ -3,13 +3,121 @@
   <head>
     <!-- INCLUDESCRIPT BLOCK : common_link.php -->
     <link rel="stylesheet" href="css/index.css" />
+
+    <script>
+      const s1Data = {
+        title: `あぶら<br>ホツトポツト`,
+        swiper: [
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利1。`,
+            img: 'images/s1-1.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利2。`,
+            img: 'images/s1-1.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利3。`,
+            img: 'images/s1-1.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利4。`,
+            img: 'images/s1-1.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利5。`,
+            img: 'images/s1-1.png'
+          }
+        ]
+      };
+
+      const s2Data = {
+        row1: {
+          swiper: ['images/s2-1.png', 'images/s2-1.png', 'images/s2-1.png'],
+          title: { en: 'STORY', ch: '會社介紹' },
+          intro: {
+            title: `延續脂系列的職人精神，<br>
+                  脂 團隊精心籌備的鍋物展店計畫隆重登場`,
+            content: `店址選定小街上的老宅，經巧手改造後成了充滿日本京都風情的建築。初踏入脂鍋物，映入眼簾的是一座工藝細膩的巨型燈籠使視覺甦醒，為向晚的庭院製造氤氳朦朧的美感。店內特別設有VIP包廂，隱蔽性極高，可讓顧客與親友獨享一界私密的用餐時空。室內裝潢選用大量浮世繪壁紙，浮世繪的真實意涵是live in the moment，即「活在當下」，這正是我們期望帶給客人用餐時，身心所能感受到的富足享受。 `
+          }
+        }
+      };
+    </script>
   </head>
 
   <body>
     <main id="mainContainer">
       <!-- INCLUDESCRIPT BLOCK : common_header.php -->
 
-      <section class="section1"></section>
+      <!-- s1 -->
+      <section class="section1">
+        <!-- Slider main container -->
+        <div class="swiper-container s1__swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper s1__swiper-wrapper">
+            <!-- Slides -->
+            <div v-for="data in s1Data.swiper" class="swiper-slide s1__swiper-slide">
+              <div class="bg">
+                <img class="swiper-lazy" :data-src="data.img" alt="" />
+              </div>
+
+              <p class="subtitle fw-200 fz-16 lh-21 ls-50 c-fff" v-html="data.subtitle"></p>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination s1__swiper-pagination"></div>
+        </div>
+
+        <h2 class="section1__title fz-94 lh-11 c-p-1" v-html="s1Data.title"></h2>
+      </section>
+
+      <!-- s2 -->
+      <section class="section2">
+        <div class="section2__bg">
+          <img src="images/s2-bg.png" alt="" />
+        </div>
+
+        <div class="bg-decoration bg-decoration-1">
+          <div class="img">
+            <img src="images/s2-flower-1.png" alt="" />
+          </div>
+        </div>
+
+        <div class="section2__row-1">
+          <div class="col col-left">
+            <!-- Slider main container -->
+            <div class="swiper-container s2-1__swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper s2-1__swiper-wrapper">
+                <!-- Slides -->
+                <div v-for="data in s2Data.row1.swiper" class="swiper-slide s2-1__swiper-slide">
+                  <div class="img">
+                    <div class="img-inner">
+                      <img class="swiper-lazy" :data-src="data" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination s2-1__swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col col-right">
+            <h2 class="main-title-wrapper bc-p-1">
+              <div class="title-group">
+                <div class="title-en fz-42 ls-20 c-fff td-underline"><% s2Data.row1.title.en %></div>
+                <div class="title-ch fz-22 c-fff"><% s2Data.row1.title.ch %></div>
+              </div>
+            </h2>
+
+            <div class="intro-wrapper">
+              <h3 class="title fw-700 fz-30 lh-17 ls-20" v-html="s2Data.row1.intro.title"></h3>
+              <p class="content fz-18 lh-21 ls-25 c-g-2 ta-justify" v-html="s2Data.row1.intro.content"></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- INCLUDESCRIPT BLOCK : common_footer.php -->
     </main>

@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -164,9 +164,9 @@ img {
 
 // font
 // font-family: 'Noto Serif TC', serif;
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif+TC:400,700&display=swap&subset=chinese-traditional");
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,400,700&display=swap&subset=chinese-traditional');
 
 html,
 body {
-  font-family: $ff-sans-serif;
+  font-family: $ff-serif;
 }
