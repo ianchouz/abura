@@ -1,0 +1,167 @@
+@import 'vars';
+@import 'mixin';
+
+.main-container {
+  height: 100vh;
+}
+
+.entrance-wrapper {
+  display: flex;
+  height: 76%;
+}
+
+.entrance {
+  width: 0;
+  flex-grow: 1;
+  //
+  transition: flex-grow 1s;
+
+  .bg-texture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    top: 52%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .main-img {
+    transition: 0.5s;
+  }
+
+  .hover-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(#000, 0.45);
+    overflow: hidden;
+    //
+    opacity: 0;
+    transition: opacity 1s;
+
+    .img-wrapper {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      height: 40%;
+      //
+      transform: translateY(10%);
+      transition: transform 1s;
+    }
+
+    .inner {
+      height: 100%;
+      width: 75%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .enter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+      width: 25%;
+    }
+  }
+
+  &-left {
+    border-right: 3px solid $c-p-4;
+
+    .bg-texture {
+      img {
+        mix-blend-mode: multiply;
+      }
+    }
+
+    .logo {
+      margin-bottom: vw-dsk(10);
+
+      img {
+        height: vw-dsk(250);
+      }
+    }
+
+    .main-img {
+      img {
+        height: vw-dsk(321);
+      }
+    }
+  }
+  &-right {
+    border-left: 3px solid $c-p-4;
+
+    .logo {
+      img {
+        height: vw-dsk(258);
+      }
+    }
+
+    .main-img {
+      margin-top: vw-dsk(-16);
+
+      img {
+        height: vw-dsk(350);
+      }
+    }
+
+    .img-wrapper {
+      flex-direction: row-reverse;
+    }
+  }
+
+  // .entrance
+  @include hover {
+    &:hover {
+      flex-grow: 1.25;
+
+      .main-img {
+        opacity: 0;
+      }
+
+      .hover-wrapper {
+        opacity: 1;
+
+        .img-wrapper {
+          transform: initial;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 24%;
+
+  .logo {
+    margin-bottom: 26px;
+  }
+}

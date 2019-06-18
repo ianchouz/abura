@@ -1,0 +1,19 @@
+{
+  "name": "cosmo-grand_vista",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^2.1.3",
+    "lazysizes": "^5.1.0",
+    "scrollmagic": "^2.0.7",
+    "swiper": "^4.5.0",
+    "vue": "^2.6.10"
+  }
+}

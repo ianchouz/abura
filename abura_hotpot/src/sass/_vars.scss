@@ -1,0 +1,19 @@
+// font
+$ff-sans-serif: "PingFang TC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+$ff-serif: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", "Microsoft YaHei", serif;
+
+// view-width
+// view-height
+$vw-dsk: 1920;
+$vh-dsk: 1080;
+$vw-mbl: 320;
+$vh-mbl: 568;
+
+// color
+$c-p-1: #ea5404;
+
+$colors: (
+  "fff": #fff,
+  "000": #000,
+  "p-1": $c-p-1
+);

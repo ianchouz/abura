@@ -1,0 +1,86 @@
+// rwd
+$bkp-dsk: "min-width: 1024px";
+$bkp-mbl: "max-width: 1023.98px";
+$bkp-8l: "max-width: 1800px";
+$bkp-7l: "max-width: 1700px";
+$bkp-6l: "max-width: 1600px";
+$bkp-5l: "max-width: 1500px";
+$bkp-4l: "max-width: 1400px";
+$bkp-3l: "max-width: 1300px";
+$bkp-2l: "max-width: 1200px";
+$bkp-l: "max-width: 1100px";
+$bkp-m: "max-width: 800px";
+$bkp-s: "max-width: 600px";
+
+@mixin mq($bkp) {
+  @if $bkp == dsk {
+    @media ($bkp-dsk) {
+      @content;
+    }
+  } @else if $bkp == mbl {
+    @media ($bkp-mbl) {
+      @content;
+    }
+  } @else if $bkp == 8l {
+    @media ($bkp-8l) {
+      @content;
+    }
+  } @else if $bkp == 7l {
+    @media ($bkp-7l) {
+      @content;
+    }
+  } @else if $bkp == 6l {
+    @media ($bkp-6l) {
+      @content;
+    }
+  } @else if $bkp == 5l {
+    @media ($bkp-5l) {
+      @content;
+    }
+  } @else if $bkp == 4l {
+    @media ($bkp-4l) {
+      @content;
+    }
+  } @else if $bkp == 3l {
+    @media ($bkp-3l) {
+      @content;
+    }
+  } @else if $bkp == 2l {
+    @media ($bkp-2l) {
+      @content;
+    }
+  } @else if $bkp == l {
+    @media ($bkp-l) {
+      @content;
+    }
+  } @else if $bkp == m {
+    @media ($bkp-m) {
+      @content;
+    }
+  } @else if $bkp == s {
+    @media ($bkp-s) {
+      @content;
+    }
+  }
+}
+
+// hover
+@mixin hover() {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// vw vh
+@function vw-dsk($px) {
+  @return #{$px / $vw-dsk * 100}vw;
+}
+@function vw-mbl($px) {
+  @return #{$px / $vw-mbl * 100}vw;
+}
+@function vh-dsk($px) {
+  @return #{$px / $vh-dsk * 100}vh;
+}
+@function vh-mbl($px) {
+  @return #{$px / $vh-mbl * 100}vh;
+}

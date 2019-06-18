@@ -1,0 +1,17 @@
+<!-- btn -->
+<script type="text/x-template" id="btn1">
+  <div class="btn-1">
+    <p><% name %></p>
+  </div>
+</script>
+
+<script>
+  Vue.component("btn-1", {
+    delimiters: ["<%", "%>"],
+    template: "#btn1",
+    props: ["name"]
+    // data() {
+    //   return {};
+    // }
+  });
+</script>
