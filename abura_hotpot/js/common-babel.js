@@ -1,0 +1,1 @@
+"use strict";var bkpDsk="(min-width: 1024px)",bkpMbl="(max-width: 1023.98px)",mdaHvr="(hover: hover)",$id=function(id){return document.getElementById(id)};

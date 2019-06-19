@@ -108,3 +108,51 @@ $bkp-s: 'max-width: 600px';
     }
   }
 }
+
+@mixin navigation-prev {
+  padding: 20px;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 28px;
+    width: 28px;
+    border-width: 2px;
+    border-color: $c-g-4;
+    border-style: solid none none solid;
+    transform: rotate(-45deg);
+  }
+}
+
+@mixin navigation-next {
+  @include navigation-prev;
+  &::before {
+    transform: rotate(135deg);
+  }
+}
+
+// border-decoration
+@mixin border-decoration {
+  .border {
+    position: absolute;
+    top: vw-dsk(-20);
+    right: vw-dsk(-20);
+    bottom: vw-dsk(-20);
+    left: vw-dsk(-20);
+
+    border-color: $c-p-1;
+    border-width: 5px;
+
+    pointer-events: none;
+    z-index: 10;
+    &-tb {
+      border-style: double none;
+    }
+
+    &-lr {
+      border-style: none double;
+      margin: 10px 0;
+    }
+  }
+}

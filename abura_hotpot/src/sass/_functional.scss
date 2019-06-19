@@ -33,7 +33,7 @@
 }
 
 // font-size
-@for $i from 0 through 50 {
+@for $i from 0 through 60 {
   .fz-#{12 + $i * 2} {
     font-size: #{(12 + $i * 2) / 16}rem;
     &-vw {
@@ -43,7 +43,7 @@
 }
 
 @include mq(mbl) {
-  @for $i from 0 through 50 {
+  @for $i from 0 through 60 {
     .fz-mbl-#{12 + $i * 2} {
       font-size: #{(12 + $i * 2) / 16}rem;
       &-vw {
@@ -112,6 +112,10 @@
       letter-spacing: #{$i * 5 / 10}px;
     }
   }
+}
+
+.ls-140 {
+  letter-spacing: 14px;
 }
 // ------------------------------------------------font
 
