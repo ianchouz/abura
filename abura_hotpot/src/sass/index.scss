@@ -20,9 +20,25 @@
   &-3 {
     position: absolute;
     right: 0;
-    bottom: 0;
-    // transform: translateY(-50%);
+    top: calc(80px + 20.6vw);
     z-index: 10;
+    pointer-events: none;
+
+    .img {
+      max-width: 28vw;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-63%);
+    pointer-events: none;
   }
 }
 
@@ -54,14 +70,24 @@
       content: '';
       display: block;
       position: absolute;
-      top: 100% + 4;
+      top: 100%;
       left: 0;
-      height: 120px;
-      width: 3px;
+      height: 68px;
+      width: 2px;
       background-color: #fff;
       transform-origin: 0 100%;
       transform: rotate(45deg);
     }
+  }
+
+  .scroll-down {
+    @include scroll-down;
+    position: absolute;
+    bottom: vh-dsk(50);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: -20px;
+    z-index: 10;
   }
 }
 
@@ -85,10 +111,10 @@
 
     .subtitle {
       position: absolute;
-      top: vh-dsk(910);
+      top: vh-dsk(810);
       left: vw-dsk(126);
 
-      width: 750px;
+      width: vw-dsk(600);
     }
   }
 
@@ -96,7 +122,7 @@
     @include pagination;
     position: absolute;
     right: vw-dsk(140);
-    bottom: vh-dsk(120);
+    bottom: calc(#{vh-dsk(50)} + 16px);
     margin-right: -12px;
     margin-bottom: -12px;
   }
@@ -241,6 +267,7 @@
           flex-grow: 1;
           padding-right: 30px;
           margin-right: -30px;
+          overflow-y: auto;
         }
 
         @include hover {
@@ -270,7 +297,7 @@
     }
 
     .border-decoration {
-      @include border-decoration;
+      @include border-decoration(-20);
       position: absolute;
       top: 0;
       left: vw-dsk(190);
@@ -686,5 +713,134 @@
 
 // s5
 .section5 {
-  padding-top: 100px;
+  padding: 100px vw-dsk(190) 380px;
+
+  .title-wrapper {
+    margin-bottom: 130px;
+  }
+
+  .title-ch {
+    margin-top: 20px;
+  }
+
+  .news-row {
+    margin: 0 vw-dsk(-76);
+  }
+
+  .news-item {
+    float: left;
+    width: 33.333333%;
+    padding: 0 vw-dsk(76);
+
+    &-inner {
+      cursor: pointer;
+
+      @include hover {
+        &:hover {
+          .img {
+            &-inner {
+              &::after {
+                opacity: 1;
+              }
+            }
+          }
+
+          .border-decoration {
+            transform: translate(vw-dsk(26), vw-dsk(-20));
+            pointer-events: initial;
+            opacity: 1;
+
+            .text {
+              transform: initial;
+            }
+          }
+        }
+      }
+    }
+
+    .img {
+      width: 100%;
+
+      &-inner {
+        padding-top: 350 / 440 * 100%;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(#000, 0.85);
+          //
+          opacity: 0;
+          transition: 0.5s;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .intro-wrapper {
+      padding-top: vw-dsk(30);
+    }
+
+    .date {
+      margin-bottom: vw-dsk(16);
+    }
+
+    .group {
+      margin-bottom: vw-dsk(40);
+    }
+
+    &:nth-child(3n + 2) {
+      margin-top: vw-dsk(80);
+    }
+    &:nth-child(3n) {
+      margin-top: vw-dsk(80 * 2);
+    }
+  }
+
+  .border-decoration {
+    @include border-decoration;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // transform: translate(vw-dsk(26), vw-dsk(-20));
+    //
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+
+    .text {
+      position: absolute;
+      bottom: vw-dsk(30);
+      left: vw-dsk(24);
+      //
+      transform: translate(vw-dsk(26 * 2), vw-dsk(-20 * 2));
+      transition: 0.5s;
+    }
+  }
+
+  .latest-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(100% - #{vw-dsk(20)} - 5px);
+    right: vw-dsk(-26);
+
+    width: vw-dsk(194);
+    height: vw-dsk(52);
+  }
 }

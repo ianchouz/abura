@@ -1,1 +1,69 @@
-<!-- <footer id="commonFooter"></footer> -->
+<footer id="commonFooter" class="common-footer">
+  <div class="bg-decoration bg-decoration-4 bg-decoration-4-1">
+    <div class="img">
+      <img class="lazyload" data-src="images/fish2-1.png" alt="" />
+    </div>
+  </div>
+
+  <div class="common-footer__bg">
+    <img src="images/footer-bg.png" alt="" />
+  </div>
+
+  <div class="bg-decoration bg-decoration-4 bg-decoration-4-2">
+    <div class="img">
+      <img class="lazyload" data-src="images/fish2-2.png" alt="" />
+    </div>
+  </div>
+
+  <h2 class="title-wrapper">
+    <div class="title-en fz-42 lh-12 ls-20 custom-underline c-p-1" v-html="footerData.title.en"></div>
+    <div class="title-ch fz-22 ls-140 c-p-1" v-html="footerData.title.ch"></div>
+  </h2>
+
+  <div class="content-wrapper">
+    <div class="info-group">
+      <div class="info info-tel">
+        <p class="title fz-18 lh-17 ls-25 c-p-1" v-html="footerData.tel.title"></p>
+        <p class="content fz-18 lh-17 ls-25 fw-200 c-fff" v-html="footerData.tel.content"></p>
+      </div>
+
+      <div class="info info-add">
+        <p class="title fz-18 lh-17 ls-25 c-p-1" v-html="footerData.add.title"></p>
+        <p class="content fz-18 lh-17 ls-25 fw-200 c-fff" v-html="footerData.add.content"></p>
+      </div>
+
+      <div class="info info-open">
+        <p class="title fz-18 lh-17 ls-25 c-p-1" v-html="footerData.businessHours.title"></p>
+        <p class="content fz-18 lh-17 ls-25 fw-200 c-fff" v-html="footerData.businessHours.content"></p>
+      </div>
+
+      <div class="note">
+        <p class="title fz-32 c-p-1">すみません</p>
+        <p class="content fz-18 lh-17 ls-25 fw-200 c-fff">恕不接待3歲以下小朋友</p>
+      </div>
+    </div>
+
+    <div class="social-wrapper">
+      <div class="icon-group">
+        <a href="###" target="_blank" class="icon icon-fb">
+          <img src="images/icon-fb.png" alt="" />
+        </a>
+        <a href="###" target="_blank" class="icon icon-ig">
+          <img src="images/icon-ig.png" alt="" />
+        </a>
+      </div>
+
+      <div class="copyright fz-14 lh-16 ls-10 fw-200">
+        <p>
+          Copyright (c) 2019 ABURA<br />
+          Designed by
+          <a href="https://www.cosmo-br.com/" target="_blank">Cosmo Branding</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="goTopBtn" class="go-top">
+    <div class="circle"></div>
+  </div>
+</footer>

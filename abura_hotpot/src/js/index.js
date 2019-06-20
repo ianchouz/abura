@@ -2,7 +2,16 @@
 const vm = new Vue({
   delimiters: ['<%', '%>'],
   el: '#mainContainer',
-  data: { s1Data, s2Data, s2row2ImgIndex: 0, s2row3SwiperIndex: 0, s3Data, s4Data, s5Data },
+  data: {
+    footerData,
+    s1Data,
+    s2Data,
+    s2row2ImgIndex: 0,
+    s2row3SwiperIndex: 0,
+    s3Data,
+    s4Data,
+    s5Data
+  },
   methods: {
     hoverChangeImg(index) {
       // console.log(index);
@@ -18,7 +27,15 @@ const vm = new Vue({
     setTargetLeft() {
       const targetLeft = document.querySelector('.set-item.active').getBoundingClientRect().left;
       $id('s2_3BorderDecoration').style.left = `${targetLeft}px`;
+    },
+    showPopup() {
+      $id('menuPopup').classList.add('active');
     }
+  },
+  mounted() {
+    document.querySelectorAll('.js-clamp').forEach(item => {
+      $clamp(item, { clamp: 2 });
+    });
   }
 });
 
@@ -52,9 +69,6 @@ const s2_1Swiper = new Swiper('.s2-1__swiper-container', {
     clickable: true
   }
 });
-
-// row2
-const ps = new PerfectScrollbar('#js-scrollbar');
 
 // row3
 // swiper
@@ -102,4 +116,13 @@ const s4Swiper = new Swiper('.s4__swiper-container', {
   loop: true,
   loopedSlides: 4,
   centeredSlides: true
+});
+
+// scrollbar
+// console.log(document.querySelectorAll('.js-scrollbar'));
+document.querySelectorAll('.js-scrollbar').forEach(item => {
+  new PerfectScrollbar(item, {
+    wheelSpeed: 0.5,
+    wheelPropagation: false
+  });
 });

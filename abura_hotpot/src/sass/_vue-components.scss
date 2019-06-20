@@ -1,0 +1,191 @@
+// ========================popup
+.popup-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(#000, 0.6);
+
+  padding: 120px 0;
+  z-index: 1000;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  //
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.8s;
+
+  &.active {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .ps__rail-x,
+  .ps__rail-y {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+}
+
+.popup-wrapper {
+  width: 76%;
+  background-color: #fff;
+  margin: auto;
+}
+
+.popup {
+  &__header {
+    .img {
+      width: 100%;
+
+      &-inner {
+        padding-top: 810 / 1500 * 100%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .menu-name {
+      position: absolute;
+      top: 100px;
+      left: vw-dsk(190);
+      writing-mode: vertical-rl;
+    }
+
+    .popup-close {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: absolute;
+      top: 0;
+      right: vw-dsk(30);
+      transform: translateY(-30%);
+
+      writing-mode: vertical-rl;
+      width: 76px;
+      height: 240px;
+      margin: auto;
+      padding: 30px 0;
+      cursor: pointer;
+
+      .border-decoration {
+        @include border-decoration;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .cross {
+        @include cross;
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  &__body {
+    padding: 0 vw-dsk(140) 160px;
+
+    .tag-wrapper {
+      display: flex;
+      padding-top: 140px;
+      padding-bottom: 90px;
+      border-bottom: 2px solid #000;
+    }
+
+    .tag-item {
+      width: 0;
+      flex-grow: 1;
+      text-align: center;
+      cursor: pointer;
+      //
+      transition: 0.3s;
+
+      &.active {
+        color: $c-p-1;
+      }
+
+      & + .tag-item {
+        border-left: 2px solid $c-g-5;
+      }
+    }
+
+    .menu-item-container {
+      overflow: hidden;
+    }
+
+    .menu-item-wrapper {
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.5s, max-height 0s 0.5s;
+
+      &.active {
+        opacity: 1;
+        max-height: 99999px;
+        transition: opacity 0.5s 0.5s, max-height 0s 0.5s;
+      }
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 100px;
+      padding-bottom: 80px;
+      border-bottom: 2px solid $c-g-5;
+
+      .title-wrapper {
+        margin-right: vw-dsk(100);
+      }
+
+      .note {
+        margin-top: 20px;
+      }
+    }
+
+    .price-wrapper {
+      display: flex;
+      align-items: center;
+
+      .price {
+        margin-left: vw-dsk(80);
+      }
+    }
+  }
+
+  &__footer {
+    padding-bottom: 140px;
+
+    .popup-close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: vw-dsk(400);
+      min-width: 280px;
+      height: 76px;
+      margin: auto;
+      cursor: pointer;
+
+      .border-decoration {
+        @include border-decoration;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}
+// popup========================

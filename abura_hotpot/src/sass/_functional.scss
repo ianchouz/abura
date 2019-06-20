@@ -23,6 +23,29 @@
   text-align: justify;
 }
 
+.fs-italic {
+  font-style: italic;
+}
+
+.ws-preline {
+  white-space: pre-line;
+}
+
+// clearfix
+.clearfix:before,
+.clearfix:after {
+  content: ''; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
 // font------------------------------------------------
 .ff-serif {
   font-family: $ff-serif;
@@ -114,8 +137,14 @@
   }
 }
 
+.ls-120 {
+  letter-spacing: 12px;
+}
 .ls-140 {
   letter-spacing: 14px;
+}
+.ls-300 {
+  letter-spacing: 30px;
 }
 // ------------------------------------------------font
 

@@ -5,15 +5,22 @@
     <link rel="stylesheet" href="css/index.css" />
 
     <script>
+      const footerData = {
+        title: { en: `CONTACT US`, ch: `聯絡我們` },
+        tel: { title: '貴賓服務專線', content: '04-2376-7575' },
+        add: { title: '地址', content: '台中市西區中美街十四號' },
+        businessHours: { title: '營業時間', content: '17:30~12:00pm' }
+      };
+
       const s1Data = {
         title: `あぶら<br>ホツトポツト`,
         swiper: [
           {
-            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利1。`,
+            subtitle: `秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利1。`,
             img: 'images/s1-1.png'
           },
           {
-            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利2。`,
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利2並貼心提供剝蝦蟹殼的福利2並貼心剝。`,
             img: 'images/s1-1.png'
           },
           {
@@ -42,7 +49,7 @@
           }
         },
         row2: {
-          title: { en: `FEATURES<br>MENU`, ch: `味自慢集` },
+          title: { en: `FEATURES\nMENU`, ch: `味自慢集` },
           menus: [
             {
               name: 'だし 湯底',
@@ -120,7 +127,7 @@
                 {
                   tag: '豚',
                   items: [
-                    { name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { name: `味自慢 燉和豚`, note: `牛肚/牛筋`, price: `481` },
                     { name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
                     { name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
                     { name: `日本和牛霜降`, note: ``, price: `680` },
@@ -133,7 +140,7 @@
                 {
                   tag: '雞',
                   items: [
-                    { name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { name: `味自慢 燉和雞`, note: `牛肚/牛筋`, price: `482` },
                     { name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
                     { name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
                     { name: `日本和牛霜降`, note: ``, price: `680` },
@@ -164,19 +171,6 @@
                 },
                 {
                   tag: '豚',
-                  items: [
-                    { name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { name: `日本和牛霜降`, note: ``, price: `680` },
-                    { name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '雞',
                   items: [
                     { name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
                     { name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
@@ -271,7 +265,7 @@
       };
 
       const s3Data = {
-        title: { en: `INSIDE<br>ENVIRONMENT`, ch: `店內寫真` },
+        title: { en: `INSIDE\nENVIRONMENT`, ch: `店內寫真` },
         swiper: ['images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png']
       };
 
@@ -310,49 +304,49 @@
         title: { en: `LATEST NEWS`, ch: `揭示板` },
         news: [
           {
-            data: '2018-05-10',
+            date: '2018-05-10',
             img: 'images/s5-1.png',
             title: `開幕優惠公告`,
             content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
             latestTag: true
           },
           {
-            data: '2018-05-09',
+            date: '2018-05-09',
             img: 'images/s5-1.png',
             title: `開幕優惠公告`,
             content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
             latestTag: true
           },
           {
-            data: '2018-05-08',
+            date: '2018-05-08',
             img: 'images/s5-2.png',
             title: `開幕優惠公告`,
             content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
             latestTag: false
           },
           {
-            data: '2018-05-07',
+            date: '2018-05-07',
             img: 'images/s5-3.png',
             title: `開幕優惠公告`,
             content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
             latestTag: false
           },
           {
-            data: '2018-05-06',
+            date: '2018-05-06',
             img: 'images/s5-4.png',
             title: `開幕優惠公告`,
             content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
             latestTag: false
           },
           {
-            data: '2018-05-05',
+            date: '2018-05-05',
             img: 'images/s5-5.png',
             title: `開幕優惠公告`,
             content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
             latestTag: false
           },
           {
-            data: '2018-05-04',
+            date: '2018-05-04',
             img: 'images/s5-1.png',
             title: `開幕優惠公告`,
             content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
@@ -382,17 +376,22 @@
                 <img class="swiper-lazy" :data-src="data.img" alt="" />
               </div>
 
-              <p class="subtitle fw-200 fz-16 lh-21 ls-50 c-fff" v-html="data.subtitle"></p>
+              <p class="subtitle fw-200 fz-16 lh-21 ls-50 c-fff ta-justify" v-html="data.subtitle"></p>
             </div>
           </div>
           <!-- If we need pagination -->
           <div class="swiper-pagination s1__swiper-pagination"></div>
         </div>
 
-        <h2 class="section1__title fz-94 lh-11 c-p-1" v-html="s1Data.title"></h2>
+        <h2 class="section1__title fz-64 lh-11 c-p-1" v-html="s1Data.title"></h2>
+
+        <div id="scrollDownBtn" class="scroll-down">
+          <div class="inner"></div>
+        </div>
       </section>
 
       <!-- s2 -->
+      <div id="scrollDownAnchor"></div>
       <section class="section2">
         <div class="bg-decoration bg-decoration-1">
           <div class="img">
@@ -424,7 +423,10 @@
           <div class="col col-right">
             <h2 class="main-title-wrapper bc-p-1">
               <div class="title-group">
-                <div class="title-en fz-42 lh-12 ls-20 c-fff custom-underline" v-html="s2Data.row1.title.en"></div>
+                <div
+                  class="title-en fz-42 lh-12 ls-20 c-fff custom-underline ws-preline"
+                  v-html="s2Data.row1.title.en"
+                ></div>
                 <div class="title-ch fz-22 c-fff ls-140" v-html="s2Data.row1.title.ch"></div>
               </div>
             </h2>
@@ -457,15 +459,19 @@
           <div class="title-wrapper bc-g-3">
             <div class="title-wrapper-inner">
               <h2 class="title-group">
-                <div class="title-en fz-42 lh-12 ls-20 c-fff custom-underline" v-html="s2Data.row2.title.en"></div>
+                <div
+                  class="title-en fz-42 lh-12 ls-20 c-fff custom-underline ws-preline"
+                  v-html="s2Data.row2.title.en"
+                ></div>
                 <div class="title-ch fz-22 c-fff ls-140" v-html="s2Data.row2.title.ch"></div>
               </h2>
 
-              <div id="js-scrollbar" class="menu-name-group">
+              <div class="js-scrollbar menu-name-group">
                 <div
                   v-for="(name, index) in s2Data.row2.menus"
                   class="menu-name fz-20 ls-30"
                   @mouseenter="hoverChangeImg(index)"
+                  @click="showPopup"
                 >
                   <p v-html="name.name"></p>
                 </div>
@@ -477,7 +483,7 @@
         <!-- row-3 -->
         <div class="section2__row-3">
           <h2 class="title-wrapper">
-            <div class="title-en fz-42 lh-12 ls-20 custom-underline" v-html="s2Data.row3.title.en"></div>
+            <div class="title-en fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s2Data.row3.title.en"></div>
             <div class="title-ch fz-22 ls-140" v-html="s2Data.row3.title.ch"></div>
           </h2>
 
@@ -523,7 +529,7 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper s3__swiper-wrapper">
             <!-- Slides -->
-            <div v-for="img in s3Data.swiper" class="swiper-slide s3__swiper-slide">
+            <div v-for="(img, index) in s3Data.swiper" class="swiper-slide s3__swiper-slide">
               <div class="bg">
                 <img class="swiper-lazy" :data-src="img" alt="" />
               </div>
@@ -536,7 +542,7 @@
         <div class="title-wrapper">
           <div class="num fz-124 c-p-1">02</div>
           <h2 class="title-group">
-            <div class="title-en c-fff fz-42 lh-12 ls-20 custom-underline" v-html="s3Data.title.en"></div>
+            <div class="title-en c-fff fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s3Data.title.en"></div>
             <div class="title-ch c-fff fz-22 ls-140" v-html="s3Data.title.ch"></div>
           </h2>
         </div>
@@ -544,61 +550,95 @@
 
       <section class="section4">
         <h2 class="title-wrapper">
-          <div class="title-en fz-42 lh-12 ls-20 custom-underline" v-html="s4Data.title.en"></div>
+          <div class="title-en fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s4Data.title.en"></div>
           <div class="title-ch fz-22 ls-140" v-html="s4Data.title.ch"></div>
         </h2>
 
-        <!-- Slider main container -->
-        <div class="swiper-container s4__swiper-container">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper s4__swiper-wrapper">
-            <!-- Slides -->
-            <div v-for="data in s4Data.swiper" class="swiper-slide s4__swiper-slide">
-              <div class="intro-item">
-                <div class="img">
-                  <div class="img-inner">
-                    <img class="swiper-lazy" :data-src="data.img" alt="" />
+        <div class="s4__swiper-outer">
+          <!-- Slider main container -->
+          <div class="swiper-container s4__swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper s4__swiper-wrapper">
+              <!-- Slides -->
+              <div v-for="data in s4Data.swiper" class="swiper-slide s4__swiper-slide">
+                <div class="intro-item">
+                  <div class="img">
+                    <div class="img-inner">
+                      <img class="swiper-lazy" :data-src="data.img" alt="" />
+                    </div>
                   </div>
-                </div>
 
-                <div class="intro-wrapper">
-                  <div class="group">
-                    <div class="title fz-22 ls-30" v-html="data.title"></div>
-                    <div class="content fz-18 lh-21 ls-25 c-g-2" v-html="data.content"></div>
+                  <div class="intro-wrapper">
+                    <div class="group">
+                      <div class="title fz-22 ls-30" v-html="data.title"></div>
+                      <div class="content fz-18 lh-21 ls-25 c-g-2" v-html="data.content"></div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev s4__swiper-button s4__swiper-button-prev">
+              <p class="text fz-16 ls-25 c-fff">PREV</p>
+            </div>
+            <div class="swiper-button-next s4__swiper-button s4__swiper-button-next">
+              <p class="text fz-16 ls-25 c-fff">NEXT</p>
+            </div>
           </div>
 
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev s4__swiper-button s4__swiper-button-prev">
-            <p class="text fz-16 ls-25 c-fff">PREV</p>
-          </div>
-          <div class="swiper-button-next s4__swiper-button s4__swiper-button-next">
-            <p class="text fz-16 ls-25 c-fff">NEXT</p>
-          </div>
-        </div>
-
-        <div class="bg-decoration bg-decoration-3">
-          <div class="img">
-            <img class="lazyload" data-src="images/fish-1.png" alt="" />
+          <div class="bg-decoration bg-decoration-3">
+            <div class="img">
+              <img class="lazyload" data-src="images/fish-1.png" alt="" />
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section5">
         <h2 class="title-wrapper">
-          <div class="title-en fz-42 lh-12 ls-20 custom-underline" v-html="s5Data.title.en"></div>
+          <div class="title-en fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s5Data.title.en"></div>
           <div class="title-ch fz-22 ls-140" v-html="s5Data.title.ch"></div>
         </h2>
+
+        <div class="news-wrapper">
+          <div class="news-row clearfix">
+            <div v-for="(item, index) in s5Data.news" class="news-item">
+              <div class="news-item-inner">
+                <div class="img">
+                  <div class="img-inner">
+                    <img class="lazyload" :data-src="item.img" alt="" />
+                  </div>
+
+                  <div class="border-decoration">
+                    <div class="border border-tb"></div>
+                    <div class="border border-lr"></div>
+                    <p class="text fz-14 ls-15 c-p-1">LEARN MORE</p>
+                  </div>
+
+                  <div v-if="item.latestTag" class="latest-tag fz-20-vw ls-20 fw-200 bc-p-1 c-fff">最新ニュース</div>
+                </div>
+
+                <div class="intro-wrapper">
+                  <div class="group">
+                    <p class="date fz-14 ls-15 c-p-1 fs-italic" v-html="item.date"></p>
+                    <h3 class="title fz-22 ls-45" v-html="item.title"></h3>
+                  </div>
+                  <p class="content js-clamp fz-18 lh-21 ls-25 c-g-2" v-html="item.content"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <popup-wrapper id="menuPopup" :menus="s2Data.row2.menus[s2row2ImgIndex]"></popup-wrapper>
 
       <!-- INCLUDESCRIPT BLOCK : common_footer.php -->
     </main>
 
     <!-- INCLUDESCRIPT BLOCK : common_script.php -->
-    <!-- INCLUDESCRIPT BLOCK : components.php -->
+    <!-- INCLUDESCRIPT BLOCK : vue-components.php -->
     <!-- main -->
     <script src="js/index-babel.js"></script>
     <!-- lazysizes -->

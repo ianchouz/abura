@@ -1,17 +1,102 @@
 <!-- btn -->
-<script type="text/x-template" id="btn1">
-  <div class="btn-1">
-    <p><% name %></p>
+<script type="text/x-template" id="popup-wrapper-template">
+  <div class="popup-container">
+    <div class="popup-wrapper">
+      <!-- header -->
+      <div class="popup__header">
+        <div class="img">
+          <div class="img-inner">
+            <img :src="menus.img" alt="">
+          </div>
+        </div>
+
+        <div class="menu-name fz-60 c-fff" v-html="menus.name"></div>
+
+        <div class="popup-close" @click="closePopup">
+            <div class="border-decoration">
+              <div class="border border-tb"></div>
+              <div class="border border-lr"></div>
+            </div>
+            <p class="fz-24 ls-300 c-p-1">關閉</p>
+
+            <div class="cross"></div>
+          </div>
+      </div>
+      <!-- body -->
+      <div class="popup__body">
+        <div :class="['tag-wrapper', {'d-n': tagQty === 1}]">
+          <div v-for="(data, index) in menus.menu"
+               :class="['tag-item fz-44', {active: index === popupTagIndex}]"
+               @click="changeTagIndex(index)"
+               v-html="data.tag"></div>
+        </div>
+
+        <div class="menu-item-container">
+          <template v-for="(data, index) in menus.menu">
+            <div :key="data.tag" :class="['menu-item-wrapper', {active: index === popupTagIndex}]">
+              <div v-for="item in data.items" :key="item.name" class="menu-item">
+                <div class="title-wrapper">
+                  <p class="name fz-40" v-html="item.name"></p>
+                  <p v-if="item.note !== ''" class="note fz-24 c-g-2 lh-12 ls-40" v-html="item.note"></p>
+                </div>
+
+                <div class="price-wrapper">
+                  <div class="dots-group">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+
+                  <div class="price fz-40 ls-40 c-p-1">
+                    <p><% `NT.${ item.price }` %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="popup__footer">
+        <div class="popup-close" @click="closePopup">
+          <div class="border-decoration">
+            <div class="border border-tb"></div>
+            <div class="border border-lr"></div>
+          </div>
+          <p class="fz-24 ls-120 c-p-1">關閉</p>
+        </div>
+      </div>
+    </div>
   </div>
 </script>
 
 <script>
-  Vue.component("btn-1", {
-    delimiters: ["<%", "%>"],
-    template: "#btn1",
-    props: ["name"]
-    // data() {
-    //   return {};
-    // }
+  Vue.component('popup-wrapper', {
+    delimiters: ['<%', '%>'],
+    template: '#popup-wrapper-template',
+    props: { menus: Object },
+    data() {
+      return {
+        popupTagIndex: 0
+      };
+    },
+    methods: {
+      changeTagIndex(index) {
+        // console.log(index);
+        this.popupTagIndex = index;
+      },
+      closePopup() {
+        $id('menuPopup').classList.remove('active');
+      }
+    },
+    computed: {
+      tagQty() {
+        // console.log(this.menus.menu.length);
+        return this.menus.menu.length;
+      }
+    }
   });
 </script>
