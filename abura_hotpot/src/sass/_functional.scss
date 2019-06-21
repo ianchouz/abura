@@ -118,7 +118,7 @@
     letter-spacing: #{$i * 5 / 10}px;
   }
 }
-@for $i from 2 through 10 {
+@for $i from 2 through 15 {
   .ls-#{$i * 5} {
     letter-spacing: #{$i * 5 / 10}px;
   }
@@ -130,13 +130,16 @@
       letter-spacing: #{$i * 5 / 10}px;
     }
   }
-  @for $i from 2 through 10 {
+  @for $i from 2 through 15 {
     .ls-mbl-#{$i * 5} {
       letter-spacing: #{$i * 5 / 10}px;
     }
   }
 }
 
+.ls-100 {
+  letter-spacing: 10px;
+}
 .ls-120 {
   letter-spacing: 12px;
 }
