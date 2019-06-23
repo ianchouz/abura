@@ -157,7 +157,7 @@
   }
 
   .nav-item-wrapper {
-    transform: initial;
+    transform: translate(0, -50%);
     opacity: 1;
     transition: 0.5s 0.3s;
   }
@@ -188,7 +188,7 @@
   right: 0;
   bottom: 0;
 
-  padding-top: vh-dsk(240);
+  // padding-top: vh-dsk(240);
   padding-left: vw-dsk(316);
   padding-right: vw-dsk(216);
   //
@@ -211,9 +211,10 @@
 }
 
 .nav-item-wrapper {
+  top: 55%;
   opacity: 0;
   //
-  transform: translateX(-10px);
+  transform: translate(-10px, -50%);
   transition: 0.5s;
 }
 

@@ -7,7 +7,7 @@
 
 .entrance-wrapper {
   display: flex;
-  height: 76%;
+  height: 70%;
 }
 
 .entrance {
@@ -163,9 +163,9 @@
   justify-content: center;
   align-items: center;
 
-  height: 24%;
+  height: 100% - 70;
 
   .logo {
-    margin-bottom: 26px;
+    margin-bottom: vh-dsk(24);
   }
 }

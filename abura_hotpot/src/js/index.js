@@ -64,7 +64,13 @@ const s1Swiper = new Swiper('.s1__swiper-container', {
     el: '.s1__swiper-pagination',
     type: 'bullets',
     clickable: true
-  }
+  },
+  effect: 'fade',
+  autoplay: {
+    delay: 8000,
+    disableOnInteraction: false
+  },
+  speed: 800
 });
 
 // s2
@@ -112,6 +118,12 @@ const s3Swiper = new Swiper('.s3__swiper-container', {
     type: 'bullets',
     clickable: true
   },
+  effect: 'fade',
+  autoplay: {
+    delay: 8000,
+    disableOnInteraction: false
+  },
+  speed: 800,
   on: {
     init: function() {
       // console.log('swiper initialized');
