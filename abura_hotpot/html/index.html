@@ -17,23 +17,28 @@
         swiper: [
           {
             subtitle: `秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利1。`,
-            img: 'images/s1-1.png'
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
           },
           {
             subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利2並貼心提供剝蝦蟹殼的福利2並貼心剝。`,
-            img: 'images/s1-1.png'
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
           },
           {
             subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利3。`,
-            img: 'images/s1-1.png'
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
           },
           {
             subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利4。`,
-            img: 'images/s1-1.png'
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
           },
           {
             subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利5。`,
-            img: 'images/s1-1.png'
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
           }
         ]
       };
@@ -769,19 +774,23 @@
             <!-- Slides -->
             <div v-for="data in s1Data.swiper" class="swiper-slide s1__swiper-slide">
               <div class="bg">
-                <img class="swiper-lazy" :data-src="data.img" alt="" />
+                <img class="swiper-lazy dsk" :data-src="data.img" alt="" />
+                <img class="swiper-lazy mbl" :data-src="data.imgMbl" alt="" />
               </div>
 
-              <p class="subtitle fw-200 fz-16 lh-21 ls-50 c-fff ta-justify" v-html="data.subtitle"></p>
+              <p
+                class="subtitle fw-200 fz-16 fz-mbl-14 lh-21 lh-mbl-14 ls-50 ls-mbl-40 c-fff ta-justify"
+                v-html="data.subtitle"
+              ></p>
             </div>
           </div>
           <!-- If we need pagination -->
           <div class="swiper-pagination s1__swiper-pagination"></div>
         </div>
 
-        <h2 class="section1__title fz-64 lh-11 c-p-1" v-html="s1Data.title"></h2>
+        <h2 class="section1__title fz-64 fz-mbl-28 lh-11 c-p-1" v-html="s1Data.title"></h2>
 
-        <div id="scrollDownBtn" class="scroll-down" @click="scrollToNext">
+        <div id="scrollDownBtn" class="scroll-down dsk" @click="scrollToNext">
           <div class="inner"></div>
         </div>
       </section>
@@ -791,7 +800,7 @@
       <div id="storyAnchor"></div>
 
       <section class="section2">
-        <div class="bg-decoration bg-decoration-1">
+        <div class="bg-decoration bg-decoration-1 dsk">
           <div class="img">
             <img class="lazyload" data-src="images/s2-flower-1.png" alt="" />
           </div>
@@ -822,16 +831,22 @@
             <h2 class="main-title-wrapper bc-p-1">
               <div class="title-group">
                 <div
-                  class="title-en fz-42 lh-12 ls-20 c-fff custom-underline ws-preline"
+                  class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline ws-preline"
                   v-html="s2Data.row1.title.en"
                 ></div>
-                <div class="title-ch fz-22 c-fff ls-140" v-html="s2Data.row1.title.ch"></div>
+                <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row1.title.ch"></div>
               </div>
             </h2>
 
             <div class="intro-wrapper">
-              <h3 class="title fw-700 fz-30 lh-17 ls-20" v-html="s2Data.row1.intro.title"></h3>
-              <p class="content fz-18 lh-21 ls-25 c-g-2 ta-justify" v-html="s2Data.row1.intro.content"></p>
+              <h3
+                class="title fw-700 fz-30 fz-mbl-16 lh-17 lh-mbl-16 ls-20 ls-mbl-15"
+                v-html="s2Data.row1.intro.title"
+              ></h3>
+              <p
+                class="content fz-18 fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2 ta-justify"
+                v-html="s2Data.row1.intro.content"
+              ></p>
             </div>
           </div>
         </div>
@@ -846,7 +861,8 @@
             </div>
           </div>
 
-          <div class="img-wrapper">
+          <!-- ===== dsk ===== -->
+          <div class="img-wrapper dsk">
             <template v-for="(img, index) in s2Data.row2.menus">
               <div :class="['img', {active: s2row2ImgIndex === index}]">
                 <div class="img-inner">
@@ -856,7 +872,7 @@
             </template>
           </div>
 
-          <div class="title-wrapper bc-g-3">
+          <div class="title-wrapper dsk bc-g-3">
             <div class="title-wrapper-inner">
               <h2 class="title-group">
                 <div
@@ -878,6 +894,43 @@
               </div>
             </div>
           </div>
+          <!-- ===== dsk ===== -->
+
+          <!-- ===== mbl ===== -->
+          <h2 class="title-group mbl">
+            <div
+              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline ws-preline"
+              v-html="s2Data.row2.title.en"
+            ></div>
+            <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row2.title.ch"></div>
+          </h2>
+          <!-- Slider main container -->
+          <div class="swiper-container s2-2__swiper-container mbl">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper s2-2__swiper-wrapper">
+              <!-- Slides -->
+              <div
+                v-for="(menu, index) in s2Data.row2.menus"
+                class="swiper-slide s2-2__swiper-slide"
+                @click="showPopup('menu')"
+              >
+                <div class="img">
+                  <div class="img-inner">
+                    <img class="swiper-lazy" :data-src="menu.img" alt="" />
+                  </div>
+                </div>
+
+                <p class="menu-name fz-mbl-14 ls-20" v-html="menu.name"></p>
+              </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="s2-2__swiper-button-group bc-g-3">
+              <div class="swiper-button-prev s2-2__swiper-button s2-2__swiper-button-prev"></div>
+              <div class="swiper-button-next s2-2__swiper-button s2-2__swiper-button-next"></div>
+            </div>
+          </div>
+          <!-- ===== mbl ===== -->
         </div>
 
         <!-- row-3 -->
@@ -885,8 +938,11 @@
 
         <div class="section2__row-3">
           <h2 class="title-wrapper">
-            <div class="title-en fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s2Data.row3.title.en"></div>
-            <div class="title-ch fz-22 ls-140" v-html="s2Data.row3.title.ch"></div>
+            <div
+              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-10 custom-underline ws-preline"
+              v-html="s2Data.row3.title.en"
+            ></div>
+            <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s2Data.row3.title.ch"></div>
           </h2>
 
           <div class="s2-3__swiper-outer">
@@ -906,17 +962,25 @@
                         <img class="swiper-lazy" :data-src="set.nameImg" alt="" />
                       </div>
 
-                      <div class="type fz-20 ls-12"><% `{ ${ set.type } }` %></div>
+                      <div class="type fz-20 fz-mbl-14 ls-15 ls-mbl-10"><% `{ ${ set.type } }` %></div>
                     </div>
 
-                    <div class="price fz-32 ls-15 bc-fff"><% `NT.${ set.price }` %></div>
+                    <div class="price fz-32 fz-mbl-18 ls-15 ls-mbl-10 bc-fff"><% `NT.${ set.price }` %></div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div class="bg-block bc-g-3 mbl"></div>
+
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev s2-3__swiper-button s2-3__swiper-button-prev"></div>
-            <div class="swiper-button-next s2-3__swiper-button s2-3__swiper-button-next"></div>
+            <div class="s2-3__swiper-button-group">
+              <div class="swiper-button-prev s2-3__swiper-button s2-3__swiper-button-prev"></div>
+              <div class="line mbl"></div>
+              <div class="swiper-button-next s2-3__swiper-button s2-3__swiper-button-next"></div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination s2-3__swiper-pagination mbl fz-mbl-14 ls-05 c-g-1"></div>
+            </div>
 
             <div id="s2_3BorderDecoration" class="border-decoration">
               <div class="border border-tb"></div>
@@ -930,23 +994,31 @@
       <div id="envAnchor"></div>
 
       <section class="section3">
-        <!-- Slider main container -->
-        <div class="swiper-container s3__swiper-container">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper s3__swiper-wrapper">
-            <!-- Slides -->
-            <div v-for="(img, index) in s3Data.swiper" class="swiper-slide s3__swiper-slide">
-              <div class="bg">
-                <img class="swiper-lazy" :data-src="img" alt="" />
+        <div class="s3__swiper-outer">
+          <!-- Slider main container -->
+          <div class="swiper-container s3__swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper s3__swiper-wrapper">
+              <!-- Slides -->
+              <div v-for="(img, index) in s3Data.swiper" class="swiper-slide s3__swiper-slide">
+                <div class="bg">
+                  <img class="swiper-lazy" :data-src="img" alt="" />
+                </div>
               </div>
             </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination s3__swiper-pagination dsk"></div>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination s3__swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="s3__swiper-button-group">
+            <div class="swiper-button-prev s3__swiper-button s3__swiper-button-prev"></div>
+            <div class="swiper-button-next s3__swiper-button s3__swiper-button-next"></div>
+          </div>
         </div>
 
         <div class="title-wrapper">
-          <div class="num-wrapper fz-124 c-p-1">
+          <div class="num-wrapper fz-124 fz-mbl-26 c-p-1">
             <span>0</span>
             <div class="group">
               <div id="pageClock" class="group-inner">
@@ -955,8 +1027,11 @@
             </div>
           </div>
           <h2 class="title-group">
-            <div class="title-en c-fff fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s3Data.title.en"></div>
-            <div class="title-ch c-fff fz-22 ls-140" v-html="s3Data.title.ch"></div>
+            <div
+              class="title-en c-fff fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
+              v-html="s3Data.title.en"
+            ></div>
+            <div class="title-ch c-fff fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s3Data.title.ch"></div>
           </h2>
         </div>
       </section>
@@ -966,8 +1041,11 @@
 
       <section class="section4">
         <h2 class="title-wrapper">
-          <div class="title-en fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s4Data.title.en"></div>
-          <div class="title-ch fz-22 ls-140" v-html="s4Data.title.ch"></div>
+          <div
+            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
+            v-html="s4Data.title.en"
+          ></div>
+          <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s4Data.title.ch"></div>
         </h2>
 
         <div class="s4__swiper-outer">
@@ -986,8 +1064,8 @@
 
                   <div class="intro-wrapper">
                     <div class="group">
-                      <div class="title fz-22 ls-30" v-html="data.title"></div>
-                      <div class="content fz-18 lh-21 ls-25 c-g-2" v-html="data.content"></div>
+                      <div class="title fz-22 fz-mbl-14 ls-30 ls-mbl-20" v-html="data.title"></div>
+                      <div class="content fz-18 fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2" v-html="data.content"></div>
                     </div>
                   </div>
                 </div>
@@ -996,10 +1074,10 @@
 
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev s4__swiper-button s4__swiper-button-prev">
-              <p class="text fz-16 ls-25 c-fff">PREV</p>
+              <p class="text fz-16 fz-mbl-12 ls-25 ls-mbl-15 c-fff">PREV</p>
             </div>
             <div class="swiper-button-next s4__swiper-button s4__swiper-button-next">
-              <p class="text fz-16 ls-25 c-fff">NEXT</p>
+              <p class="text fz-16 fz-mbl-12 ls-25 ls-mbl-15 c-fff">NEXT</p>
             </div>
           </div>
 
@@ -1016,17 +1094,28 @@
 
       <section class="section5">
         <h2 class="title-wrapper">
-          <div class="title-en fz-42 lh-12 ls-20 custom-underline ws-preline" v-html="s5Data.title.en"></div>
-          <div class="title-ch fz-22 ls-140" v-html="s5Data.title.ch"></div>
+          <div
+            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
+            v-html="s5Data.title.en"
+          ></div>
+          <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s5Data.title.ch"></div>
         </h2>
 
-        <div class="news-wrapper">
-          <div class="news-row clearfix">
-            <div v-for="(item, index) in s5Data.news" class="news-item" @mouseenter="hoverChangeNewsIndex(index)">
+        <div class="news-wrapper swiper-container s5__swiper-container">
+          <div class="news-row clearfix swiper-wrapper s5__swiper-wrapper">
+            <div
+              v-for="(item, index) in s5Data.news"
+              class="news-item swiper-slide s5__swiper-slide"
+              @mouseenter="hoverChangeNewsIndex(index)"
+            >
               <div class="news-item-inner" @click="showPopup('news')">
                 <div class="img">
                   <div class="img-inner">
-                    <img class="lazyload" :data-src="item.img" alt="" />
+                    <img
+                      :class="{lazyload: windowSize === 'dsk', 'swiper-lazy': windowSize === 'mbl'}"
+                      :data-src="item.img"
+                      alt=""
+                    />
                   </div>
 
                   <div class="border-decoration">
@@ -1035,20 +1124,28 @@
                     <p class="text fz-14 ls-15 c-p-1">LEARN MORE</p>
                   </div>
 
-                  <div v-if="item.latestTag" class="latest-tag fz-20-vw ls-20 fw-200 bc-p-1 c-fff">最新ニュース</div>
+                  <div v-if="item.latestTag" class="latest-tag fz-20-vw fz-mbl-14 ls-20 ls-mbl-15 fw-200 bc-p-1 c-fff">
+                    最新ニュース
+                  </div>
                 </div>
 
                 <div class="intro-wrapper">
                   <div class="group">
-                    <p class="date fz-14 ls-15 c-p-1 fs-italic" v-html="item.date"></p>
-                    <h3 class="title fz-22 ls-45" v-html="item.title"></h3>
+                    <p class="date fz-14 fz-mbl-12 ls-15 ls-mbl-10 c-p-1 fs-italic" v-html="item.date"></p>
+                    <h3 class="title fz-22 fz-mbl-14 ls-45 ls-mbl-25" v-html="item.title"></h3>
                   </div>
-                  <p class="subtitle js-clamp fz-18 lh-21 ls-25 c-g-2" v-html="item.subtitle"></p>
+                  <p
+                    class="subtitle js-clamp fz-18 fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2"
+                    v-html="item.subtitle"
+                  ></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination s5__swiper-pagination"></div>
       </section>
 
       <!-- menuPopup -->

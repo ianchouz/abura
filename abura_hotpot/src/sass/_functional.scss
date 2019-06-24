@@ -149,6 +149,13 @@
 .ls-300 {
   letter-spacing: 30px;
 }
+
+@include mq(mbl) {
+  .ls-mbl-100 {
+    letter-spacing: 10px;
+  }
+}
+
 // ------------------------------------------------font
 
 // color

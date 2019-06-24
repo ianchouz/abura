@@ -46,5 +46,14 @@ const vueMixins = {
         window.requestAnimationFrame(this.goToSection);
       }
     }
+  },
+  computed: {
+    windowSize() {
+      if (window.matchMedia(bkpDsk).matches) {
+        return 'dsk';
+      } else {
+        return 'mbl';
+      }
+    }
   }
 };

@@ -32,6 +32,10 @@
   width: 76%;
   background-color: #fff;
   margin: auto;
+
+  @include mq(mbl) {
+    width: 90%;
+  }
 }
 
 .popup {
@@ -96,6 +100,23 @@
         width: 24px;
       }
     }
+
+    @include mq(mbl) {
+      .popup-close {
+        top: 0;
+        right: vw-mbl(16);
+        transform: translateY(-60%);
+
+        width: 42px;
+        height: 130px;
+        padding: 20px 0;
+
+        .cross {
+          height: 12px;
+          width: 12px;
+        }
+      }
+    }
   }
 
   // ===================== body
@@ -125,10 +146,27 @@
         left: 0;
       }
     }
+
+    @include mq(mbl) {
+      padding-bottom: 40px;
+
+      .popup-close {
+        max-width: initial;
+        min-width: initial;
+        width: 220px;
+        height: 42px;
+      }
+    }
   }
 }
 
 // menu
+@include mq(mbl) {
+  .menu-popup .menu-name {
+    opacity: 0;
+  }
+}
+
 .popup__body-menu {
   padding: 0 vw-dsk(140) 160px;
 
@@ -195,6 +233,39 @@
 
     .price {
       margin-left: vw-dsk(80);
+    }
+  }
+
+  @include mq(mbl) {
+    padding: 0 vw-mbl(30) 74px;
+
+    .tag-wrapper {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .menu-item {
+      display: block;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      border-width: 1px;
+
+      .title-wrapper {
+        margin-right: initial;
+        margin-bottom: 30px;
+      }
+
+      .note {
+        margin-top: 16px;
+      }
+    }
+
+    .price-wrapper {
+      justify-content: space-between;
+
+      .price {
+        margin-left: initial;
+      }
     }
   }
 }
@@ -309,6 +380,8 @@
           }
         }
 
+        &-broth,
+        &-main,
         &-rice {
           .content__title {
             display: flex;
@@ -327,6 +400,98 @@
 
         .title {
           margin-bottom: 54px;
+        }
+      }
+    }
+  }
+
+  @include mq(mbl) {
+    padding-top: 36px;
+
+    .menu-item-wrapper {
+      display: block;
+      padding-bottom: 74px;
+    }
+
+    .col {
+      &-title {
+        width: 100%;
+
+        .title-wrapper {
+          margin: 0 vw-mbl(30) 30px;
+          padding-bottom: 36px;
+          width: initial;
+          border-bottom: 2px solid #000;
+        }
+
+        .set-name {
+          &::after {
+            height: 22px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+        }
+
+        .price {
+          margin-bottom: 10px;
+        }
+      }
+
+      &-content {
+        width: 100%;
+        padding-right: initial;
+        padding: 0 vw-mbl(30);
+
+        .content {
+          & + .content {
+            border-width: 1px;
+          }
+
+          &:nth-child(n + 2) {
+            padding-top: 30px;
+            padding-bottom: 50px;
+          }
+
+          &__title {
+            margin-bottom: 24px;
+          }
+
+          &-broth {
+            padding-bottom: 10px;
+
+            .item-wrapper {
+              flex-wrap: wrap;
+              justify-content: center;
+              margin: 0 vw-mbl(-15);
+            }
+
+            .item {
+              height: vw-mbl(100);
+              flex-grow: initial;
+              width: 50%;
+              padding: 0 vw-mbl(15);
+              margin-bottom: 20px;
+            }
+          }
+
+          &-broth,
+          &-main,
+          &-rice {
+            .content__title {
+              .note {
+                margin-left: vw-mbl(16);
+              }
+            }
+          }
+        }
+
+        .note-wrapper {
+          padding-top: 30px;
+          border-width: 2px;
+
+          .title {
+            margin-bottom: 24px;
+          }
         }
       }
     }

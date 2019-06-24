@@ -46,9 +46,15 @@ const vm = new Vue({
     }
   },
   mounted() {
-    document.querySelectorAll('.js-clamp').forEach(item => {
-      $clamp(item, { clamp: 2 });
-    });
+    if (window.matchMedia(bkpDsk).matches) {
+      document.querySelectorAll('.js-clamp').forEach(item => {
+        $clamp(item, { clamp: 2 });
+      });
+    } else {
+      document.querySelectorAll('.js-clamp').forEach(item => {
+        $clamp(item, { clamp: 4 });
+      });
+    }
   }
 });
 
@@ -89,9 +95,35 @@ const s2_1Swiper = new Swiper('.s2-1__swiper-container', {
   }
 });
 
+// row2
+if (window.matchMedia(bkpMbl).matches) {
+  const s2_2Swiper = new Swiper('.s2-2__swiper-container', {
+    // Disable preloading of all images
+    preloadImages: false,
+    lazy: {
+      loadPrevNext: true
+    },
+    navigation: {
+      nextEl: '.s2-2__swiper-button-next',
+      prevEl: '.s2-2__swiper-button-prev'
+    },
+    effect: 'fade',
+    speed: 800,
+    on: {
+      init() {
+        vm.s2row2ImgIndex = this.activeIndex;
+      },
+      slideChange() {
+        vm.s2row2ImgIndex = this.activeIndex;
+      }
+    }
+  });
+}
+
 // row3
 // swiper
-const s2_3Swiper = new Swiper('.s2-3__swiper-container', {
+// dsk
+const s2_3ParamDsk = {
   // Disable preloading of all images
   preloadImages: false,
   lazy: {
@@ -102,7 +134,71 @@ const s2_3Swiper = new Swiper('.s2-3__swiper-container', {
     nextEl: '.s2-3__swiper-button-next'
   },
   slidesPerView: 5
-});
+};
+// mbl
+const s2_3ParamMbl = {
+  init: false,
+  // Disable preloading of all images
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
+  navigation: {
+    prevEl: '.s2-3__swiper-button-prev',
+    nextEl: '.s2-3__swiper-button-next'
+  },
+  pagination: {
+    el: '.s2-3__swiper-pagination',
+    type: 'fraction'
+  },
+  slidesPerView: 'auto',
+  centeredSlides: true,
+  loop: true,
+  loopedSlides: 5
+};
+
+if (window.matchMedia(bkpDsk).matches) {
+  // dsk
+  const s2_3Swiper = new Swiper('.s2-3__swiper-container', s2_3ParamDsk);
+} else {
+  // mbl
+  const s2_3Swiper = new Swiper('.s2-3__swiper-container', s2_3ParamMbl);
+
+  // ======================================
+  const s2_3SlideChange = function() {
+    const currentPagi = document.querySelector('.s2-3__swiper-pagination .swiper-pagination-current');
+    const totalPagi = document.querySelector('.s2-3__swiper-pagination .swiper-pagination-total');
+
+    const arr = [currentPagi, totalPagi];
+
+    arr.forEach(item => {
+      if (item.innerText.length === 1) {
+        item.innerText = 0 + item.innerText;
+      }
+    });
+
+    vm.s2row3SwiperIndex = s2_3Swiper.realIndex;
+  };
+  // ======================================
+
+  s2_3Swiper.on('init', function() {
+    s2_3SlideChange();
+
+    // console.log(document.querySelectorAll('.swiper-slide-duplicate'));
+    const duplicateSlides = document.querySelectorAll('.swiper-slide-duplicate');
+    duplicateSlides.forEach(item => {
+      item.addEventListener('click', function() {
+        vm.showPopup('set');
+      });
+    });
+  });
+
+  s2_3Swiper.init();
+
+  s2_3Swiper.on('slideChange', function() {
+    s2_3SlideChange();
+  });
+}
 
 // s3
 // swiper
@@ -117,6 +213,10 @@ const s3Swiper = new Swiper('.s3__swiper-container', {
     el: '.s3__swiper-pagination',
     type: 'bullets',
     clickable: true
+  },
+  navigation: {
+    nextEl: '.s3__swiper-button-next',
+    prevEl: '.s3__swiper-button-prev'
   },
   effect: 'fade',
   autoplay: {
@@ -164,3 +264,22 @@ document.querySelectorAll('.js-scrollbar').forEach(item => {
     wheelPropagation: false
   });
 });
+
+// s5
+if (window.matchMedia(bkpMbl).matches) {
+  const s5Swiper = new Swiper('.s5__swiper-container', {
+    // Disable preloading of all images
+    preloadImages: false,
+    lazy: {
+      loadPrevNext: true
+    },
+    pagination: {
+      el: '.s5__swiper-pagination',
+      type: 'bullets',
+      dynamicBullets: true
+    },
+    spaceBetween: 100
+    // effect: 'fade',
+    // speed: 800
+  });
+}
