@@ -191,7 +191,8 @@ $bkp-s: 'max-width: 600px';
     height: 38px;
     border: 1px solid #000;
     border-radius: 50%;
-    margin-bottom: 20px;
+    //
+    transition: 0.3s;
 
     &::before {
       content: '';
@@ -205,6 +206,8 @@ $bkp-s: 'max-width: 600px';
       border-width: 1px;
       border-color: #000;
       border-style: solid none none solid;
+      //
+      transition: 0.3s;
     }
   }
 
@@ -214,6 +217,29 @@ $bkp-s: 'max-width: 600px';
     width: 1px;
     height: 75px;
     background-color: #000;
+    transform-origin: 50% 100%;
+    transform: translateY(20px);
+    //
+    transition: 0.3s;
+  }
+
+  @include hover {
+    &:hover {
+      .circle {
+        border-color: transparent;
+        background-color: $c-p-1;
+
+        &::before {
+          border-color: #fff;
+          transform: translate(-50%, -70%) rotate(45deg);
+        }
+      }
+
+      &::after {
+        background-color: $c-p-1;
+        transform: translateY(20px) scaleY((95 / 75));
+      }
+    }
   }
 
   @include mq(mbl) {
@@ -257,6 +283,8 @@ $bkp-s: 'max-width: 600px';
       background-color: $c-p-1;
       border-radius: 50%;
       top: 10px;
+      // animation: name duration timing-function delay iteration-count direction fill-mode;
+      animation: scroll-down 0.8s infinite alternate;
     }
 
     &::after {
@@ -268,6 +296,12 @@ $bkp-s: 'max-width: 600px';
       transform: rotate(225deg);
       top: 16px;
     }
+  }
+}
+
+@keyframes scroll-down {
+  100% {
+    transform: translateY(4px);
   }
 }
 

@@ -170,3 +170,12 @@ html,
 body {
   font-family: $ff-serif;
 }
+
+// overflow
+html.hide-scrollbar {
+  overflow: hidden;
+
+  @include mq(dsk) {
+    margin-right: 17px;
+  }
+}

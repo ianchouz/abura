@@ -3,6 +3,14 @@
 
 // bg-decoration
 .bg-decoration {
+  .img {
+    transition: 1s;
+
+    img {
+      width: 100%;
+    }
+  }
+
   &-1 {
     position: absolute;
     top: 0;
@@ -15,6 +23,10 @@
     right: 0;
     top: 0;
     transform: translateY(-50%);
+
+    .img {
+      width: 30vw;
+    }
   }
 
   &-3 {
@@ -25,11 +37,7 @@
     pointer-events: none;
 
     .img {
-      max-width: 28vw;
-    }
-
-    img {
-      width: 100%;
+      width: 28vw;
     }
   }
 
@@ -46,8 +54,8 @@
       top: 202px;
       transform: translateY(-58%);
 
-      img {
-        height: vw-mbl(350);
+      .img {
+        width: 56vw;
       }
     }
 
@@ -57,7 +65,6 @@
       transform: translateY(-20%);
 
       .img {
-        max-width: initial;
         width: 43vw;
       }
     }
@@ -67,10 +74,6 @@
 
       .img {
         width: 65vw;
-
-        img {
-          width: 100%;
-        }
       }
     }
   }
@@ -96,21 +99,22 @@
 .section1 {
   &__title {
     position: absolute;
-    bottom: vh-dsk(370);
     left: vw-dsk(126);
+    // bottom: vh-dsk(370);
+    bottom: 34%;
     z-index: 10;
 
     &::after {
       content: '';
       display: block;
       position: absolute;
-      top: 100%;
       left: 0;
-      height: 68px;
+      top: calc(86% + 6.4vh);
+      transform: translateY(-50%) rotate(45deg);
+      height: vw-dsk(68);
       width: 2px;
       background-color: #fff;
       transform-origin: 0 100%;
-      transform: rotate(45deg);
     }
   }
 
@@ -122,16 +126,26 @@
     transform: translateX(-50%);
     margin-bottom: -20px;
     z-index: 10;
+    //
+    transition: 0.5s;
+
+    &.hide {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 10px);
+    }
   }
 
   @include mq(mbl) {
     &__title {
-      bottom: vh-mbl(250);
+      // bottom: vh-mbl(250);
+      bottom: 44%;
       left: vw-mbl(20);
 
       &::after {
-        top: 100% + 10;
-        height: 34px;
+        top: calc(80% + 5.2vh);
+        transform: translateY(-50%) rotate(45deg);
+        height: vw-mbl(34);
       }
     }
   }
@@ -191,8 +205,9 @@
 
     .subtitle {
       position: absolute;
-      top: vh-dsk(810);
       left: vw-dsk(126);
+      // top: vh-dsk(810);
+      top: 76%;
       width: vw-dsk(600);
     }
   }
@@ -210,8 +225,10 @@
     &-slide {
       .subtitle {
         left: initial;
-        top: vh-mbl(380);
+        // top: vh-mbl(380);
+        top: 64%;
         width: 100%;
+        max-width: 600px;
 
         padding-left: vw-mbl(20);
         padding-right: vw-mbl(40);
@@ -251,7 +268,19 @@
           align-items: center;
           width: vw-dsk(348);
           height: vw-dsk(514);
+          min-width: 240px;
           margin-top: vw-dsk(-60);
+          //
+          @include mq(dsk) {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          transition: 1s;
+
+          &.show {
+            opacity: 1;
+            transform: initial;
+          }
 
           .title-ch {
             margin-top: 20px;
@@ -273,6 +302,14 @@
       }
     }
 
+    // &__row-1
+    @include mq(3l) {
+      .col {
+        &-left {
+          width: 38%;
+        }
+      }
+    }
     @include mq(mbl) {
       flex-direction: column-reverse;
       margin-bottom: initial;
@@ -434,6 +471,27 @@
       }
     }
 
+    // &__row-2
+    @include mq(5l) {
+      padding-left: vw-dsk(120);
+
+      .img-wrapper {
+        width: vw-dsk(1160);
+        height: 540px;
+        margin-top: 80px;
+      }
+
+      .title-wrapper {
+        height: 560px;
+        padding: 80px 0;
+
+        .menu-name {
+          &-group {
+            width: vw-dsk(480);
+          }
+        }
+      }
+    }
     @include mq(mbl) {
       display: block;
       padding-left: initial;
@@ -478,6 +536,19 @@
       width: calc((100% - #{vw-dsk(190 * 2)}) / 5);
       //
       transition: 0.5s;
+    }
+  }
+
+  // &__row-3
+  @include mq(4l) {
+    .border-decoration {
+      width: calc((100% - #{vw-dsk(190 * 2)}) / 4);
+    }
+  }
+
+  @include mq(2l) {
+    .border-decoration {
+      width: calc((100% - #{vw-dsk(190 * 2)}) / 3);
     }
   }
 
@@ -759,6 +830,17 @@
     }
   }
 
+  @include mq(4l) {
+    &-button {
+      &-prev {
+        left: vw-dsk(30);
+      }
+
+      &-next {
+        right: vw-dsk(30);
+      }
+    }
+  }
   @include mq(mbl) {
     &-outer {
       padding: initial;
@@ -1165,7 +1247,7 @@
 
       .title {
         flex-shrink: 0;
-        margin-right: vw-dsk(100);
+        margin-right: vw-dsk(60);
       }
     }
 
@@ -1207,6 +1289,9 @@
     padding: 10px 0;
     cursor: pointer;
     z-index: 10;
+    //
+    filter: drop-shadow(0 0 3px rgba(#000, 0));
+    transition: 0.3s;
 
     // 點點
     &::before {
@@ -1259,8 +1344,29 @@
         order: 1;
       }
     }
+
+    @include hover {
+      &:hover {
+        filter: drop-shadow(0 0 3px rgba(#000, 0.5));
+      }
+    }
   }
 
+  // .s4__swiper
+  @include mq(3l) {
+    &-slide {
+      .intro-wrapper {
+        .group {
+          display: block;
+        }
+
+        .title {
+          margin-right: initial;
+          margin-bottom: vw-dsk(30);
+        }
+      }
+    }
+  }
   @include mq(mbl) {
     &-container {
       padding-top: vw-mbl(54);
@@ -1278,13 +1384,13 @@
         }
 
         .group {
-          display: block;
+          // display: block;
           padding-top: vw-mbl(40);
           padding-bottom: vw-mbl(50);
         }
 
         .title {
-          margin-right: initial;
+          // margin-right: initial;
           margin-bottom: vw-mbl(30);
         }
       }
@@ -1461,10 +1567,28 @@
     height: vw-dsk(52);
   }
 
+  // .section5
+  @include mq(3l) {
+    .news-item {
+      width: 50%;
+
+      &:nth-child(3n + 2) {
+        margin-top: initial;
+      }
+
+      &:nth-child(3n) {
+        margin-top: initial;
+      }
+
+      &:nth-child(2n) {
+        margin-top: vw-dsk(100);
+      }
+    }
+  }
   @include mq(mbl) {
     padding: initial;
-    padding-bottom: 70px;
-    margin-bottom: 70px;
+    padding-bottom: vw-mbl(40);
+    margin-bottom: vw-mbl(100);
 
     .title-wrapper {
       margin-bottom: 40px;
@@ -1500,10 +1624,14 @@
         margin-bottom: vw-mbl(30);
       }
 
-      &:nth-child(3n + 2) {
-        margin-top: initial;
-      }
-      &:nth-child(3n) {
+      // &:nth-child(3n + 2) {
+      //   margin-top: initial;
+      // }
+      // &:nth-child(3n) {
+      //   margin-top: initial;
+      // }
+
+      &:nth-child(2n) {
         margin-top: initial;
       }
     }
@@ -1521,6 +1649,10 @@
 
 @include mq(dsk) {
   .s5__swiper {
+    &-container {
+      overflow: initial;
+    }
+
     &-wrapper {
       display: block;
     }
@@ -1537,11 +1669,14 @@
     &-pagination {
       @include pagination;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
       position: absolute;
-      bottom: 0;
+      top: 100%;
       right: 0;
-      left: 0;
-      margin: auto;
+      width: calc(150px + #{vw-mbl(30)});
+
+      padding-right: vw-mbl(30);
 
       .swiper-pagination-bullet {
         &-active {

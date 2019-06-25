@@ -20,6 +20,10 @@
   .logo {
     margin-top: vh-dsk(96);
     margin-left: vw-dsk(126);
+
+    img {
+      width: 140px;
+    }
   }
 
   .menu-toggle {
@@ -41,6 +45,18 @@
 
       & + .menu-toggle__bar {
         margin-top: 10px;
+      }
+
+      &:first-child {
+        transform-origin: 100% 50%;
+      }
+
+      &:nth-child(2) {
+        transform-origin: 100% 50%;
+      }
+      &:nth-child(3) {
+        transform-origin: 100% 50%;
+        box-shadow: 0 0 0 1px rgba($c-g-3, 0);
       }
     }
   }
@@ -169,10 +185,27 @@
     @include go-top;
     position: absolute;
     right: 0;
-    top: 288px;
-    transform: translateX(calc(100% + 5vw - 50%));
+    bottom: 0;
+    transform: translate(calc(100% + 5vw - 50%), -100px);
   }
 
+  // .common-footer
+  @include mq(4l) {
+    .note {
+      position: relative;
+      top: initial;
+      left: initial;
+      margin-top: 80px;
+
+      .title {
+        margin-bottom: 10px;
+      }
+    }
+
+    .copyright {
+      margin-top: 10px;
+    }
+  }
   @include mq(mbl) {
     margin-right: initial;
     padding: 84px vw-mbl(70) 40px vw-mbl(30);
@@ -219,9 +252,9 @@
     }
 
     .note {
-      position: relative;
-      top: initial;
-      left: initial;
+      // position: relative;
+      // top: initial;
+      // left: initial;
       margin-top: 70px;
       margin-bottom: 100px;
 
@@ -248,9 +281,7 @@
 
     .go-top {
       right: -20px;
-      top: initial;
-      bottom: -20px;
-      transform: translate(vw-mbl(-14), -36px);
+      transform: translate(vw-mbl(-14), -40px);
     }
   }
 }
@@ -275,16 +306,13 @@
   .menu-toggle {
     &__bar {
       &:first-child {
-        transform-origin: 100% 50%;
         transform: translateY(13px) rotate(-20deg);
       }
 
       &:nth-child(2) {
-        transform-origin: 100% 50%;
         transform: rotate(-20deg);
       }
       &:nth-child(3) {
-        transform-origin: 100% 50%;
         transform: rotate(20deg);
         box-shadow: 0 0 0 1px rgba($c-g-3, 0.98);
       }

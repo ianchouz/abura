@@ -11,7 +11,7 @@
           </div>
         </div>
 
-        <div v-if="menus" class="menu-name fz-70 lh-12 c-fff" v-html="menus.name"></div>
+        <div v-if="menus" class="menu-name fz-50 lh-12 c-fff" v-html="menus.name"></div>
 
         <div class="popup-close" @click="closePopup">
           <div class="border-decoration">
@@ -64,6 +64,8 @@
         });
 
         this.popupTagIndex = 0;
+
+        document.documentElement.classList.remove('hide-scrollbar');
       },
       closePopupClickOutside(e) {
         // console.log(e.target);
@@ -277,11 +279,11 @@
   <!-- body -->
   <div class="popup__body popup__body-news">
     <div class="title-wrapper">
-      <p class="date fz-18 ls-15 c-p-1 fs-italic" v-html="dataFromParent.news.date"></p>
-      <h3 class="title fz-32 ls-45" v-html="dataFromParent.news.title"></h3>
+      <p class="date fz-18 fz-mbl-14 ls-15 c-p-1 fs-italic" v-html="dataFromParent.news.date"></p>
+      <h3 class="title fz-32 fz-mbl-20 ls-45" v-html="dataFromParent.news.title"></h3>
     </div>
 
-    <p class="content lh-21 ls-25 c-g-2" v-html="dataFromParent.news.content"></p>
+    <p class="content fz-mbl-14 lh-21 lh-mbl-18 ls-25 c-g-2 ta-justify" v-html="dataFromParent.news.content"></p>
   </div>
 </script>
 

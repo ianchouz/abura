@@ -7,6 +7,18 @@ const $id = function(id) {
   return document.getElementById(id);
 };
 
+let nowScrollTop, lastScrollTop;
+
+const scrollCloseNavMenu = function() {
+  lastScrollTop = nowScrollTop;
+  nowScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (lastScrollTop !== nowScrollTop) {
+    $id('commonHeader').classList.remove('nav-menu-open');
+    window.removeEventListener('scroll', scrollCloseNavMenu);
+  }
+};
+
 const vueMixins = {
   delimiters: ['<%', '%>'],
   data: {
@@ -14,7 +26,15 @@ const vueMixins = {
   },
   methods: {
     showNavMenu() {
-      $id('commonHeader').classList.toggle('nav-menu-open');
+      // $id('commonHeader').classList.toggle('nav-menu-open');
+
+      if (!$id('commonHeader').classList.contains('nav-menu-open')) {
+        $id('commonHeader').classList.add('nav-menu-open');
+        window.addEventListener('scroll', scrollCloseNavMenu);
+      } else {
+        $id('commonHeader').classList.remove('nav-menu-open');
+        window.removeEventListener('scroll', scrollCloseNavMenu);
+      }
     },
     scrollToTop() {
       const t = document.documentElement.scrollTop || document.body.scrollTop;
@@ -34,8 +54,15 @@ const vueMixins = {
     setTargetOffsetTop(target) {
       this.targetOffsetTop = $id(target).getBoundingClientRect().top;
       // console.log(this.targetOffsetTop);
+      $id('commonHeader').classList.remove('nav-menu-open');
+      window.removeEventListener('scroll', scrollCloseNavMenu);
 
-      this.goToSection();
+      if (window.matchMedia(bkpDsk).matches) {
+        this.goToSection();
+      } else {
+        const t = document.documentElement.scrollTop || document.body.scrollTop;
+        window.scrollTo(0, t + this.targetOffsetTop);
+      }
     },
     goToSection() {
       const t = document.documentElement.scrollTop || document.body.scrollTop;

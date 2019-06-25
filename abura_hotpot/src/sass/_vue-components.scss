@@ -2,9 +2,9 @@
 .popup-container {
   position: fixed;
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
+  width: 100vw;
   background-color: rgba(#000, 0.6);
 
   padding: 120px 0;
@@ -20,12 +20,6 @@
     opacity: 1;
     pointer-events: initial;
   }
-
-  // .ps__rail-x,
-  // .ps__rail-y {
-  //   opacity: 0 !important;
-  //   pointer-events: none;
-  // }
 }
 
 .popup-wrapper {
@@ -163,7 +157,7 @@
 // menu
 @include mq(mbl) {
   .menu-popup .menu-name {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -272,7 +266,7 @@
 
 // set
 .set-popup .menu-name {
-  opacity: 0;
+  display: none;
 }
 
 .popup__body-set {
@@ -515,6 +509,19 @@
   .content {
     img {
       max-width: 100%;
+    }
+  }
+
+  @include mq(mbl) {
+    padding: 50px vw-mbl(30) 100px;
+
+    .title-wrapper {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
+
+    .date {
+      margin-bottom: 10px;
     }
   }
 }

@@ -120,6 +120,14 @@
   &-right {
     border-left: 3px solid $c-p-4;
 
+    .bg-texture {
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
     .logo {
       img {
         height: vw-dsk(258);

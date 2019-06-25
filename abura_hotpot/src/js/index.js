@@ -43,6 +43,17 @@ const vm = new Vue({
       } else if (popupType === 'news') {
         $id('newsPopup').classList.add('active');
       }
+
+      document.documentElement.classList.add('hide-scrollbar');
+    }
+  },
+  computed: {
+    s5DataNewsSwitch() {
+      if (window.matchMedia(bkpDsk).matches) {
+        return this.s5Data.news;
+      } else {
+        return this.s5Data.news.slice(0, 10);
+      }
     }
   },
   mounted() {
@@ -133,7 +144,16 @@ const s2_3ParamDsk = {
     prevEl: '.s2-3__swiper-button-prev',
     nextEl: '.s2-3__swiper-button-next'
   },
-  slidesPerView: 5
+  slidesPerView: 5,
+  breakpoints: {
+    // when window width is <= 1400px
+    1400: {
+      slidesPerView: 4
+    },
+    1200: {
+      slidesPerView: 3
+    }
+  }
 };
 // mbl
 const s2_3ParamMbl = {
@@ -184,6 +204,7 @@ if (window.matchMedia(bkpDsk).matches) {
   s2_3Swiper.on('init', function() {
     s2_3SlideChange();
 
+    // duplicate
     // console.log(document.querySelectorAll('.swiper-slide-duplicate'));
     const duplicateSlides = document.querySelectorAll('.swiper-slide-duplicate');
     duplicateSlides.forEach(item => {
@@ -220,7 +241,7 @@ const s3Swiper = new Swiper('.s3__swiper-container', {
   },
   effect: 'fade',
   autoplay: {
-    delay: 8000,
+    delay: 3000,
     disableOnInteraction: false
   },
   speed: 800,
@@ -253,7 +274,8 @@ const s4Swiper = new Swiper('.s4__swiper-container', {
   slidesPerView: 'auto',
   loop: true,
   loopedSlides: 4,
-  centeredSlides: true
+  centeredSlides: true,
+  speed: 800
 });
 
 // scrollbar
@@ -275,11 +297,54 @@ if (window.matchMedia(bkpMbl).matches) {
     },
     pagination: {
       el: '.s5__swiper-pagination',
-      type: 'bullets',
-      dynamicBullets: true
+      type: 'bullets'
+      // dynamicBullets: true
     },
-    spaceBetween: 100
+    spaceBetween: 100,
     // effect: 'fade',
-    // speed: 800
+    // speed: 800,
+    on: {
+      init() {
+        vm.newsIndex = this.activeIndex;
+      },
+      slideChange() {
+        vm.newsIndex = this.activeIndex;
+      }
+    }
   });
+}
+
+// scrollmagic
+
+if (window.matchMedia(bkpDsk).matches) {
+  const controller = new ScrollMagic.Controller({
+    // addIndicators: true
+  });
+
+  // ===================== s1
+  const s1Tl = new TimelineMax({});
+  s1Tl.to('.section2__row-1 .main-title-wrapper', 0.001, { className: '+=show' }).to('#scrollDownBtn', 0.001, {
+    className: '+=hide'
+  });
+
+  new ScrollMagic.Scene({
+    triggerElement: '#storyAnchor',
+    triggerHook: 0.8
+  })
+    .setTween(s1Tl)
+    .addTo(controller);
+
+  // ===================== s2
+  const s2Tl = new TimelineMax({});
+  s2Tl
+    .fromTo('.bg-decoration-1 .img', 1, { yPercent: 5 }, { yPercent: -5 }, 0)
+    .fromTo('.bg-decoration-2 .img', 1, { yPercent: -5 }, { yPercent: 5 }, 0);
+
+  new ScrollMagic.Scene({
+    duration: '200%',
+    triggerElement: '#storyAnchor',
+    triggerHook: 1
+  })
+    .setTween(s2Tl)
+    .addTo(controller);
 }
