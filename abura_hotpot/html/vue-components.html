@@ -5,10 +5,27 @@
       <!-- header -->
       <div class="popup__header">
 
-        <div v-if="menus" class="img">
+        <!-- <div v-if="menus" class="img">
           <div class="img-inner">
             <img class="lazyload" :data-src="menus.img" alt="">
           </div>
+        </div> -->
+
+        <!-- Slider main container -->
+        <div v-if="menus" class="swiper-container popup-header__swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper popup-header__swiper-wrapper">
+            <!-- Slides -->
+            <div v-for="img in menus.imgs" class="swiper-slide popup-header__swiper-slide">
+              <div class="img">
+                <div class="img-inner">
+                  <img class="lazyload" src="" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination popup-header__swiper-pagination"></div>
         </div>
 
         <div v-if="menus" class="menu-name fz-50 lh-12 c-fff" v-html="menus.name"></div>
@@ -154,10 +171,11 @@
       </div>
       <div class="col-content">
         <div class="content-wrapper">
+          <!-- 湯底 -->
           <div class="content content-broth">
               <div class="content__title">
                 <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.broth.title %></p>
-                <p class="note fz-24 fz-mbl-14 ls-75 c-g-6 mbl"><% dataFromParent.menus.broth.items.length | toChineseNum %>選一</p>
+                <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items.length | toChineseNum %>選一</p>
               </div>
             <div class="item-wrapper">
               <div v-for="item in dataFromParent.menus.broth.items" class="item">
@@ -172,12 +190,21 @@
                 </div>
               </div>
             </div>
-            <div class="note fz-20 fz-mbl-14 c-p-1 dsk">
-              <p>（<% dataFromParent.menus.broth.items.length | toChineseNum %>選一）</p>
+          </div>
+
+          <div v-for="dish in dataFromParent.menus.otherDishes" class="content">
+              <div class="content__title">
+                <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dish.title %></p>
+                <p v-if="dish.chooseNum !== ''" class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dish.items.length | toChineseNum %>選<% dish.chooseNum | toChineseNum %></p>
+              </div>
+            <div class="item-wrapper">
+              <div v-for="item in dish.items" class="item">
+                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
+              </div>
             </div>
           </div>
 
-          <div class="content content-main">
+          <!-- <div class="content content-main">
               <div class="content__title">
                 <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.main.title %></p>
                 <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.main.items.length | toChineseNum %>選一</p>
@@ -208,7 +235,7 @@
                 <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="note-wrapper">
@@ -229,40 +256,40 @@
     filters: {
       toChineseNum(value) {
         // console.log(typeof value);
-        switch (value) {
-          case 1:
+        switch (value.toString()) {
+          case '1':
             return '一';
             break;
 
-          case 2:
+          case '2':
             return '二';
             break;
 
-          case 3:
+          case '3':
             return '三';
             break;
 
-          case 4:
+          case '4':
             return '四';
             break;
 
-          case 5:
+          case '5':
             return '五';
             break;
 
-          case 6:
+          case '6':
             return '六';
             break;
 
-          case 7:
+          case '7':
             return '七';
             break;
 
-          case 8:
+          case '8':
             return '八';
             break;
 
-          case 9:
+          case '9':
             return '九';
             break;
 

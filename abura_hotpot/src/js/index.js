@@ -38,13 +38,33 @@ const vm = new Vue({
       // console.log(popupType);
       if (popupType === 'menu') {
         $id('menuPopup').classList.add('active');
+
+        const nowSwiper = $id('menuPopup').querySelector('.popup-header__swiper-container').swiper;
+        const nowImgs = this.s2Data.row2.menus[this.s2row2ImgIndex].imgs;
+        this.changePopupSlidesImg(nowSwiper, nowImgs);
       } else if (popupType === 'set') {
         $id('setPopup').classList.add('active');
+
+        const nowSwiper = $id('setPopup').querySelector('.popup-header__swiper-container').swiper;
+        const nowImgs = this.s2Data.row3.swiper[this.s2row3SwiperIndex].imgs;
+        // console.log(nowImgs);
+
+        this.changePopupSlidesImg(nowSwiper, nowImgs);
       } else if (popupType === 'news') {
         $id('newsPopup').classList.add('active');
       }
 
       document.documentElement.classList.add('hide-scrollbar');
+    },
+    changePopupSlidesImg(theSwiper, theImgs) {
+      theSwiper.update();
+      theSwiper.slideTo(0, 0);
+
+      // console.log([...theSwiper.slides]);
+      [...theSwiper.slides].forEach((item, index) => {
+        item.querySelector('img').className = 'lazyload';
+        item.querySelector('img').dataset.src = theImgs[index];
+      });
     }
   },
   computed: {
@@ -103,6 +123,15 @@ const s2_1Swiper = new Swiper('.s2-1__swiper-container', {
     el: '.s2-1__swiper-pagination',
     type: 'bullets',
     clickable: true
+  },
+  speed: 1000,
+  on: {
+    slidePrevTransitionStart: function() {
+      // console.log('slidePrevTransitionStart');
+      // console.log(this.previousIndex);
+      this.slides[this.previousIndex].classList.remove('prev');
+      this.slides[this.activeIndex].classList.add('prev');
+    }
   }
 });
 
@@ -314,6 +343,15 @@ if (window.matchMedia(bkpMbl).matches) {
   });
 }
 
+// popup
+const popupSwiper = new Swiper('.popup-header__swiper-container', {
+  pagination: {
+    el: '.popup-header__swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  }
+});
+
 // scrollmagic
 
 if (window.matchMedia(bkpDsk).matches) {
@@ -346,5 +384,30 @@ if (window.matchMedia(bkpDsk).matches) {
     triggerHook: 1
   })
     .setTween(s2Tl)
+    .addTo(controller);
+
+  // ===================== s4
+  const s4Tl = new TimelineMax({});
+  s4Tl.fromTo('.bg-decoration-3 .img-2', 1, { yPercent: 10 }, { yPercent: -10 }, 0);
+
+  new ScrollMagic.Scene({
+    duration: '200%',
+    triggerElement: '#recommendAnchor',
+    triggerHook: 1
+  })
+    .setTween(s4Tl)
+    .addTo(controller);
+
+  // ===================== footer
+  const footerTl = new TimelineMax({});
+  footerTl.fromTo('.bg-decoration-4-1 .img-2', 1, { yPercent: 10 }, { yPercent: 0 }, 0);
+
+  new ScrollMagic.Scene({
+    duration: 400 + $id('commonFooter').offsetHeight,
+    triggerElement: '#contactAnchor',
+    triggerHook: 1,
+    offset: -400
+  })
+    .setTween(footerTl)
     .addTo(controller);
 }

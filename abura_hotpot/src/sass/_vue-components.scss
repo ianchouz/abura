@@ -32,6 +32,23 @@
   }
 }
 
+.popup-header__swiper {
+  &-pagination {
+    @include pagination;
+    position: absolute;
+    bottom: 0;
+    right: vw-dsk(30);
+    margin-right: -12px;
+  }
+
+  @include mq(mbl) {
+    &-pagination {
+      right: vw-mbl(16);
+      margin-right: -10px;
+    }
+  }
+}
+
 .popup {
   // ===================== header
   &__header {
@@ -324,6 +341,16 @@
       padding-right: vw-dsk(230);
 
       .content {
+        &__title {
+          display: flex;
+          align-items: flex-end;
+          margin-bottom: 60px;
+
+          .note {
+            margin-left: vw-dsk(20);
+          }
+        }
+
         & + .content {
           border-top: 2px solid $c-g-7;
         }
@@ -331,10 +358,6 @@
         &:nth-child(n + 2) {
           padding-top: 60px;
           padding-bottom: 90px;
-        }
-
-        &__title {
-          margin-bottom: 60px;
         }
 
         &-broth {
@@ -366,23 +389,6 @@
 
             img {
               width: 100%;
-            }
-          }
-
-          .note {
-            text-align: center;
-          }
-        }
-
-        &-broth,
-        &-main,
-        &-rice {
-          .content__title {
-            display: flex;
-            align-items: flex-end;
-
-            .note {
-              margin-left: vw-dsk(20);
             }
           }
         }
@@ -437,6 +443,14 @@
         padding: 0 vw-mbl(30);
 
         .content {
+          &__title {
+            margin-bottom: 24px;
+
+            .note {
+              margin-left: vw-mbl(16);
+            }
+          }
+
           & + .content {
             border-width: 1px;
           }
@@ -444,10 +458,6 @@
           &:nth-child(n + 2) {
             padding-top: 30px;
             padding-bottom: 50px;
-          }
-
-          &__title {
-            margin-bottom: 24px;
           }
 
           &-broth {
@@ -465,16 +475,6 @@
               width: 50%;
               padding: 0 vw-mbl(15);
               margin-bottom: 20px;
-            }
-          }
-
-          &-broth,
-          &-main,
-          &-rice {
-            .content__title {
-              .note {
-                margin-left: vw-mbl(16);
-              }
             }
           }
         }

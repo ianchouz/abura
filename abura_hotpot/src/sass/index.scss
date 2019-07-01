@@ -6,6 +6,12 @@
   .img {
     transition: 1s;
 
+    &-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
     img {
       width: 100%;
     }
@@ -33,12 +39,9 @@
     position: absolute;
     right: 0;
     top: calc(80px + 20.6vw);
+    width: 30vw;
     z-index: 10;
     pointer-events: none;
-
-    .img {
-      width: 28vw;
-    }
   }
 
   &-4 {
@@ -63,10 +66,7 @@
       right: -9%;
       top: calc(-54px - #{vw-mbl(76)});
       transform: translateY(-20%);
-
-      .img {
-        width: 43vw;
-      }
+      width: 43vw;
     }
 
     &-4 {
@@ -578,11 +578,45 @@
   }
 
   &-slide {
+    &.swiper-slide-active {
+      .img {
+        &-inner {
+          &::after {
+            transform: translateX(-100%);
+          }
+        }
+      }
+
+      &.prev {
+        .img {
+          &-inner {
+            &::after {
+              transform: translateX(100%);
+            }
+          }
+        }
+      }
+    }
+
     .img {
       width: 100%;
 
       &-inner {
         padding-top: 712 / 520 * 100%;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: $c-g-3;
+          z-index: 1;
+          //
+          transition: 1.5s;
+        }
       }
 
       img {
@@ -1655,6 +1689,7 @@
 
     &-wrapper {
       display: block;
+      width: initial;
     }
   }
 }
