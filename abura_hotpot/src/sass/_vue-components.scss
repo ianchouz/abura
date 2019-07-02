@@ -36,15 +36,15 @@
   &-pagination {
     @include pagination;
     position: absolute;
-    bottom: 0;
-    right: vw-dsk(30);
-    margin-right: -12px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
   @include mq(mbl) {
     &-pagination {
-      right: vw-mbl(16);
-      margin-right: -10px;
+      bottom: 0;
     }
   }
 }
@@ -223,14 +223,35 @@
 
   .menu-item {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: flex-start;
-    padding-top: 100px;
-    padding-bottom: 80px;
+    // padding-top: 100px;
+    // padding-bottom: 80px;
     border-bottom: 2px solid $c-g-5;
 
+    .img {
+      align-self: center;
+      width: 30%;
+      flex-shrink: 0;
+      margin-right: 2vw;
+
+      &-inner {
+        padding-top: 268 / 400 * 100%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
     .title-wrapper {
-      margin-right: vw-dsk(100);
+      margin-right: 2vw;
+      padding-top: 100px;
+      padding-bottom: 80px;
     }
 
     .note {
@@ -240,11 +261,14 @@
 
   .price-wrapper {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
-    .price {
-      margin-left: vw-dsk(80);
-    }
+    margin-left: auto;
+    padding-top: 100px;
+
+    width: 30%;
+    flex-shrink: 0;
   }
 
   @include mq(mbl) {
@@ -261,7 +285,14 @@
       padding-bottom: 24px;
       border-width: 1px;
 
+      .img {
+        width: 100%;
+        margin-right: initial;
+      }
+
       .title-wrapper {
+        padding-top: 16px;
+        padding-bottom: initial;
         margin-right: initial;
         margin-bottom: 30px;
       }
@@ -273,10 +304,8 @@
 
     .price-wrapper {
       justify-content: space-between;
-
-      .price {
-        margin-left: initial;
-      }
+      padding-top: initial;
+      width: 100%;
     }
   }
 }

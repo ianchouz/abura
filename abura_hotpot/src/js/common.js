@@ -84,3 +84,22 @@ const vueMixins = {
     }
   }
 };
+
+// logo
+const changeLogo = function() {
+  const t = document.documentElement.scrollTop || document.body.scrollTop;
+  // console.log(t);
+
+  if (t > $id('storyAnchor').offsetTop) {
+    $id('logo').classList.add('scroll');
+  } else {
+    $id('logo').classList.remove('scroll');
+  }
+};
+
+window.addEventListener('load', function() {
+  changeLogo();
+});
+window.addEventListener('scroll', function() {
+  changeLogo();
+});

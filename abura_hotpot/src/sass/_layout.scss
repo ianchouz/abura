@@ -18,17 +18,54 @@
   }
 
   .logo {
-    margin-top: vh-dsk(96);
     margin-left: vw-dsk(126);
 
-    img {
+    &.scroll {
+      .logo-main {
+        opacity: 0;
+        pointer-events: none;
+        max-height: 0;
+        max-width: 0;
+        // 淡出
+        transition: opacity 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
+      }
+
+      .logo-small {
+        opacity: 1;
+        pointer-events: initial;
+        max-height: 999px;
+        max-width: 999px;
+        // 淡入
+        transition: opacity 0.5s 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
+      }
+    }
+
+    &-main {
       width: 140px;
+      margin-top: vh-dsk(96);
+      max-height: 999px;
+      max-width: 999px;
+      // 淡入
+      transition: opacity 0.5s 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
+    }
+
+    &-small {
+      position: absolute;
+      top: 0;
+      left: 0;
+      //
+      max-height: 0;
+      max-width: 0;
+      opacity: 0;
+      pointer-events: none;
+      // 淡出
+      transition: opacity 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
     }
   }
 
   .menu-toggle {
     position: absolute;
-    top: vh-dsk(148);
+    top: vh-dsk(96);
     right: vw-dsk(126);
     margin-top: -20px;
     margin-right: -20px;
@@ -63,11 +100,15 @@
 
   @include mq(mbl) {
     .logo {
-      margin-top: vh-mbl(22);
       margin-left: vw-mbl(18);
 
-      img {
+      &-main {
+        margin-top: vh-mbl(48);
         width: 106px;
+      }
+
+      &-small {
+        width: 60px;
       }
     }
 
@@ -353,7 +394,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    transform-origin: calc(100% - #{vw-dsk(126)}) vh-dsk(148);
+    transform-origin: calc(100% - #{vw-dsk(126)}) vh-dsk(96);
     transform: scale(0);
     background-color: rgba($c-g-3, 0.98);
     //
@@ -450,13 +491,14 @@
   display: flex;
 
   .dot {
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
+    height: 5px;
+    width: 5px;
     background-color: #000;
+    transform-origin: 0 100%;
+    transform: rotate(45deg);
 
     & + .dot {
-      margin-left: 4px;
+      margin-left: 6px;
     }
   }
 
@@ -466,7 +508,7 @@
       width: 4px;
 
       & + .dot {
-        margin-left: 3px;
+        margin-left: 4px;
       }
     }
   }

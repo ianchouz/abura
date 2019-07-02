@@ -6,12 +6,6 @@
   .img {
     transition: 1s;
 
-    &-2 {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
     img {
       width: 100%;
     }
@@ -42,6 +36,14 @@
     width: 30vw;
     z-index: 10;
     pointer-events: none;
+
+    .img {
+      &-2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
   }
 
   &-4 {
@@ -50,6 +52,14 @@
     left: 0;
     transform: translateY(-63%);
     pointer-events: none;
+
+    .img {
+      &-2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
   }
 
   @include mq(mbl) {
@@ -473,7 +483,7 @@
 
     // &__row-2
     @include mq(5l) {
-      padding-left: vw-dsk(120);
+      padding-left: vw-dsk(126);
 
       .img-wrapper {
         width: vw-dsk(1160);

@@ -89,6 +89,8 @@
         if (e.target.classList.contains('popup-container')) {
           e.currentTarget.classList.remove('active');
           this.popupTagIndex = 0;
+
+          document.documentElement.classList.remove('hide-scrollbar');
         }
       }
     }
@@ -101,7 +103,7 @@
   <div class="popup__body popup__body-menu">
     <div :class="['tag-wrapper', {'d-n': tagQty === 1}]">
       <div v-for="(data, index) in dataFromParent.menus.menu"
-      :class="['tag-item fz-44 fz-mbl-20', {active: index === dataFromParent.popupTagIndex}]"
+      :class="['tag-item fz-40 fz-mbl-20', {active: index === dataFromParent.popupTagIndex}]"
       @click="dataFromParent.changeTagIndex(index)"
       v-html="data.tag"></div>
     </div>
@@ -110,9 +112,15 @@
       <template v-for="(data, index) in dataFromParent.menus.menu">
         <div :key="data.tag" :class="['menu-item-wrapper', {active: index === dataFromParent.popupTagIndex}]">
           <div v-for="item in data.items" :key="item.name" class="menu-item">
+            <div v-if="item.img" class="img">
+              <div class="img-inner">
+                <img class="lazyload" :data-src="item.img" :alt="item.name">
+              </div>
+            </div>
+
             <div class="title-wrapper">
-              <p class="name fz-40 fz-mbl-18" v-html="item.name"></p>
-              <p v-if="item.note !== ''" class="note fz-24 fz-mbl-14 c-g-2 lh-12 ls-40" v-html="item.note"></p>
+              <p class="name fz-32-vw fz-mbl-18 lh-12" v-html="item.name"></p>
+              <p v-if="item.note !== ''" class="note fz-18-vw fz-mbl-14 c-g-2 lh-12 ls-40" v-html="item.note"></p>
             </div>
 
             <div class="price-wrapper">
@@ -125,7 +133,7 @@
                 <div class="dot"></div>
               </div>
 
-              <div class="price fz-40 fz-mbl-18 ls-40 c-p-1">
+              <div class="price fz-32-vw fz-mbl-18 ls-40 c-p-1">
                 <p><% `NT.${ item.price }` %></p>
               </div>
             </div>
