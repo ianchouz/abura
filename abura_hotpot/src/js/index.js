@@ -91,24 +91,26 @@ const vm = new Vue({
 
 // s1
 // swiper
-const s1Swiper = new Swiper('.s1__swiper-container', {
-  // Disable preloading of all images
-  preloadImages: false,
-  lazy: {
-    loadPrevNext: true
-  },
-  pagination: {
-    el: '.s1__swiper-pagination',
-    type: 'bullets',
-    clickable: true
-  },
-  effect: 'fade',
-  autoplay: {
-    delay: 8000,
-    disableOnInteraction: false
-  },
-  speed: 800
-});
+if (!s1Data.video.active || window.matchMedia(bkpMbl).matches) {
+  const s1Swiper = new Swiper('.s1__swiper-container', {
+    // Disable preloading of all images
+    preloadImages: false,
+    lazy: {
+      loadPrevNext: true
+    },
+    pagination: {
+      el: '.s1__swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    effect: 'fade',
+    autoplay: {
+      delay: 8000,
+      disableOnInteraction: false
+    },
+    speed: 800
+  });
+}
 
 // s2
 // row1

@@ -22,7 +22,11 @@
             imgMbl: '{imgMbl}'
           },
           <!-- END BLOCK : banner -->
-        ]
+        ],
+        video:{
+          active: true,
+          src: 'video/video.mp4'
+        }
       };
 
       const s2Data = {
@@ -160,8 +164,13 @@
 
       <!-- s1 -->
       <section class="section1">
+        <video :class="['section1__video', {'d-n': !s1Data.video.active || windowSize === 'mbl'}]" loop muted autoplay>
+          <source :src="s1Data.video.src" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         <!-- Slider main container -->
-        <div class="swiper-container s1__swiper-container">
+        <div :class="['swiper-container s1__swiper-container', {'d-n': s1Data.video.active && windowSize === 'dsk'}]">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper s1__swiper-wrapper">
             <!-- Slides -->

@@ -107,6 +107,12 @@
 
 // s1
 .section1 {
+  &__video {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
   &__title {
     position: absolute;
     left: vw-dsk(126);
