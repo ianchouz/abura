@@ -1,0 +1,180 @@
+// utility
+.dsk {
+  @include mq(mbl) {
+    display: none !important;
+  }
+}
+
+.mbl {
+  @include mq(dsk) {
+    display: none !important;
+  }
+}
+
+.d-n {
+  display: none !important;
+}
+
+.td-underline {
+  text-decoration: underline;
+}
+
+.ta-justify {
+  text-align: justify;
+}
+
+.fs-italic {
+  font-style: italic;
+}
+
+.ws-preline {
+  white-space: pre-line;
+}
+
+// clearfix
+.clearfix:before,
+.clearfix:after {
+  content: ''; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+// font------------------------------------------------
+.ff-serif {
+  font-family: $ff-serif;
+}
+
+.ff-sans-serif {
+  font-family: $ff-sans-serif;
+}
+
+// font-size
+@for $i from 0 through 60 {
+  .fz-#{12 + $i * 2} {
+    font-size: #{(12 + $i * 2) / 16}rem;
+    &-vw {
+      font-size: #{(12 + $i * 2) / $vw-dsk * 100}vw;
+    }
+  }
+}
+
+@include mq(mbl) {
+  @for $i from 0 through 60 {
+    .fz-mbl-#{12 + $i * 2} {
+      font-size: #{(12 + $i * 2) / 16}rem;
+      &-vw {
+        font-size: #{(12 + $i * 2) / $vw-mbl * 100}vw;
+      }
+    }
+  }
+}
+
+// font-weight
+.fw-200 {
+  font-weight: 200;
+}
+.fw-300 {
+  font-weight: 300;
+}
+.fw-700 {
+  font-weight: 700;
+}
+
+// line-height
+@for $i from 0 through 9 {
+  .lh-0#{$i} {
+    line-height: $i / 10;
+  }
+}
+@for $i from 10 through 30 {
+  .lh-#{$i} {
+    line-height: $i / 10;
+  }
+}
+
+@include mq(mbl) {
+  @for $i from 0 through 9 {
+    .lh-mbl-0#{$i} {
+      line-height: $i / 10;
+    }
+  }
+  @for $i from 10 through 30 {
+    .lh-mbl-#{$i} {
+      line-height: $i / 10;
+    }
+  }
+}
+
+// letter-spacing
+@for $i from 0 through 1 {
+  .ls-0#{$i * 5} {
+    letter-spacing: #{$i * 5 / 10}px;
+  }
+}
+@for $i from 2 through 15 {
+  .ls-#{$i * 5} {
+    letter-spacing: #{$i * 5 / 10}px;
+  }
+}
+
+@include mq(mbl) {
+  @for $i from 0 through 1 {
+    .ls-mbl-0#{$i * 5} {
+      letter-spacing: #{$i * 5 / 10}px;
+    }
+  }
+  @for $i from 2 through 15 {
+    .ls-mbl-#{$i * 5} {
+      letter-spacing: #{$i * 5 / 10}px;
+    }
+  }
+}
+
+.ls-100 {
+  letter-spacing: 10px;
+}
+.ls-120 {
+  letter-spacing: 12px;
+}
+.ls-140 {
+  letter-spacing: 14px;
+}
+.ls-300 {
+  letter-spacing: 30px;
+}
+
+@include mq(mbl) {
+  .ls-mbl-100 {
+    letter-spacing: 10px;
+  }
+}
+
+// ------------------------------------------------font
+
+// color
+@each $name, $color in $colors {
+  .c-#{$name} {
+    color: $color;
+  }
+  .bc-#{$name} {
+    background-color: $color;
+  }
+}
+
+@include mq(mbl) {
+  @each $name, $color in $colors {
+    .c-mbl-#{$name} {
+      color: $color;
+    }
+    .bc-mbl-#{$name} {
+      background-color: $color;
+    }
+  }
+}

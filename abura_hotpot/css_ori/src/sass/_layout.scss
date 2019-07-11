@@ -1,0 +1,526 @@
+.main-container {
+  overflow: hidden;
+}
+
+// header
+.common-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1000;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: initial;
+  }
+
+  .logo {
+    margin-left: vw-dsk(126);
+
+    &.scroll {
+      .logo-main {
+        opacity: 0;
+        pointer-events: none;
+        max-height: 0;
+        max-width: 0;
+        // 淡出
+        transition: opacity 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
+      }
+
+      .logo-small {
+        opacity: 1;
+        pointer-events: initial;
+        max-height: 999px;
+        max-width: 999px;
+        // 淡入
+        transition: opacity 0.5s 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
+      }
+    }
+
+    &-main {
+      width: 140px;
+      margin-top: vh-dsk(96);
+      max-height: 999px;
+      max-width: 999px;
+      // 淡入
+      transition: opacity 0.5s 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
+    }
+
+    &-small {
+      position: absolute;
+      top: 0;
+      left: 0;
+      //
+      max-height: 0;
+      max-width: 0;
+      opacity: 0;
+      pointer-events: none;
+      // 淡出
+      transition: opacity 0.5s, max-height 0s 0.5s, max-width 0s 0.5s;
+    }
+  }
+
+  .menu-toggle {
+    position: absolute;
+    top: vh-dsk(96);
+    right: vw-dsk(126);
+    margin-top: -20px;
+    margin-right: -20px;
+    padding: 20px;
+    //
+    z-index: 10;
+    cursor: pointer;
+
+    &__bar {
+      width: 38px;
+      height: 3px;
+      //
+      transition: 0.5s;
+
+      & + .menu-toggle__bar {
+        margin-top: 10px;
+      }
+
+      &:first-child {
+        transform-origin: 100% 50%;
+      }
+
+      &:nth-child(2) {
+        transform-origin: 100% 50%;
+      }
+      &:nth-child(3) {
+        transform-origin: 100% 50%;
+        box-shadow: 0 0 0 1px rgba($c-g-3, 0);
+      }
+    }
+  }
+
+  @include mq(mbl) {
+    .logo {
+      margin-left: vw-mbl(18);
+
+      &-main {
+        margin-top: vh-mbl(48);
+        width: 106px;
+      }
+
+      &-small {
+        width: 60px;
+      }
+    }
+
+    .menu-toggle {
+      top: vh-mbl(48);
+      right: vw-mbl(18);
+
+      &__bar {
+        width: 22px;
+        height: 2px;
+
+        & + .menu-toggle__bar {
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}
+
+// footer
+.common-footer {
+  margin-right: 10%;
+  padding: 120px vw-dsk(120) 100px vw-dsk(190);
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .title-wrapper {
+    margin-bottom: 160px;
+  }
+
+  .title-ch {
+    margin-top: 20px;
+  }
+
+  .info {
+    &-tel {
+      margin-bottom: 10px;
+    }
+
+    &-tel,
+    &-add {
+      display: flex;
+      max-width: 290px;
+
+      .title {
+        margin-right: 14px;
+        flex-shrink: 0;
+      }
+    }
+
+    &-open {
+      position: absolute;
+      top: 0;
+      left: calc(290px + #{vw-dsk(30)});
+      padding-left: vw-dsk(40);
+      border-left: 1px solid rgba(#fff, 0.5);
+
+      .title {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .note {
+    position: absolute;
+    top: 0;
+    left: calc(520px + #{vw-dsk(100)});
+
+    .title {
+      margin-bottom: 10px;
+    }
+  }
+
+  .social-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    .icon-group {
+      display: flex;
+      margin-left: -12px;
+    }
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+
+      & + .icon {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .copyright {
+    color: rgba(#fff, 0.25);
+    margin-top: 50px;
+  }
+
+  .go-top {
+    @include go-top;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(calc(100% + 5vw - 50%), -100px);
+  }
+
+  // .common-footer
+  @include mq(4l) {
+    .note {
+      position: relative;
+      top: initial;
+      left: initial;
+      margin-top: 80px;
+
+      .title {
+        margin-bottom: 10px;
+      }
+    }
+
+    .copyright {
+      margin-top: 10px;
+    }
+  }
+  @include mq(mbl) {
+    margin-right: initial;
+    padding: 84px vw-mbl(70) 40px vw-mbl(30);
+
+    .title-wrapper {
+      margin-bottom: 60px;
+    }
+
+    .title-ch {
+      margin-top: 10px;
+    }
+
+    .info {
+      &-tel {
+        margin-bottom: initial;
+      }
+
+      &-tel,
+      &-add {
+        max-width: initial;
+
+        .title {
+          margin-right: 10px;
+        }
+      }
+
+      &-open {
+        display: flex;
+        position: relative;
+        top: initial;
+        left: initial;
+        padding-left: initial;
+        border-left: none;
+
+        .title {
+          margin-bottom: initial;
+          margin-right: 10px;
+        }
+      }
+
+      & + .info {
+        margin-top: 14px;
+      }
+    }
+
+    .note {
+      // position: relative;
+      // top: initial;
+      // left: initial;
+      margin-top: 70px;
+      margin-bottom: 100px;
+
+      .title {
+        margin-bottom: 6px;
+      }
+    }
+
+    .social-wrapper {
+      position: relative;
+      bottom: initial;
+      right: initial;
+
+      .icon {
+        img {
+          width: 24px;
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: 16px;
+    }
+
+    .go-top {
+      right: -20px;
+      transform: translate(vw-mbl(-14), -40px);
+    }
+  }
+}
+
+// menu-open
+.common-header.nav-menu-open {
+  .nav-menu {
+    pointer-events: initial;
+
+    &::before {
+      transform: initial;
+      transition: 0.5s;
+    }
+  }
+
+  .nav-item-wrapper {
+    transform: translate(0, -50%);
+    opacity: 1;
+    transition: 0.5s 0.3s;
+  }
+
+  .menu-toggle {
+    &__bar {
+      &:first-child {
+        transform: translateY(13px) rotate(-20deg);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(-20deg);
+      }
+      &:nth-child(3) {
+        transform: rotate(20deg);
+        box-shadow: 0 0 0 1px rgba($c-g-3, 0.98);
+      }
+    }
+  }
+
+  @include mq(mbl) {
+    .menu-toggle {
+      &__bar {
+        &:first-child {
+          transform: translateY(8px) rotate(-20deg);
+        }
+        &:nth-child(3) {
+          box-shadow: 0 0 0 1px rgba($c-g-3, 0.98);
+        }
+      }
+    }
+  }
+}
+// menu
+.nav-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  // padding-top: vh-dsk(240);
+  padding-left: vw-dsk(316);
+  padding-right: vw-dsk(216);
+  //
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: calc(100% - #{vw-dsk(126)}) vh-dsk(96);
+    transform: scale(0);
+    background-color: rgba($c-g-3, 0.98);
+    //
+    transition: 0.5s 0.3s;
+  }
+
+  @include mq(mbl) {
+    left: 0;
+
+    padding-left: vw-mbl(30);
+    padding-right: vw-mbl(30);
+  }
+}
+
+.nav-item-wrapper {
+  top: 55%;
+  opacity: 0;
+  //
+  transform: translate(-10px, -50%);
+  transition: 0.5s;
+}
+
+.nav-item {
+  padding: vh-dsk(30) 0;
+  cursor: pointer;
+  //
+  transition: 0.5s;
+
+  .icon {
+    position: absolute;
+    right: 106%;
+    top: 50%;
+    transform: translateY(-50%);
+    //
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  .title-en {
+    transition: 0.5s;
+  }
+
+  .title-ch {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    //
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  @include hover {
+    &:hover {
+      transform: translateY(vh-dsk(-10));
+
+      .title-en {
+        color: $c-p-1;
+      }
+      .title-ch {
+        opacity: 1;
+      }
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include mq(mbl) {
+    padding: vh-mbl(12) 0;
+
+    .title-en {
+      color: $c-p-1;
+      margin-bottom: 6px;
+    }
+
+    .title-ch {
+      position: relative;
+      color: #fff;
+      opacity: 1;
+    }
+  }
+}
+
+// common
+.custom-underline {
+  display: inline;
+  border-width: 1px;
+  border-style: none none solid none;
+}
+
+.dots-group {
+  display: flex;
+
+  .dot {
+    height: 5px;
+    width: 5px;
+    background-color: #000;
+    transform-origin: 0 100%;
+    transform: rotate(45deg);
+
+    & + .dot {
+      margin-left: 6px;
+    }
+  }
+
+  @include mq(mbl) {
+    .dot {
+      height: 4px;
+      width: 4px;
+
+      & + .dot {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+// vue
+// .v-enter,
+// .v-leave-to {
+//   opacity: 0;
+// }
+
+// .v-enter-active,
+// .v-leave-active {
+//   transition: opacity 0.5s;
+// }

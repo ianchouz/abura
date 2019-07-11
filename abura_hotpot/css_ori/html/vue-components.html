@@ -1,0 +1,332 @@
+<!-- ========================================= popup ========================================= -->
+<script type="text/x-template" id="popup-wrapper-template">
+  <div class="popup-container" @click='closePopupClickOutside'>
+    <div class="popup-wrapper">
+      <!-- header -->
+      <div class="popup__header">
+
+        <!-- <div v-if="menus" class="img">
+          <div class="img-inner">
+            <img class="lazyload" :data-src="menus.img" alt="">
+          </div>
+        </div> -->
+
+        <!-- Slider main container -->
+        <div v-if="menus" class="swiper-container popup-header__swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper popup-header__swiper-wrapper">
+            <!-- Slides -->
+            <div v-for="img in menus.imgs" class="swiper-slide popup-header__swiper-slide">
+              <div class="img">
+                <div class="img-inner">
+                  <img class="lazyload" src="" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination popup-header__swiper-pagination"></div>
+        </div>
+
+        <div v-if="menus" class="menu-name fz-50 lh-12 c-fff" v-html="menus.name"></div>
+
+        <div class="popup-close" @click="closePopup">
+          <div class="border-decoration">
+            <div class="border border-tb"></div>
+            <div class="border border-lr"></div>
+          </div>
+          <p class="fz-24 fz-mbl-14 ls-300 ls-mbl-100 c-p-1">關閉</p>
+
+          <div class="cross"></div>
+        </div>
+      </div>
+
+      <!-- body -->
+      <slot name="menu-body-slot" :menus="menus" :popup-tag-index="popupTagIndex" :change-tag-index="changeTagIndex"></slot>
+      <slot name="set-body-slot" :menus="menus"></slot>
+      <slot name="news-body-slot" :news="news"></slot>
+
+      <!-- footer -->
+      <div class="popup__footer">
+        <div class="popup-close" @click="closePopup">
+          <div class="border-decoration">
+            <div class="border border-tb"></div>
+            <div class="border border-lr"></div>
+          </div>
+          <p class="fz-24 fz-mbl-14 ls-120 ls-mbl-100 c-p-1">關閉</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script>
+  Vue.component('popup-wrapper', {
+    delimiters: ['<%', '%>'],
+    template: '#popup-wrapper-template',
+    props: { menus: Object, news: Object },
+    data() {
+      return {
+        popupTagIndex: 0
+      };
+    },
+    methods: {
+      changeTagIndex(index) {
+        // console.log(index);
+        this.popupTagIndex = index;
+      },
+      closePopup() {
+        document.querySelectorAll('.popup-container').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        this.popupTagIndex = 0;
+
+        document.documentElement.classList.remove('hide-scrollbar');
+      },
+      closePopupClickOutside(e) {
+        // console.log(e.target);
+        if (e.target.classList.contains('popup-container')) {
+          e.currentTarget.classList.remove('active');
+          this.popupTagIndex = 0;
+
+          document.documentElement.classList.remove('hide-scrollbar');
+        }
+      }
+    }
+  });
+</script>
+
+<!-- menu -->
+<script type="text/x-template" id="menu-body-template">
+  <!-- body -->
+  <div class="popup__body popup__body-menu">
+    <div :class="['tag-wrapper', {'d-n': tagQty === 1}]">
+      <div v-for="(data, index) in dataFromParent.menus.menu"
+      :class="['tag-item fz-40 fz-mbl-20', {active: index === dataFromParent.popupTagIndex}]"
+      @click="dataFromParent.changeTagIndex(index)"
+      v-html="data.tag"></div>
+    </div>
+
+    <div class="menu-item-container">
+      <template v-for="(data, index) in dataFromParent.menus.menu">
+        <div :key="data.tag" :class="['menu-item-wrapper', {active: index === dataFromParent.popupTagIndex}]">
+          <div v-for="item in data.items" :key="item.name" class="menu-item">
+            <div v-if="item.img" class="img">
+              <div class="img-inner">
+                <img class="lazyload" :data-src="item.img" :alt="item.name">
+              </div>
+            </div>
+
+            <div class="title-wrapper">
+              <p class="name fz-32-vw fz-mbl-18 lh-12" v-html="item.name"></p>
+              <p v-if="item.note !== ''" class="note fz-18-vw fz-mbl-14 c-g-2 lh-12 ls-40" v-html="item.note"></p>
+            </div>
+
+            <div class="price-wrapper">
+              <div class="dots-group">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+
+              <div class="price fz-32-vw fz-mbl-18 ls-40 c-p-1">
+                <p><% `NT.${ item.price }` %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</script>
+
+<script>
+  Vue.component('menu-body', {
+    delimiters: ['<%', '%>'],
+    template: '#menu-body-template',
+    props: { dataFromParent: Object },
+    computed: {
+      tagQty() {
+        return this.dataFromParent.menus.menu.length;
+      }
+    }
+  });
+</script>
+
+<!-- set meal -->
+<script type="text/x-template" id="set-body-template">
+  <!-- body -->
+  <div class="popup__body popup__body-set">
+
+    <div class="menu-item-wrapper">
+      <div class="col-title">
+        <div class="title-wrapper">
+          <div class="set-name">
+            <p class="fz-50 fz-mbl-24 lh-12"><% dataFromParent.menus.name + dataFromParent.menus.type %></p>
+          </div>
+          <div class="price-group">
+            <div class="price">
+              <p class="fz-50 fz-mbl-28 ls-50 c-p-1"><% dataFromParent.menus.price %></p>
+              <span class="fz-30 fz-mbl-16 c-p-1">元</span>
+            </div>
+            <p class="fz-22 fz-mbl-14 ls-65">以上不含10%服務費</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-content">
+        <div class="content-wrapper">
+          <!-- 湯底 -->
+          <div class="content content-broth">
+              <div class="content__title">
+                <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.broth.title %></p>
+                <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items.length | toChineseNum %>選一</p>
+              </div>
+            <div class="item-wrapper">
+              <div v-for="item in dataFromParent.menus.broth.items" class="item">
+                <div class="icon">
+                  <img class="lazyload" data-src="images/icon-deco.png" alt="">
+                </div>
+
+                <h4 class="fz-30-vw fz-mbl-14-vw lh-12 c-g-6" v-html="item"></h4>
+
+                <div class="icon reverse">
+                  <img class="lazyload" data-src="images/icon-deco.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-for="dish in dataFromParent.menus.otherDishes" class="content">
+              <div class="content__title">
+                <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dish.title %></p>
+                <p v-if="dish.chooseNum !== ''" class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dish.items.length | toChineseNum %>選<% dish.chooseNum | toChineseNum %></p>
+              </div>
+            <div class="item-wrapper">
+              <div v-for="item in dish.items" class="item">
+                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="content content-main">
+              <div class="content__title">
+                <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.main.title %></p>
+                <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.main.items.length | toChineseNum %>選一</p>
+              </div>
+            <div class="item-wrapper">
+              <div v-for="item in dataFromParent.menus.main.items" class="item">
+                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="content content-appetizer">
+            <div class="content__title fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.appetizer.title %></div>
+            <div class="item-wrapper">
+              <div v-for="item in dataFromParent.menus.appetizer.items" class="item">
+                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="content content-rice">
+            <div class="content__title">
+              <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.rice.title %></p>
+              <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.rice.items.length | toChineseNum %>選一</p>
+            </div>
+            <div class="item-wrapper">
+              <div v-for="item in dataFromParent.menus.rice.items" class="item">
+                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="note-wrapper">
+          <div class="title fz-34 fz-mbl-16 ls-100" v-html="popupNote.title"></div>
+          <div class="note fz-24 fz-mbl-12 ls-75 ls-mbl-25 lh-16" v-html="popupNote.note"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</script>
+
+<script>
+  Vue.component('set-body', {
+    delimiters: ['<%', '%>'],
+    template: '#set-body-template',
+    props: { dataFromParent: Object, popupNote: Object },
+    filters: {
+      toChineseNum(value) {
+        // console.log(typeof value);
+        switch (value.toString()) {
+          case '1':
+            return '一';
+            break;
+
+          case '2':
+            return '二';
+            break;
+
+          case '3':
+            return '三';
+            break;
+
+          case '4':
+            return '四';
+            break;
+
+          case '5':
+            return '五';
+            break;
+
+          case '6':
+            return '六';
+            break;
+
+          case '7':
+            return '七';
+            break;
+
+          case '8':
+            return '八';
+            break;
+
+          case '9':
+            return '九';
+            break;
+
+          default:
+            return value;
+        }
+      }
+    }
+  });
+</script>
+
+<!-- news -->
+<script type="text/x-template" id="news-body-template">
+  <!-- body -->
+  <div class="popup__body popup__body-news">
+    <div class="title-wrapper">
+      <p class="date fz-18 fz-mbl-14 ls-15 c-p-1 fs-italic" v-html="dataFromParent.news.date"></p>
+      <h3 class="title fz-32 fz-mbl-20 ls-45" v-html="dataFromParent.news.title"></h3>
+    </div>
+
+    <p class="content fz-mbl-14 lh-21 lh-mbl-18 ls-25 c-g-2 ta-justify" v-html="dataFromParent.news.content"></p>
+  </div>
+</script>
+
+<script>
+  Vue.component('news-body', {
+    delimiters: ['<%', '%>'],
+    template: '#news-body-template',
+    props: { dataFromParent: Object }
+  });
+</script>
+<!-- ========================================= popup ========================================= -->

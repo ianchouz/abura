@@ -1,0 +1,19 @@
+{	       "sendSuc" : "成功送出", 
+	      "sendFail" : "送出失敗",
+	        "fillin" : "請填寫",
+	         "error" : "發生錯誤",
+	      "erFormat" : "格式錯誤",
+	      "notFound" : "沒有找到資料",
+
+        "verifyFail" : "抱歉，無法取得您驗證的資訊!!請重新進行驗證!!",
+     "verifyDisable" : "抱歉，無法完成您的作業，此驗證碼可能已經失效～!!",
+         "verifySuc" : "親愛的客戶您好，您的帳號已經啟用成功！您已可以使用會員帳號進行登入。",
+       "verifyRepet" : "親愛的客戶您好，您的帳號已經啟用過，請直接登入系統!!",
+     "verifyMailTit" : "會員認證信",
+ "verifyMailTit_Suc" : "會員註冊成功", 
+   "forgetPwMailTit" : "會員忘記密碼通知",
+
+      "verifyNotYet" : "您的帳號尚未通過認證",
+         "AcDisable" : "您的帳號目前被停用,請聯絡客服人員協助您處理!!"
+}
+

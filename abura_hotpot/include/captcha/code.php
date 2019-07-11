@@ -127,7 +127,7 @@ for($i=0; $i<$length; $i++) {
 
 /* calculate the final image size, adding some padding */
 
-$x_padding = 12;
+// $x_padding = 12;
 
 if ( $CSize == 1 )
 	{
@@ -274,6 +274,14 @@ foreach($data as $d) {
   		$color_text    = ImageColorAllocate($im, $color_text_r, $color_text_g, $color_text_b );
   		break;
   }
+  // echo 'size: '.$d['size']; echo '<br>';
+  // echo 'angle: '.$d['angle']; echo '<br>';
+  // echo 'pos_x: '.$pos_x; echo '<br>';
+  // echo 'pos_y: '.$pos_y; echo '<br>';
+  // echo 'color_text: '.$color_text; echo '<br>';
+  // echo 'font: '.$font; echo '<br>';
+  // echo 'char: '.$d['char']; echo '<br>';
+  // exit;
   ImageTTFText($im, $d['size'], $d['angle'], $pos_x, $pos_y, $color_text , $font, $d['char'] );
   $pos_x += $d['width'] + $CFontPadding;
 }

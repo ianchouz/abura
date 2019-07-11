@@ -1,28 +1,29 @@
-<?
+<?php
 $CSize = 0;
-$CSizeWidth = 108;
-$CSizeHeight = 36;
+$CSizeWidth = 132; // * 108
+$CSizeHeight = 34; // * 36
+$x_padding = 35; // 12
 $CSrc = '0123456789';
 $CType = 0;
-$CMinSize = 5;
-$CMaxSize = 5;
-$CBackgroundType = 2;
-$CBackgroundColor = '#E6E6E6';
-$CBackgroundFile = 'backgrounds/bluecircles.gif';
+$CMinSize = 4; // 5
+$CMaxSize = 4; // 5
+$CBackgroundType = 0; // 2
+// $CBackgroundColor = '#E6E6E6';
+$CBackgroundFile = 'backgrounds/code.jpg'; //
 $CBackgroundFillType = 1;
 $CFontUsed = 0;
-$CFontURL = 'fonts/Dink.ttf';
+$CFontURL = 'fonts/ghost.ttf'; // Dink.ttf
 $fonts_dir = 'fonts';
-$CFontColorType = 1;
+$CFontColorType = 3; // 1
 $CFontColor = '#0A268C';
-$CFontSizeMin = 16;
-$CFontSizeMax = 16;
-$CFontRotMin = -20;
-$CFontRotMax = 20;
-$CFontPadding = 0;
+$CFontSizeMin = 12;
+$CFontSizeMax = 12;
+$CFontRotMin = 0; // -20
+$CFontRotMax = 0; // 20
+$CFontPadding = 8; // 0
 $CNoise = 0;
-$CNoiseType = 4;
-$CNoiseColor = '#545454';
+$CNoiseType = 2; // 4
+$CNoiseColor = '#000'; // #545454
 $output_type = 'png';
 $captcha_type = 1;
 ?>

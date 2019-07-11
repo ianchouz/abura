@@ -1,0 +1,11 @@
+ul#menu, ul#menu ul {margin:0px;line-height:20px;font-size:10pt;list-style-type:none;margin: 0;padding: 0;width: 150px;}
+ul#menu .submenu {display: none;}
+ul#menu .submenuactive {display: inline;padding: 0;margin: 0;}
+ul#menu .i-menu{border-bottom:0px solid #FFFFFF;font-size:10pt;color:#000000;background:url(../images/i_m_bg.gif) 0 0px repeat-x;}
+ul#menu .i-leaf        {border:0px #000 solid;margin:0px;padding-top:6px;font-weight:bold;background:url(../images/i_m_l.gif) 5px 5px no-repeat;padding-left:25px;}
+ul#menu .i-folder      {border:0px #000 solid;margin:0px;padding-top:6px;font-weight:bold;background:url(../images/i_m_f.gif) 5px 5px no-repeat;padding-left:25px;}
+ul#menu .i-folder-open {border:0px solid #000;border:0px #000 solid;margin:0px;padding-top:6px;font-weight:bold;background:url(../images/i_m_fo.gif) 5px 5px no-repeat;padding-left:25px;}
+#menu a {display: block;text-decoration: none;cursor:pointer;}
+ul#menu li {margin:0px;line-height:20px;}
+ul#menu li ul li a {border-bottom:1px solid #FFFFFF;background:#aeaeae;}
+ul#menu .elbow {border:0px #000 solid;margin:0px;background:url(../images/i_m_f_l.gif) 20px 8px no-repeat;padding-top:6px;padding-left:35px;color:#FFFFFF;font-weight:bold;}

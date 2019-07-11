@@ -1,0 +1,29 @@
+<?php
+$CSize = 0;
+$CSizeWidth = 180; // * 108
+$CSizeHeight = 40; // * 36
+$x_padding = 50; // 12
+$CSrc = '0123456789';
+$CType = 0;
+$CMinSize = 5; // 5
+$CMaxSize = 5; // 5
+$CBackgroundType = 2; // 2
+$CBackgroundColor = '#E4E4E4';
+$CBackgroundFile = 'backgrounds/code.jpg'; //
+$CBackgroundFillType = 1;
+$CFontUsed = 0;
+$CFontURL = 'fonts/ghost.ttf'; // Dink.ttf
+$fonts_dir = 'fonts';
+$CFontColorType = 2; // 1
+$CFontColor = '#6D6D6D';
+$CFontSizeMin = 12;
+$CFontSizeMax = 12;
+$CFontRotMin = 0; // -20
+$CFontRotMax = 0; // 20
+$CFontPadding = 8; // 0
+$CNoise = 0;
+$CNoiseType = 2; // 4
+$CNoiseColor = '#000'; // #545454
+$output_type = 'png';
+$captcha_type = 1;
+?>

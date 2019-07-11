@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <!-- INCLUDESCRIPT BLOCK : common_link.php -->
+    <link rel="stylesheet" href="css/index.css" />
+
+    <script>
+      const footerData = {
+        title: { en: `CONTACT US`, ch: `聯絡我們` },
+        tel: { title: '貴賓服務專線', content: '04-2376-7575' },
+        add: { title: '地址', content: '台中市西區中美街十四號' },
+        businessHours: { title: '營業時間', content: '17:30~12:00pm' }
+      };
+
+      const s1Data = {
+        title: `あぶら<br>ホツトポツト`,
+        swiper: [
+          {
+            subtitle: `秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利1。`,
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利2並貼心提供剝蝦蟹殼的福利2並貼心剝。`,
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利3。`,
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利4。`,
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
+          },
+          {
+            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利5。`,
+            img: 'images/s1-1.png',
+            imgMbl: 'images/s1-1-mbl.png'
+          }
+        ]
+      };
+
+      const s2Data = {
+        row1: {
+          title: { en: `STORY`, ch: `會社介紹` },
+          swiper: ['images/s2-1.png', 'images/s2-1.png', 'images/s2-1.png'],
+          intro: {
+            title: `延續脂系列的職人精神，<br>
+                  脂 團隊精心籌備的鍋物展店計畫隆重登場`,
+            content: `店址選定小街上的老宅，經巧手改造後成了充滿日本京都風情的建築。初踏入脂鍋物，映入眼簾的是一座工藝細膩的巨型燈籠使視覺甦醒，為向晚的庭院製造氤氳朦朧的美感。店內特別設有VIP包廂，隱蔽性極高，可讓顧客與親友獨享一界私密的用餐時空。室內裝潢選用大量浮世繪壁紙，浮世繪的真實意涵是live in the moment，即「活在當下」，這正是我們期望帶給客人用餐時，身心所能感受到的富足享受。 `
+          }
+        },
+        row2: {
+          title: { en: `FEATURES\nMENU`, ch: `味自慢集` },
+          menus: [
+            {
+              name: 'だし 湯底',
+              imgs: [
+                'images/popup-2.png',
+                'images/popup-1.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png'
+              ],
+              menu: [
+                {
+                  tag: '',
+                  items: [
+                    {
+                      img: 'images/menu-img.png',
+                      name: `原味昆布柴魚湯底`,
+                      note: `淡雅細緻的口味適合口感清淡的饕客建議搭配海鮮為主`,
+                      price: `280`
+                    },
+                    {
+                      img: 'images/menu-img.png',
+                      name: `白味增昆布柴魚湯底`,
+                      note: `加入日本白味增的昆布柴魚湯更加豐富提味<br>
+                            鹹中帶甜有淡淡的豆香味及奶香味<br>
+                            建議搭配活體蝦蟹類、日本和牛為主`,
+                      price: `280`
+                    },
+                    {
+                      img: 'images/menu-img.png',
+                      name: `赤味增昆布柴魚湯底`,
+                      note: `醇厚的濃郁感代表著日本赤味增，<br>
+                            適合口味較重的饕客<br>
+                            建議搭配廣島生蠔及挪威鮭魚頭`,
+                      price: `280`
+                    },
+                    {
+                      img: 'images/menu-img.png',
+                      name: `秘製醬昆布柴魚湯底`,
+                      note: `特製的秘製醬讓口感更圓滑，<br>
+                            帶出更多的甘甜口感<br>
+                            建議搭配海鮮為主`,
+                      price: `280`
+                    },
+                    {
+                      img: 'images/menu-img.png',
+                      name: `自煮博多雞白湯底`,
+                      note: `大量雞爪及雞架骨加上豬背脂熬煮帶出滿滿濃郁的膠質<br>
+                            建議搭配雞肉、日本和牛、牛內臟`,
+                      price: `280`
+                    },
+                    {
+                      img: 'images/menu-img.png',
+                      name: `日本和牛辣椒雞白湯底`,
+                      note: `日本和牛的牛油爆炒新鮮辣椒加上秘製配方<br>
+                            大量雞爪及雞架骨加上豬背脂熬煮帶出滿滿濃郁的膠質<br>
+                            建議搭配雞肉、日本和牛、牛內臟`,
+                      price: `280`
+                    },
+                    {
+                      img: 'images/menu-img.png',
+                      name: `秘製薄鹽壽喜燒湯底  四品`,
+                      note: `新鮮昆布柴魚湯底加上日本薄鹽壽喜燒醬油及秘製配方調製而成，甘甜不膩口<br>
+                            建議搭配日本和牛、伊比利豬`,
+                      price: `280`
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'にく 肉',
+              imgs: ['images/popup-1.png', 'images/popup-2.png', 'images/popup-2.png', 'images/popup-2.png'],
+              menu: [
+                {
+                  tag: '牛',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: '', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '豚',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和豚`, note: `牛肚/牛筋`, price: `481` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '雞',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和雞`, note: `牛肚/牛筋`, price: `482` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'やきにく 海鮮',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png'
+              ],
+              menu: [
+                {
+                  tag: '牛',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '豚',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'ベジタブル 蔬菜',
+              imgs: [
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png'
+              ],
+              menu: [
+                {
+                  tag: '牛',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '豚',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '雞',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'ベジタブル 蔬菜',
+              imgs: [
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png'
+              ],
+              menu: [
+                {
+                  tag: '牛',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '豚',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '雞',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'ベジタブル 蔬菜',
+              imgs: [
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png'
+              ],
+              menu: [
+                {
+                  tag: '牛',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '豚',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '雞',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'ベジタブル 蔬菜',
+              imgs: [
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png'
+              ],
+              menu: [
+                {
+                  tag: '牛',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '豚',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '雞',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'ベジタブル 蔬菜',
+              imgs: [
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png',
+                'images/popup-2.png'
+              ],
+              menu: [
+                {
+                  tag: '牛',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '豚',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                },
+                {
+                  tag: '雞',
+                  items: [
+                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
+                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
+                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
+                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
+                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
+                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
+                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
+                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        row3: {
+          title: { en: `SET MEAL`, ch: `套餐` },
+          popupNote: {
+            title: '晚餐',
+            note: `17:30-12:00pm 低消800<br>
+                以上不含10%服務費，恕不接待3歲以下兒童`
+          },
+          swiper: [
+            {
+              nameImg: 'images/bhd.png',
+              name: '北海道',
+              type: `雙人套餐`,
+              price: '2880',
+              imgs: ['images/popup-3.png', 'images/popup-3.png', 'images/popup-3.png', 'images/popup-3.png'],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/bd.png',
+              name: '博多',
+              type: `和牛套餐`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-2.png',
+                'images/popup-1.png',
+                'images/popup-2.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/gg.png',
+              name: '九州',
+              type: `雙人套餐`,
+              price: '2880',
+              imgs: ['images/popup-3.png', 'images/popup-3.png', 'images/popup-3.png'],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/iu.png',
+              name: '愛媛',
+              type: `雙人套餐`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/fg.png',
+              name: '福井',
+              type: `海陸雙人套餐`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/bhd.png',
+              name: '北海道',
+              type: `雙人套餐2`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/bd.png',
+              name: '博多',
+              type: `和牛套餐2`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/gg.png',
+              name: '九州',
+              type: `雙人套餐2`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/iu.png',
+              name: '愛媛',
+              type: `雙人套餐2`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            },
+            {
+              nameImg: 'images/fg.png',
+              name: '福井',
+              type: `海陸雙人套餐2`,
+              price: '2880',
+              imgs: [
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png',
+                'images/popup-3.png'
+              ],
+              broth: {
+                title: '湯底',
+                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+              },
+              otherDishes: [
+                {
+                  title: '主菜',
+                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
+                  chooseNum: '1'
+                },
+                {
+                  title: '前菜',
+                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
+                  chooseNum: ''
+                },
+                {
+                  title: '米飯',
+                  items: ['越光米雜炊', '日本太麵'],
+                  chooseNum: '1'
+                }
+              ]
+            }
+          ]
+        }
+      };
+
+      const s3Data = {
+        title: { en: `INSIDE\nENVIRONMENT`, ch: `店內寫真` },
+        swiper: ['images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png']
+      };
+
+      const s4Data = {
+        title: { en: `RECOMMEND`, ch: `達人秘訣` },
+        swiper: [
+          {
+            img: 'images/s4-1.png',
+            title: `大海自慢好味1`,
+            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
+          },
+          {
+            img: 'images/s4-1.png',
+            title: `大海自慢好味2`,
+            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 因為善用四季的新鮮食材，每道料理皆能本味呈現。脂因為善用四季的新鮮食材，每道料理皆能本味呈現。脂因為善用四季的新鮮食材，每道料理皆能本味`
+          },
+          {
+            img: 'images/s4-1.png',
+            title: `大海自慢好味3`,
+            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
+          },
+          {
+            img: 'images/s4-1.png',
+            title: `大海自慢好味4`,
+            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
+          },
+          {
+            img: 'images/s4-1.png',
+            title: `大海自慢好味5`,
+            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
+          }
+        ]
+      };
+
+      const s5Data = {
+        title: { en: `LATEST NEWS`, ch: `揭示板` },
+        news: [
+          {
+            date: '2018-05-10',
+            img: 'images/s5-1.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `<img data-src="images/popup-3.png" alt="" class=" lazyloaded" src="images/popup-3.png"><br><br>WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: true
+          },
+          {
+            date: '2018-05-09',
+            img: 'images/s5-1.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，<br><br><img data-src="images/popup-3.png" alt="" class=" lazyloaded" src="images/popup-3.png">`,
+            latestTag: true
+          },
+          {
+            date: '2018-05-08',
+            img: 'images/s5-2.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-07',
+            img: 'images/s5-3.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-06',
+            img: 'images/s5-4.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-05',
+            img: 'images/s5-5.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-04',
+            img: 'images/s5-1.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-04',
+            img: 'images/s5-1.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-04',
+            img: 'images/s5-1.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-04',
+            img: 'images/s5-1.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          },
+          {
+            date: '2018-05-04',
+            img: 'images/s5-1.png',
+            title: `開幕優惠公告`,
+            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
+            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
+            latestTag: false
+          }
+        ]
+      };
+    </script>
+  </head>
+
+  <body>
+    <main id="mainContainer" class="main-container">
+      <div class="main-container__bg main-container__bg-1">
+        <img class="lazyload" data-src="images/main-bg.png" alt="" />
+      </div>
+      <!-- INCLUDESCRIPT BLOCK : common_header.php -->
+
+      <!-- s1 -->
+      <section class="section1">
+        <!-- Slider main container -->
+        <div class="swiper-container s1__swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper s1__swiper-wrapper">
+            <!-- Slides -->
+            <div v-for="data in s1Data.swiper" class="swiper-slide s1__swiper-slide">
+              <div class="bg">
+                <img class="swiper-lazy dsk" :data-src="data.img" alt="" />
+                <img class="swiper-lazy mbl" :data-src="data.imgMbl" alt="" />
+              </div>
+
+              <p
+                class="subtitle fw-200 fz-18-vw fz-mbl-14 lh-21 lh-mbl-14 ls-50 ls-mbl-40 c-fff ta-justify"
+                v-html="data.subtitle"
+              ></p>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination s1__swiper-pagination"></div>
+        </div>
+
+        <h2 class="section1__title fz-80-vw fz-mbl-28-vw lh-11 c-p-1" v-html="s1Data.title"></h2>
+
+        <div id="scrollDownBtn" class="scroll-down dsk" @click="scrollToNext">
+          <div class="inner"></div>
+        </div>
+      </section>
+
+      <!-- s2 -->
+      <div id="scrollDownAnchor"></div>
+      <div id="storyAnchor"></div>
+
+      <section class="section2">
+        <div class="bg-decoration bg-decoration-1 dsk">
+          <div class="img">
+            <img class="lazyload" data-src="images/s2-flower-1.png" alt="" />
+          </div>
+        </div>
+
+        <!-- row-1 -->
+        <div class="section2__row-1">
+          <div class="col col-left">
+            <!-- Slider main container -->
+            <div class="swiper-container s2-1__swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper s2-1__swiper-wrapper">
+                <!-- Slides -->
+                <div v-for="data in s2Data.row1.swiper" class="swiper-slide s2-1__swiper-slide">
+                  <div class="img">
+                    <div class="img-inner">
+                      <img class="swiper-lazy" :data-src="data" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination s2-1__swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col col-right">
+            <h2 class="main-title-wrapper bc-p-1">
+              <div class="title-group">
+                <div
+                  class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline ws-preline"
+                  v-html="s2Data.row1.title.en"
+                ></div>
+                <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row1.title.ch"></div>
+              </div>
+            </h2>
+
+            <div class="intro-wrapper">
+              <h3
+                class="title fw-700 fz-30 fz-mbl-16 lh-17 lh-mbl-16 ls-20 ls-mbl-15"
+                v-html="s2Data.row1.intro.title"
+              ></h3>
+              <p
+                class="content fz-18 fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2 ta-justify"
+                v-html="s2Data.row1.intro.content"
+              ></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- row-2 -->
+        <div id="menuAnchor"></div>
+
+        <div class="section2__row-2">
+          <div class="bg-decoration bg-decoration-2">
+            <div class="img">
+              <img class="lazyload" data-src="images/s2-flower-2.png" alt="" />
+            </div>
+          </div>
+
+          <!-- ===== dsk ===== -->
+          <div class="img-wrapper dsk">
+            <template v-for="(img, index) in s2Data.row2.menus">
+              <div :class="['img', {active: s2row2ImgIndex === index}]" @click="showPopup('menu')">
+                <div class="img-inner">
+                  <img class="lazyload" :data-src="img.imgs[0]" alt="" />
+                </div>
+              </div>
+            </template>
+          </div>
+
+          <div class="title-wrapper dsk bc-g-3">
+            <div class="title-wrapper-inner">
+              <h2 class="title-group">
+                <div
+                  class="title-en fz-42 lh-12 ls-20 c-fff custom-underline ws-preline"
+                  v-html="s2Data.row2.title.en"
+                ></div>
+                <div class="title-ch fz-22 c-fff ls-140" v-html="s2Data.row2.title.ch"></div>
+              </h2>
+
+              <div class="js-scrollbar menu-name-group">
+                <div
+                  v-for="(name, index) in s2Data.row2.menus"
+                  class="menu-name fz-20 ls-30"
+                  @mouseenter="hoverChangeImg(index)"
+                  @click="showPopup('menu')"
+                >
+                  <p v-html="name.name"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ===== dsk ===== -->
+
+          <!-- ===== mbl ===== -->
+          <h2 class="title-group mbl">
+            <div
+              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline ws-preline"
+              v-html="s2Data.row2.title.en"
+            ></div>
+            <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row2.title.ch"></div>
+          </h2>
+          <!-- Slider main container -->
+          <div class="swiper-container s2-2__swiper-container mbl">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper s2-2__swiper-wrapper">
+              <!-- Slides -->
+              <div
+                v-for="(menu, index) in s2Data.row2.menus"
+                class="swiper-slide s2-2__swiper-slide"
+                @click="showPopup('menu')"
+              >
+                <div class="img">
+                  <div class="img-inner">
+                    <img class="swiper-lazy" :data-src="menu.imgs[0]" alt="" />
+                  </div>
+                </div>
+
+                <p class="menu-name fz-mbl-14 ls-20" v-html="menu.name"></p>
+              </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="s2-2__swiper-button-group bc-g-3">
+              <div class="swiper-button-prev s2-2__swiper-button s2-2__swiper-button-prev"></div>
+              <div class="swiper-button-next s2-2__swiper-button s2-2__swiper-button-next"></div>
+            </div>
+          </div>
+          <!-- ===== mbl ===== -->
+        </div>
+
+        <!-- row-3 -->
+        <div id="setAnchor"></div>
+
+        <div class="section2__row-3">
+          <h2 class="title-wrapper">
+            <div
+              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-10 custom-underline ws-preline"
+              v-html="s2Data.row3.title.en"
+            ></div>
+            <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s2Data.row3.title.ch"></div>
+          </h2>
+
+          <div class="s2-3__swiper-outer">
+            <!-- Slider main container -->
+            <div class="swiper-container s2-3__swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper s2-3__swiper-wrapper">
+                <!-- Slides -->
+                <div v-for="(set, index) in s2Data.row3.swiper" class="swiper-slide s2-3__swiper-slide">
+                  <div
+                    :class="['set-item', {active: s2row3SwiperIndex === index}]"
+                    @mouseenter="hoverChangeSet($event, index)"
+                    @click="showPopup('set')"
+                  >
+                    <div class="group">
+                      <div class="name-img">
+                        <img class="swiper-lazy" :data-src="set.nameImg" alt="" />
+                      </div>
+
+                      <div class="type fz-20 fz-mbl-14 ls-15 ls-mbl-10"><% `{ ${ set.type } }` %></div>
+                    </div>
+
+                    <div class="price fz-32 fz-mbl-18 ls-15 ls-mbl-10 bc-fff"><% `NT.${ set.price }` %></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-block bc-g-3 mbl"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="s2-3__swiper-button-group">
+              <div class="swiper-button-prev s2-3__swiper-button s2-3__swiper-button-prev"></div>
+              <div class="line mbl"></div>
+              <div class="swiper-button-next s2-3__swiper-button s2-3__swiper-button-next"></div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination s2-3__swiper-pagination mbl fz-mbl-14 ls-05 c-g-1"></div>
+            </div>
+
+            <div id="s2_3BorderDecoration" class="border-decoration">
+              <div class="border border-tb"></div>
+              <div class="border border-lr"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- s3 -->
+      <div id="envAnchor"></div>
+
+      <section class="section3">
+        <div class="s3__swiper-outer">
+          <!-- Slider main container -->
+          <div class="swiper-container s3__swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper s3__swiper-wrapper">
+              <!-- Slides -->
+              <div v-for="(img, index) in s3Data.swiper" class="swiper-slide s3__swiper-slide">
+                <div class="bg">
+                  <img class="swiper-lazy" :data-src="img" alt="" />
+                </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination s3__swiper-pagination dsk"></div>
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="s3__swiper-button-group">
+            <div class="swiper-button-prev s3__swiper-button s3__swiper-button-prev"></div>
+            <div class="swiper-button-next s3__swiper-button s3__swiper-button-next"></div>
+          </div>
+        </div>
+
+        <div class="title-wrapper">
+          <div class="num-wrapper fz-124 fz-mbl-26 c-p-1">
+            <span>0</span>
+            <div class="group">
+              <div id="pageClock" class="group-inner">
+                <span v-for="(data, index) in s3Data.swiper" class="num"><% index + 1 %></span>
+              </div>
+            </div>
+          </div>
+          <h2 class="title-group">
+            <div
+              class="title-en c-fff fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
+              v-html="s3Data.title.en"
+            ></div>
+            <div class="title-ch c-fff fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s3Data.title.ch"></div>
+          </h2>
+        </div>
+      </section>
+
+      <!-- s4 -->
+      <div id="recommendAnchor"></div>
+
+      <section class="section4">
+        <h2 class="title-wrapper">
+          <div
+            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
+            v-html="s4Data.title.en"
+          ></div>
+          <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s4Data.title.ch"></div>
+        </h2>
+
+        <div class="s4__swiper-outer">
+          <!-- Slider main container -->
+          <div class="swiper-container s4__swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper s4__swiper-wrapper">
+              <!-- Slides -->
+              <div v-for="data in s4Data.swiper" class="swiper-slide s4__swiper-slide">
+                <div class="intro-item">
+                  <div class="img">
+                    <div class="img-inner">
+                      <img class="swiper-lazy" :data-src="data.img" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="intro-wrapper">
+                    <div class="group">
+                      <div class="title fz-22 fz-mbl-14 ls-30 ls-mbl-20" v-html="data.title"></div>
+                      <div class="content fz-18 fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2" v-html="data.content"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev s4__swiper-button s4__swiper-button-prev">
+              <p class="text fz-16 fz-mbl-12 ls-25 ls-mbl-15 c-fff">PREV</p>
+            </div>
+            <div class="swiper-button-next s4__swiper-button s4__swiper-button-next">
+              <p class="text fz-16 fz-mbl-12 ls-25 ls-mbl-15 c-fff">NEXT</p>
+            </div>
+          </div>
+
+          <div class="bg-decoration bg-decoration-3">
+            <div class="img img-1">
+              <img class="lazyload" data-src="images/fish-1-1.png" alt="" />
+            </div>
+            <div class="img img-2">
+              <img class="lazyload" data-src="images/fish-1-2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- s5 -->
+      <div id="newsAnchor"></div>
+
+      <section class="section5">
+        <h2 class="title-wrapper">
+          <div
+            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
+            v-html="s5Data.title.en"
+          ></div>
+          <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s5Data.title.ch"></div>
+        </h2>
+
+        <div class="news-wrapper swiper-container s5__swiper-container">
+          <div class="news-row clearfix swiper-wrapper s5__swiper-wrapper">
+            <div
+              v-for="(item, index) in s5DataNewsSwitch"
+              class="news-item swiper-slide s5__swiper-slide"
+              @mouseenter="hoverChangeNewsIndex(index)"
+            >
+              <div class="news-item-inner" @click="showPopup('news')">
+                <div class="img">
+                  <div class="img-inner">
+                    <img
+                      :class="{lazyload: windowSize === 'dsk', 'swiper-lazy': windowSize === 'mbl'}"
+                      :data-src="item.img"
+                      alt=""
+                    />
+                  </div>
+
+                  <div class="border-decoration">
+                    <div class="border border-tb"></div>
+                    <div class="border border-lr"></div>
+                    <p class="text fz-14 ls-15 c-p-1">LEARN MORE</p>
+                  </div>
+
+                  <div v-if="item.latestTag" class="latest-tag fz-20-vw fz-mbl-14 ls-20 ls-mbl-15 fw-200 bc-p-1 c-fff">
+                    最新ニュース
+                  </div>
+                </div>
+
+                <div class="intro-wrapper">
+                  <div class="group">
+                    <p class="date fz-14 fz-mbl-12 ls-15 ls-mbl-10 c-p-1 fs-italic" v-html="item.date"></p>
+                    <h3 class="title fz-22 fz-mbl-14 ls-45 ls-mbl-25" v-html="item.title"></h3>
+                  </div>
+                  <p
+                    class="subtitle js-clamp fz-18 fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2"
+                    v-html="item.subtitle"
+                  ></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination s5__swiper-pagination"></div>
+      </section>
+
+      <!-- menuPopup -->
+      <popup-wrapper id="menuPopup" :menus="s2Data.row2.menus[s2row2ImgIndex]" class="menu-popup">
+        <template v-slot:menu-body-slot="parentProps">
+          <menu-body :data-from-parent="parentProps"></menu-body>
+        </template>
+      </popup-wrapper>
+
+      <!-- setPopup -->
+      <popup-wrapper id="setPopup" :menus="s2Data.row3.swiper[s2row3SwiperIndex]" class="set-popup">
+        <template v-slot:set-body-slot="parentProps">
+          <set-body :data-from-parent="parentProps" :popup-note="s2Data.row3.popupNote"></set-body>
+        </template>
+      </popup-wrapper>
+
+      <!-- newsPopup -->
+      <popup-wrapper id="newsPopup" :news="s5DataNewsSwitch[newsIndex]" class="news-popup">
+        <template v-slot:news-body-slot="parentProps">
+          <news-body :data-from-parent="parentProps"></news-body>
+        </template>
+      </popup-wrapper>
+
+      <!-- footer -->
+      <div id="contactAnchor"></div>
+      <!-- INCLUDESCRIPT BLOCK : common_footer.php -->
+    </main>
+
+    <!-- INCLUDESCRIPT BLOCK : common_script.php -->
+    <!-- INCLUDESCRIPT BLOCK : vue-components.php -->
+    <!-- main -->
+    <script src="js/index-babel.js"></script>
+    <!-- lazysizes -->
+    <script src="node_modules\lazysizes\lazysizes.min.js"></script>
+  </body>
+</html>

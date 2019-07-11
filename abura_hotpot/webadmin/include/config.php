@@ -7,25 +7,34 @@ $_config_ver = '20120315.2';
 class object {};
 $CFG = new object;
 //Session定義
-$CFG->sessionname = '_main'; //請使用英文字就好,不要帶有其他符號
+$CFG->sessionname = 'nell'; //請使用英文字就好,不要帶有其他符號
 //資料庫連線設定
 $CFG->dbhost = 'localhost';//
-$CFG->dbname = '_main';//資料庫名稱
+$CFG->dbname = 'cosmo_abura';//資料庫名稱
 $CFG->dbuser = 'root';//資料庫帳號
-$CFG->dbpass = '1234';//資料庫密碼
+$CFG->dbpass = '';//資料庫密碼
+// $CFG->dbname = 'cosmo_abura';//資料庫名稱
+// $CFG->dbuser = 'root';//資料庫帳號
+// $CFG->dbpass = '12345678';//資料庫密碼
 //==========================================
 //網站檔案資料夾名稱
-$CFG->doc_web = '_main/';//以IP瀏覽的時候帶的資料夾目錄
-$CFG->real_domain = 'localhost/_main';//真實域名，不帶有 http 喔!!
-$CFG->full_domain = 'http://localhost/_main/'; //程式用的網站路徑，包含完成的http及域名或IP+目錄
-$CFG->base_domain = 'http://localhost/_main/';//用在後台登入預設語言位置
+$CFG->doc_web = '';//以IP瀏覽的時候帶的資料夾目錄
+$CFG->real_domain = 'abura.test';//真實域名，不帶有 http 喔!!
+$CFG->full_domain = 'http://abura.test/abura_hotpot/'; //程式用的網站路徑，包含完成的http及域名或IP+目錄
+$CFG->base_domain = 'http://abura.test/abura_hotpot/';//用在後台登入預設語言位置60.249.71.45/
+// $CFG->real_domain = 'localhost:7882/cosmo-abura/';//真實域名，不帶有 http 喔!!
+// $CFG->full_domain = 'http://localhost:7882/cosmo-abura/'; //程式用的網站路徑，包含完成的http及域名或IP+目錄
+// $CFG->base_domain = 'http://localhost:7882/cosmo-abura/';//用在後台登入預設語言位置60.249.71.45/
 //==========================================
 //後台語言版本設定
 //==========================================
 $langs = array();
 $langs["tw"]  = array("val"=>"tw","url"=>$CFG->base_domain."webadmin/login.php","name"=>"繁體中文");
-//$langs["eng"] = array("val"=>"eng","url"=>$CFG->base_domain."eng/webadmin/login.php","name"=>"ENGLISH");
+// $langs["eng"] = array("val"=>"eng","url"=>$CFG->base_domain."eng/webadmin/login.php","name"=>"ENGLISH");
 //$langs["ch"]  = array("val"=>"ch","url"=>$CFG->base_domain."ch/webadmin/login.php","name"=>"简体中文");
+$CFG->langs = $langs;
+$CFG->langs_show="_tw";
+
 //==========================================
 $CFG->domain = '/';//固定
 $CFG->visit_host = $_SERVER['HTTP_HOST'];
@@ -33,7 +42,7 @@ $CFG->visit_host = $_SERVER['HTTP_HOST'];
 $tmpvi = str_replace('.','',$CFG->visit_host);
 if (is_numeric($tmpvi) === false && $tmpvi !='localhost'){//用域名
   $CFG->visit_type = 'domain';
-  $CFG->doc_web = '';
+  //$CFG->doc_web = '';
   $CFG->real_domain = $CFG->visit_host;
   $CFG->reldomain = 'http://'.$CFG->real_domain.'/'; //包含域名的domain
 }else{
@@ -50,5 +59,5 @@ $CFG->language='tw';
 $CFG->tbext = 'tw_';
 //後台管理者使用資料表前置符號
 $CFG->tbuserext = 'tw_';
-//include dirname(__FILE__).'/config_d.php';
+include dirname(__FILE__).'/config_d.php';
 ?>

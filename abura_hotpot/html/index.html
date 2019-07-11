@@ -6,932 +6,146 @@
 
     <script>
       const footerData = {
-        title: { en: `CONTACT US`, ch: `聯絡我們` },
-        tel: { title: '貴賓服務專線', content: '04-2376-7575' },
-        add: { title: '地址', content: '台中市西區中美街十四號' },
-        businessHours: { title: '營業時間', content: '17:30~12:00pm' }
+        title: { en: `{footer_title_en}`, ch: `{footer_title}` },
+        tel: { title: '{footer_tel_title}', content: '{footer_tel}' },
+        add: { title: '{footer_add_title}', content: '{footer_add}' },
+        businessHours: { title: '{footer_time_title}', content: '{footer_time}' }
       };
 
       const s1Data = {
-        title: `あぶら<br>ホツトポツト`,
+        title: `{s1data_title_en}`,
         swiper: [
+          <!-- START BLOCK : banner -->
           {
-            subtitle: `秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利1。`,
-            img: 'images/s1-1.png',
-            imgMbl: 'images/s1-1-mbl.png'
+            subtitle: `{subtitle}`,
+            img: '{img}',
+            imgMbl: '{imgMbl}'
           },
-          {
-            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利2並貼心提供剝蝦蟹殼的福利2並貼心剝。`,
-            img: 'images/s1-1.png',
-            imgMbl: 'images/s1-1-mbl.png'
-          },
-          {
-            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利3。`,
-            img: 'images/s1-1.png',
-            imgMbl: 'images/s1-1-mbl.png'
-          },
-          {
-            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利4。`,
-            img: 'images/s1-1.png',
-            imgMbl: 'images/s1-1-mbl.png'
-          },
-          {
-            subtitle: `脂 團隊的專業料理職人，秉持匠心的精神與意念，在餐廳的經營面是傾注情感的，桌邊服務親力親為，精準拿捏涮肉時機，並貼心提供剝蝦蟹殼的福利5。`,
-            img: 'images/s1-1.png',
-            imgMbl: 'images/s1-1-mbl.png'
-          }
+          <!-- END BLOCK : banner -->
         ]
       };
 
       const s2Data = {
         row1: {
-          title: { en: `STORY`, ch: `會社介紹` },
-          swiper: ['images/s2-1.png', 'images/s2-1.png', 'images/s2-1.png'],
+          title: { en: `{s21data_title_en}`, ch: `{s21data_title_ch}` },
+          swiper: [
+            <!-- START BLOCK : s21data_img -->
+            '{img}',
+            <!-- END BLOCK : s21data_img -->
+          ],
           intro: {
-            title: `延續脂系列的職人精神，<br>
-                  脂 團隊精心籌備的鍋物展店計畫隆重登場`,
-            content: `店址選定小街上的老宅，經巧手改造後成了充滿日本京都風情的建築。初踏入脂鍋物，映入眼簾的是一座工藝細膩的巨型燈籠使視覺甦醒，為向晚的庭院製造氤氳朦朧的美感。店內特別設有VIP包廂，隱蔽性極高，可讓顧客與親友獨享一界私密的用餐時空。室內裝潢選用大量浮世繪壁紙，浮世繪的真實意涵是live in the moment，即「活在當下」，這正是我們期望帶給客人用餐時，身心所能感受到的富足享受。 `
+            title: `{s21data_intro_title}`,
+            content: `{s21data_intro_content}`
           }
         },
         row2: {
-          title: { en: `FEATURES\nMENU`, ch: `味自慢集` },
+          title: { en: `{s22data_title_en}`, ch: `{s22data_title_ch}` },
           menus: [
+            <!-- START BLOCK : menus -->
             {
-              name: 'だし 湯底',
+              name: '{name}',
               imgs: [
-                'images/popup-2.png',
-                'images/popup-1.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png'
+                <!-- START BLOCK : menus_imgs -->
+                '{img}',
+                <!-- END BLOCK : menus_imgs -->
               ],
               menu: [
+                <!-- START BLOCK : tag -->
                 {
-                  tag: '',
+                  tag: '{name}',
                   items: [
+                    <!-- START BLOCK : items -->
                     {
-                      img: 'images/menu-img.png',
-                      name: `原味昆布柴魚湯底`,
-                      note: `淡雅細緻的口味適合口感清淡的饕客建議搭配海鮮為主`,
-                      price: `280`
+                      img: '{img}',
+                      name: `{name}`,
+                      note: `{note}`,
+                      price: `{price}`
                     },
-                    {
-                      img: 'images/menu-img.png',
-                      name: `白味增昆布柴魚湯底`,
-                      note: `加入日本白味增的昆布柴魚湯更加豐富提味<br>
-                            鹹中帶甜有淡淡的豆香味及奶香味<br>
-                            建議搭配活體蝦蟹類、日本和牛為主`,
-                      price: `280`
-                    },
-                    {
-                      img: 'images/menu-img.png',
-                      name: `赤味增昆布柴魚湯底`,
-                      note: `醇厚的濃郁感代表著日本赤味增，<br>
-                            適合口味較重的饕客<br>
-                            建議搭配廣島生蠔及挪威鮭魚頭`,
-                      price: `280`
-                    },
-                    {
-                      img: 'images/menu-img.png',
-                      name: `秘製醬昆布柴魚湯底`,
-                      note: `特製的秘製醬讓口感更圓滑，<br>
-                            帶出更多的甘甜口感<br>
-                            建議搭配海鮮為主`,
-                      price: `280`
-                    },
-                    {
-                      img: 'images/menu-img.png',
-                      name: `自煮博多雞白湯底`,
-                      note: `大量雞爪及雞架骨加上豬背脂熬煮帶出滿滿濃郁的膠質<br>
-                            建議搭配雞肉、日本和牛、牛內臟`,
-                      price: `280`
-                    },
-                    {
-                      img: 'images/menu-img.png',
-                      name: `日本和牛辣椒雞白湯底`,
-                      note: `日本和牛的牛油爆炒新鮮辣椒加上秘製配方<br>
-                            大量雞爪及雞架骨加上豬背脂熬煮帶出滿滿濃郁的膠質<br>
-                            建議搭配雞肉、日本和牛、牛內臟`,
-                      price: `280`
-                    },
-                    {
-                      img: 'images/menu-img.png',
-                      name: `秘製薄鹽壽喜燒湯底  四品`,
-                      note: `新鮮昆布柴魚湯底加上日本薄鹽壽喜燒醬油及秘製配方調製而成，甘甜不膩口<br>
-                            建議搭配日本和牛、伊比利豬`,
-                      price: `280`
-                    }
+                    <!-- END BLOCK : items -->
                   ]
-                }
+                },
+                <!-- END BLOCK : tag -->
               ]
             },
-            {
-              name: 'にく 肉',
-              imgs: ['images/popup-1.png', 'images/popup-2.png', 'images/popup-2.png', 'images/popup-2.png'],
-              menu: [
-                {
-                  tag: '牛',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: '', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '豚',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和豚`, note: `牛肚/牛筋`, price: `481` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '雞',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和雞`, note: `牛肚/牛筋`, price: `482` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                }
-              ]
-            },
-            {
-              name: 'やきにく 海鮮',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png'
-              ],
-              menu: [
-                {
-                  tag: '牛',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '豚',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                }
-              ]
-            },
-            {
-              name: 'ベジタブル 蔬菜',
-              imgs: [
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png'
-              ],
-              menu: [
-                {
-                  tag: '牛',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '豚',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '雞',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                }
-              ]
-            },
-            {
-              name: 'ベジタブル 蔬菜',
-              imgs: [
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png'
-              ],
-              menu: [
-                {
-                  tag: '牛',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '豚',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '雞',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                }
-              ]
-            },
-            {
-              name: 'ベジタブル 蔬菜',
-              imgs: [
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png'
-              ],
-              menu: [
-                {
-                  tag: '牛',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '豚',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '雞',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                }
-              ]
-            },
-            {
-              name: 'ベジタブル 蔬菜',
-              imgs: [
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png'
-              ],
-              menu: [
-                {
-                  tag: '牛',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '豚',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '雞',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                }
-              ]
-            },
-            {
-              name: 'ベジタブル 蔬菜',
-              imgs: [
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png',
-                'images/popup-2.png'
-              ],
-              menu: [
-                {
-                  tag: '牛',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '豚',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                },
-                {
-                  tag: '雞',
-                  items: [
-                    { img: 'images/menu-img.png', name: `味自慢 燉和牛`, note: `牛肚/牛筋`, price: `480` },
-                    { img: 'images/menu-img.png', name: `紐西蘭精選牛舌（舌中）`, note: ``, price: `580` },
-                    { img: 'images/menu-img.png', name: `牛內臟`, note: `牛肚/牛腸/牛心/牛心管`, price: `680` },
-                    { img: 'images/menu-img.png', name: `日本和牛霜降`, note: ``, price: `680` },
-                    { img: 'images/menu-img.png', name: `紐西蘭極上牛舌（舌根）`, note: ``, price: `980` },
-                    { img: 'images/menu-img.png', name: `日本和牛板腱`, note: ``, price: `1280` },
-                    { img: 'images/menu-img.png', name: `日本和牛莎朗`, note: ``, price: `1680` },
-                    { img: 'images/menu-img.png', name: `日本和牛盛合  四品`, note: ``, price: `2280` }
-                  ]
-                }
-              ]
-            }
+            <!-- END BLOCK : menus -->
           ]
         },
         row3: {
-          title: { en: `SET MEAL`, ch: `套餐` },
+          title: { en: `{s23data_title_en}`, ch: `{s23data_title_ch}` },
           popupNote: {
-            title: '晚餐',
-            note: `17:30-12:00pm 低消800<br>
-                以上不含10%服務費，恕不接待3歲以下兒童`
+            title: '{s23data_popupNote}',
+            note: `{s23data_popupNotenote}`
           },
           swiper: [
+            <!-- START BLOCK : meals -->
             {
-              nameImg: 'images/bhd.png',
-              name: '北海道',
-              type: `雙人套餐`,
-              price: '2880',
-              imgs: ['images/popup-3.png', 'images/popup-3.png', 'images/popup-3.png', 'images/popup-3.png'],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/bd.png',
-              name: '博多',
-              type: `和牛套餐`,
-              price: '2880',
+              nameImg: '{nameImg}',
+              name: '{name}',
+              type: `{type}`,
+              price: '{price}',
               imgs: [
-                'images/popup-3.png',
-                'images/popup-2.png',
-                'images/popup-1.png',
-                'images/popup-2.png',
-                'images/popup-3.png'
+                <!-- START BLOCK : meals_imgs -->
+                '{img}',
+                <!-- END BLOCK : meals_imgs -->
               ],
               broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
+                title: '{broth}',
+                items: [`{broth_items1}`, `{broth_items2}`, `{broth_items3}`]
               },
               otherDishes: [
+                <!-- START BLOCK : otherDishes -->
                 {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
+                  title: '{title}',
+                  items: [
+                    <!-- START BLOCK : otherDishesDetail -->
+                    `{name}`,
+                    <!-- END BLOCK : otherDishesDetail -->
+                  ],
+                  chooseNum: '{chooseNum}'
                 },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
+                <!-- END BLOCK : otherDishes -->
               ]
             },
-            {
-              nameImg: 'images/gg.png',
-              name: '九州',
-              type: `雙人套餐`,
-              price: '2880',
-              imgs: ['images/popup-3.png', 'images/popup-3.png', 'images/popup-3.png'],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/iu.png',
-              name: '愛媛',
-              type: `雙人套餐`,
-              price: '2880',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png'
-              ],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/fg.png',
-              name: '福井',
-              type: `海陸雙人套餐`,
-              price: '2880',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png'
-              ],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/bhd.png',
-              name: '北海道',
-              type: `雙人套餐2`,
-              price: '2880',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png'
-              ],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/bd.png',
-              name: '博多',
-              type: `和牛套餐2`,
-              price: '2880',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png'
-              ],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/gg.png',
-              name: '九州',
-              type: `雙人套餐2`,
-              price: '2880',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png'
-              ],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/iu.png',
-              name: '愛媛',
-              type: `雙人套餐2`,
-              price: '2880',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png'
-              ],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            },
-            {
-              nameImg: 'images/fg.png',
-              name: '福井',
-              type: `海陸雙人套餐2`,
-              price: '2880',
-              imgs: [
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png',
-                'images/popup-3.png'
-              ],
-              broth: {
-                title: '湯底',
-                items: ['原味雞白湯底', '和牛辣椒<br>雞白湯底', '白味噌<br>昆布柴魚湯底']
-              },
-              otherDishes: [
-                {
-                  title: '主菜',
-                  items: ['伊比利豬Bellota梅花', '紐西蘭極上牛舌（舌根）（加價400）'],
-                  chooseNum: '1'
-                },
-                {
-                  title: '前菜',
-                  items: ['桂丁雞盛合', '紋甲烏賊', '野生文蛤', '牛奶蛤蠣', '日本蔥蒸 龍膽石斑'],
-                  chooseNum: ''
-                },
-                {
-                  title: '米飯',
-                  items: ['越光米雜炊', '日本太麵'],
-                  chooseNum: '1'
-                }
-              ]
-            }
+            <!-- END BLOCK : meals -->
           ]
         }
       };
 
       const s3Data = {
-        title: { en: `INSIDE\nENVIRONMENT`, ch: `店內寫真` },
-        swiper: ['images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png', 'images/s3-1.png']
+        title: { en: `{s3data_title_en}`, ch: `{s3data_title_ch}` },
+        swiper: [
+          <!-- START BLOCK : s3data_img -->
+          '{img}',
+          <!-- END BLOCK : s3data_img -->
+        ]
       };
 
       const s4Data = {
-        title: { en: `RECOMMEND`, ch: `達人秘訣` },
+        title: { en: `{s4data_title_en}`, ch: `{s4data_title_ch}` },
         swiper: [
+          <!-- START BLOCK : s4data_img -->
           {
-            img: 'images/s4-1.png',
-            title: `大海自慢好味1`,
-            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
+            img: '{img}',
+            title: `{title}`,
+            content: `{content}`
           },
-          {
-            img: 'images/s4-1.png',
-            title: `大海自慢好味2`,
-            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 因為善用四季的新鮮食材，每道料理皆能本味呈現。脂因為善用四季的新鮮食材，每道料理皆能本味呈現。脂因為善用四季的新鮮食材，每道料理皆能本味`
-          },
-          {
-            img: 'images/s4-1.png',
-            title: `大海自慢好味3`,
-            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
-          },
-          {
-            img: 'images/s4-1.png',
-            title: `大海自慢好味4`,
-            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
-          },
-          {
-            img: 'images/s4-1.png',
-            title: `大海自慢好味5`,
-            content: `因為善用四季的新鮮食材，每道料理皆能本味呈現。脂 團隊嚴格篩選食物原料的來源與品質，並與當地漁場合作，每日直送新鮮野生漁獲，想大啖精緻海味無須遠赴漁港，在脂 鍋物就可以一飲而盡大海的鮮甜。`
-          }
+          <!-- END BLOCK : s4data_img -->
         ]
       };
 
       const s5Data = {
-        title: { en: `LATEST NEWS`, ch: `揭示板` },
+        title: { en: `{s5data_title_en}`, ch: `{s5data_title_ch}` },
         news: [
+          <!-- START BLOCK : news -->
           {
-            date: '2018-05-10',
-            img: 'images/s5-1.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `<img data-src="images/popup-3.png" alt="" class=" lazyloaded" src="images/popup-3.png"><br><br>WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: true
+            date: '{date}',
+            img: '{img}',
+            title: `{title}`,
+            subtitle: `{subtitle}`,
+            content: `{content}`,
+            latestTag: {latestTag}
           },
-          {
-            date: '2018-05-09',
-            img: 'images/s5-1.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，<br><br><img data-src="images/popup-3.png" alt="" class=" lazyloaded" src="images/popup-3.png">`,
-            latestTag: true
-          },
-          {
-            date: '2018-05-08',
-            img: 'images/s5-2.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-07',
-            img: 'images/s5-3.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-06',
-            img: 'images/s5-4.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-05',
-            img: 'images/s5-5.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-04',
-            img: 'images/s5-1.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-04',
-            img: 'images/s5-1.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-04',
-            img: 'images/s5-1.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-04',
-            img: 'images/s5-1.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          },
-          {
-            date: '2018-05-04',
-            img: 'images/s5-1.png',
-            title: `開幕優惠公告`,
-            subtitle: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下`,
-            content: `WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，WAREVEG籌備中，裝潢驗收差不多，消防檢驗完成。好想吃的民眾，要記得再忍耐一下，`,
-            latestTag: false
-          }
+          <!-- END BLOCK : news -->
         ]
       };
     </script>

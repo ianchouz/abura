@@ -1,0 +1,136 @@
+.mask {
+width: 100%;
+height: 100%;
+background: url(../images/loading.gif) no-repeat center;
+background-color: #FFFFFF;
+position: absolute;
+zIndex: 999;
+top:0;
+left:0;
+filter:alpha(opacity=70);
+-moz-opacity:0.70;
+opacity:.70;
+}
+.jBox-wraper
+{
+  position:absolute;
+  background:#E1E1E1;
+  padding:2px;
+  visibility:hidden;
+}
+.jBox
+{
+    border:1px solid #A7A6A6;
+    overflow:hidden;
+}
+.jBox-handler
+{
+    background:#F1F1F1;
+    border-bottom:1px solid #DEDEDE;
+    float:left;
+    width:100%;
+    height:28px;
+    position:relative;
+}
+.jBox-handler h3
+{
+    text-indent:5px;
+    font-size:14px;
+    line-height:28px;
+    margin:0px;
+}
+.jBox-close, jBox-close:hover
+{
+    position:absolute;
+    right:5px;
+    top:5px;
+    height:17px;
+    width:17px;
+border:0;
+}
+.jBox-close
+{
+background:transparent url(../images/pop_close.png) no-repeat;
+}
+.jBox-close:hover
+{
+background:transparent url(../images/pop_close.png) no-repeat -19px 0px;
+cursor:pointer;
+}
+.jBox-content
+{
+background-color: #fff;
+color: #000;
+padding: 5px 10px;
+overflow: auto;
+font-size:13px;
+border:0;
+}
+.jBox-status 
+{
+    background:#F1F1F1;
+    border-top:1px solid #E9E9E9;
+    height:41px;
+    position:relative;
+    text-align:right;
+    width:100%;
+}
+.jBox-confirm, .jBox-cancel
+{
+    background:url(../images/btn.png) no-repeat 0 -24px transparent;
+    color:#3F3F3F;
+    width:46px;
+    height:21px;
+    line-height:21px;
+    border:0;
+    cursor:pointer;
+    font-size:12px;
+    margin-right:10px;
+    margin-top:10px;
+}
+.jBox-cancel
+{
+    display:none;
+}
+.jBox-model
+{
+    border:0;
+    position:fixed;
+    top:0;    
+    left:0;
+    -moz-opacity:0;
+    opacity:0;
+    filter:alpha(opacity=0);
+    _position:absolute;
+    width:100%;
+    overflow:hidden;
+    background:#FFFFFF;
+    z-index:1000;
+}
+.jBox-content{
+background:#E2E2E2;
+border:1px solid #E9E9E9;
+}
+#photo-list{
+text-align:left;
+margin-left:0px;
+}
+#photo-list li {
+  margin:5px;
+}
+#album-list li, #photo-list li {
+  float:left;
+}
+#photo-list ul {margin:0px;list-style-type:none;margin: 0;padding: 0;}
+li {
+  list-style:none outside none;
+}
+.jBox_now_info{
+margin:2px;padding:0px;
+font-size:11px;
+line-height:13px;
+color:#4068AE;
+}
+#btn_flupclose{cursor:pointer;margin: 0;padding: 0;width:65px;height:22px;background:url(../images/XPButtonComText_61x22.png) no-repeat 0 0px transparent;}
+#btn_flupclose:hover{background:url(../images/XPButtonComText_61x22.png) no-repeat 0 -22px transparent;}
+#btn_flupclose .disabled{background:url(../images/XPButtonComText_61x22.png) no-repeat 0 -66px transparent;}
