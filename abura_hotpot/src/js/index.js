@@ -254,41 +254,44 @@ if (window.matchMedia(bkpDsk).matches) {
 
 // s3
 // swiper
-let pageClockOffsetTop = 0;
-const s3Swiper = new Swiper('.s3__swiper-container', {
-  // Disable preloading of all images
-  preloadImages: false,
-  lazy: {
-    loadPrevNext: true
-  },
-  pagination: {
-    el: '.s3__swiper-pagination',
-    type: 'bullets',
-    clickable: true
-  },
-  navigation: {
-    nextEl: '.s3__swiper-button-next',
-    prevEl: '.s3__swiper-button-prev'
-  },
-  effect: 'fade',
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false
-  },
-  speed: 800,
-  on: {
-    init: function() {
-      // console.log('swiper initialized');
-      pageClockOffsetTop = $id('pageClock').children[this.activeIndex].offsetTop;
-      $id('pageClock').style.transform = `translateY(-${pageClockOffsetTop}px)`;
+if (!s3Data.video.active || window.matchMedia(bkpMbl).matches) {
+  let pageClockOffsetTop = 0;
+
+  const s3Swiper = new Swiper('.s3__swiper-container', {
+    // Disable preloading of all images
+    preloadImages: false,
+    lazy: {
+      loadPrevNext: true
     },
-    slideChange: function() {
-      // console.log('slideChange');
-      pageClockOffsetTop = $id('pageClock').children[this.activeIndex].offsetTop;
-      $id('pageClock').style.transform = `translateY(-${pageClockOffsetTop}px)`;
+    pagination: {
+      el: '.s3__swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.s3__swiper-button-next',
+      prevEl: '.s3__swiper-button-prev'
+    },
+    effect: 'fade',
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    speed: 800,
+    on: {
+      init: function() {
+        // console.log('swiper initialized');
+        pageClockOffsetTop = $id('pageClock').children[this.activeIndex].offsetTop;
+        $id('pageClock').style.transform = `translateY(-${pageClockOffsetTop}px)`;
+      },
+      slideChange: function() {
+        // console.log('slideChange');
+        pageClockOffsetTop = $id('pageClock').children[this.activeIndex].offsetTop;
+        $id('pageClock').style.transform = `translateY(-${pageClockOffsetTop}px)`;
+      }
     }
-  }
-});
+  });
+}
 
 // s4
 // swiper

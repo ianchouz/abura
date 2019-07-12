@@ -134,6 +134,14 @@
     }
   }
 
+  .subtitle {
+    position: absolute;
+    left: vw-dsk(126);
+    // top: vh-dsk(810);
+    top: 76%;
+    width: vw-dsk(600);
+  }
+
   .scroll-down {
     @include scroll-down;
     position: absolute;
@@ -163,6 +171,17 @@
         transform: translateY(-50%) rotate(45deg);
         height: vw-mbl(34);
       }
+    }
+
+    .subtitle {
+      left: initial;
+      // top: vh-mbl(380);
+      top: 64%;
+      width: 100%;
+      max-width: 600px;
+
+      padding-left: vw-mbl(20);
+      padding-right: vw-mbl(40);
     }
   }
 }
@@ -218,14 +237,6 @@
         transition: 0s 0.8s;
       }
     }
-
-    .subtitle {
-      position: absolute;
-      left: vw-dsk(126);
-      // top: vh-dsk(810);
-      top: 76%;
-      width: vw-dsk(600);
-    }
   }
 
   &-pagination {
@@ -238,19 +249,6 @@
   }
 
   @include mq(mbl) {
-    &-slide {
-      .subtitle {
-        left: initial;
-        // top: vh-mbl(380);
-        top: 64%;
-        width: 100%;
-        max-width: 600px;
-
-        padding-left: vw-mbl(20);
-        padding-right: vw-mbl(40);
-      }
-    }
-
     &-pagination {
       right: vw-mbl(18);
       bottom: vh-mbl(34);
@@ -1018,6 +1016,12 @@
 // s3
 .section3 {
   margin-top: -90px;
+
+  &__video {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
 
   .title-wrapper {
     position: absolute;

@@ -72,6 +72,10 @@ const vueMixins = {
         this.targetOffsetTop -= Math.ceil(this.targetOffsetTop / 8);
         window.requestAnimationFrame(this.goToSection);
       }
+    },
+    nowrap(value) {
+      // console.log(value);
+      return value.replace('<br />', ' ');
     }
   },
   computed: {

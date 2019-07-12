@@ -78,7 +78,8 @@
           title: { en: `{s23data_title_en}`, ch: `{s23data_title_ch}` },
           popupNote: {
             title: '{s23data_popupNote}',
-            note: `{s23data_popupNotenote}`
+            note: `{s23data_popupNotenote}`,
+            priceNote: `以上不含10%服務費`
           },
           swiper: [
             <!-- START BLOCK : meals -->
@@ -121,7 +122,11 @@
           <!-- START BLOCK : s3data_img -->
           '{img}',
           <!-- END BLOCK : s3data_img -->
-        ]
+        ],
+        video:{
+          active: true,
+          src: 'video/video.mp4'
+        }
       };
 
       const s4Data = {
@@ -164,10 +169,22 @@
 
       <!-- s1 -->
       <section class="section1">
-        <video :class="['section1__video', {'d-n': !s1Data.video.active || windowSize === 'mbl'}]" loop muted autoplay>
-          <source :src="s1Data.video.src" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div class="video-wrapper">
+          <video
+            :class="['section1__video', {'d-n': !s1Data.video.active || windowSize === 'mbl'}]"
+            loop
+            muted
+            autoplay
+          >
+            <source :src="s1Data.video.src" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <p
+            class="subtitle fw-200 fz-18-vw fz-mbl-14 lh-21 lh-mbl-14 ls-50 ls-mbl-40 c-fff ta-justify"
+            v-html="s1Data.swiper[0].subtitle"
+          ></p>
+        </div>
 
         <!-- Slider main container -->
         <div :class="['swiper-container s1__swiper-container', {'d-n': s1Data.video.active && windowSize === 'dsk'}]">
@@ -233,7 +250,7 @@
             <h2 class="main-title-wrapper bc-p-1">
               <div class="title-group">
                 <div
-                  class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline ws-preline"
+                  class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
                   v-html="s2Data.row1.title.en"
                 ></div>
                 <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row1.title.ch"></div>
@@ -277,10 +294,7 @@
           <div class="title-wrapper dsk bc-g-3">
             <div class="title-wrapper-inner">
               <h2 class="title-group">
-                <div
-                  class="title-en fz-42 lh-12 ls-20 c-fff custom-underline ws-preline"
-                  v-html="s2Data.row2.title.en"
-                ></div>
+                <div class="title-en fz-42 lh-12 ls-20 c-fff custom-underline" v-html="s2Data.row2.title.en"></div>
                 <div class="title-ch fz-22 c-fff ls-140" v-html="s2Data.row2.title.ch"></div>
               </h2>
 
@@ -301,7 +315,7 @@
           <!-- ===== mbl ===== -->
           <h2 class="title-group mbl">
             <div
-              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline ws-preline"
+              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
               v-html="s2Data.row2.title.en"
             ></div>
             <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row2.title.ch"></div>
@@ -341,7 +355,7 @@
         <div class="section2__row-3">
           <h2 class="title-wrapper">
             <div
-              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-10 custom-underline ws-preline"
+              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-10 custom-underline"
               v-html="s2Data.row3.title.en"
             ></div>
             <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s2Data.row3.title.ch"></div>
@@ -396,7 +410,19 @@
       <div id="envAnchor"></div>
 
       <section class="section3">
-        <div class="s3__swiper-outer">
+        <div class="video-wrapper">
+          <video
+            :class="['section3__video', {'d-n': !s3Data.video.active || windowSize === 'mbl'}]"
+            loop
+            muted
+            autoplay
+          >
+            <source :src="s3Data.video.src" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div :class="['s3__swiper-outer', {'d-n': s3Data.video.active && windowSize === 'dsk'}]">
           <!-- Slider main container -->
           <div class="swiper-container s3__swiper-container">
             <!-- Additional required wrapper -->
@@ -420,7 +446,7 @@
         </div>
 
         <div class="title-wrapper">
-          <div class="num-wrapper fz-124 fz-mbl-26 c-p-1">
+          <div :class="['num-wrapper fz-124 fz-mbl-26 c-p-1', {'d-n': s3Data.video.active && windowSize === 'dsk'}]">
             <span>0</span>
             <div class="group">
               <div id="pageClock" class="group-inner">
@@ -428,9 +454,10 @@
               </div>
             </div>
           </div>
+
           <h2 class="title-group">
             <div
-              class="title-en c-fff fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
+              class="title-en c-fff fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
               v-html="s3Data.title.en"
             ></div>
             <div class="title-ch c-fff fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s3Data.title.ch"></div>
@@ -443,10 +470,7 @@
 
       <section class="section4">
         <h2 class="title-wrapper">
-          <div
-            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
-            v-html="s4Data.title.en"
-          ></div>
+          <div class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline" v-html="s4Data.title.en"></div>
           <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s4Data.title.ch"></div>
         </h2>
 
@@ -499,10 +523,7 @@
 
       <section class="section5">
         <h2 class="title-wrapper">
-          <div
-            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline ws-preline"
-            v-html="s5Data.title.en"
-          ></div>
+          <div class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline" v-html="s5Data.title.en"></div>
           <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s5Data.title.ch"></div>
         </h2>
 
