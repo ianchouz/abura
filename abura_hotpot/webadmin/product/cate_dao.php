@@ -52,6 +52,7 @@ class category extends controller {
         // Banner IMG
         for($i=1;$i<=5;$i++) {
             $this->_xmls['cover'.$i] = array('type'=>'img','set'=> $CFG->product_cate);
+            $this->_xmls['cover'.$i.'_alt'] = array('type'=>'');
         }
 
         $this->dbrowDefault();

@@ -477,7 +477,7 @@ class controller {
         ob_start();
         if($display=='img'){
             /*buildImageBroser("欄位名稱",  "檔案路徑",  "寬高等設定值",  "檔案")*/
-            $file1 = new buildImageBroser($col,  $tmp['set']["path"],  $tmp['set'],  $this->dbrow[$col]);
+            $file1 = new buildImageBroser($col,  $tmp['set']["path"],  $tmp['set'],  $this->dbrow[$col], $this);
         }else if($display=='file'){
             /*buildImageBroser("欄位名稱",  "檔案路徑",  "寬高等設定值",  "檔案")*/
             $file1 = buildFilehtml($col);

@@ -1,4 +1,12 @@
 <div class="-image-choice-area">
+  <table width="100%">
+    <tr>
+      <td valign='top' width="50">圖片ALT</td>
+      <td valign='top'>
+         <?=$this->dao->html($this->prefix.'_alt')?>
+      </td>
+    </tr>
+  </table>
   &nbsp;<?
   if ($this->showimage && $this->showflash){
     echo '圖片或FLASH';

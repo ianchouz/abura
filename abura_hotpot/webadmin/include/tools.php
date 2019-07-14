@@ -1106,7 +1106,7 @@ class buildImageBroser {
     public $fixdir = "";
 
 
-    function __construct($filename="",$path="",$set=array(),$filevalue) {
+    function __construct($filename="",$path="",$set=array(),$filevalue,$dao) {
         $this->prefix = $filename;
         if($set["w"])     $this->showwidth = $set["w"];
         if($set["h"])     $this->showheight= $set["h"];
@@ -1114,6 +1114,7 @@ class buildImageBroser {
         if($set["noneH"]) $this->noneHeight= $set["noneH"];
         $this->filepath=$path.$filevalue;
         $this->fixdir=$path;
+        $this->dao = $dao;
         $this->build();
     }
 

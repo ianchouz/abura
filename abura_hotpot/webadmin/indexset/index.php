@@ -71,6 +71,14 @@ var work = <?=json_encode($incSet["work"])?>;
                       <span style="color:red">特殊符號，請輸入||代替</span>
                     </td>
                 </tr>
+                <tr class="x-tr1">
+                    <th class="x-th">顯示為影片</th>
+                    <td class="x-td"><?=$dao->html('s1data_video_active')?></td>
+                </tr>
+                <tr class="x-tr1">
+                    <th class="x-th">影片網址</th>
+                    <td class="x-td"><?=$dao->html('s1data_video')?></td>
+                </tr>
             </table>
             <table class="x-table" style=" border-collapse: collapse;">
                 <tr class="x-tr1" valign="top">
@@ -91,14 +99,6 @@ var work = <?=json_encode($incSet["work"])?>;
                             <tr class="x-tr1">
                                 <th class="x-th">圖片 (手機版)</th>
                                 <td class="x-td"><?=$dao->html('mbl'.$i)?></td>
-                            </tr>
-                            <tr class="x-tr1">
-                                <th class="x-th">影片優先</th>
-                                <td class="x-td"><?=$dao->html('type'.$i)?></td>
-                            </tr>
-                            <tr class="x-tr1">
-                                <th class="x-th">影片網址</th>
-                                <td class="x-td"><?=$dao->html('video'.$i)?></td>
                             </tr>
                         </table>
                     </td>
@@ -205,6 +205,10 @@ var work = <?=json_encode($incSet["work"])?>;
                     <th class="x-th">視窗頁尾說明</th>
                     <td class="x-td"><?=$dao->html('s23data_popupNotenote')?></td>
                 </tr>
+                <tr class="x-tr1">
+                    <th class="x-th">10%服務費</th>
+                    <td class="x-td"><?=$dao->html('s23data_priceNote')?></td>
+                </tr>
             </table>
             <div class="x-panel-bbar">
                 <div class="x-toolbar x-small-editor x-toolbar-layout-ct">
@@ -228,6 +232,20 @@ var work = <?=json_encode($incSet["work"])?>;
                         </table>
                     </th>
                 </tr>
+                <tr class="x-tr1">
+                    <th class="x-th">
+                        <table class="x-table" style=" border-collapse: collapse;">
+                            <tr class="x-tr1">
+                                <th class="x-th">顯示為影片</th>
+                                <td class="x-td" align="left"><?=$dao->html('s3data_video_active')?></td>
+                            </tr>
+                            <tr class="x-tr1">
+                                <th class="x-th">影片網址</th>
+                                <td class="x-td" align="left"><?=$dao->html('s3data_video')?></td>
+                            </tr>
+                        </table>
+                    </th>
+                </tr>
             </table>
             <table class="x-table" style=" border-collapse: collapse;">
                 <tr class="x-tr1" valign="top">
@@ -240,12 +258,6 @@ var work = <?=json_encode($incSet["work"])?>;
                             </tr>
                             <tr class="x-tr1">
                                 <td class="x-td"><?=$dao->html('s3data_img'.$i)?></td>
-                            </tr>
-                            <tr class="x-tr1">
-                                <td class="x-td">影片優先<?=$dao->html('s3data_type'.$i)?></td>
-                            </tr>
-                            <tr class="x-tr1">
-                                <td class="x-td">影片網址<?=$dao->html('s3data_video'.$i)?></td>
                             </tr>
                         </table>
                     </td>

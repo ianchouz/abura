@@ -10,8 +10,11 @@ $xmlvo = new parseXML($row);
 // Banner
 $s1data_title_en = nl2br($xmlvo->value('/content/s1data_title_en'));
 $s1data_title_en = str_replace('||', '', $s1data_title_en);
+$s1data_video_active = nl2br($xmlvo->value('/content/s1data_video_active'));
 $data = [
   's1data_title_en' => $s1data_title_en,
+  's1data_video_active' => !empty($s1data_video_active) ? 'true' : 'false',
+  's1data_video' => $xmlvo->value('/content/s1data_video'),
 ];
 $tpl->assignGlobal($data);
 // Banner IMG
@@ -22,8 +25,8 @@ for($i=1;$i<=5;$i++) {
     $data['subtitle'] = nl2br($xmlvo->value('/content/s1_title'.$i));
     $data['img'] = $dsk ? $CFG->url_web."archive/images/indexset/".$dsk : '';
     $data['imgMbl'] = $mbl ? $CFG->url_web."archive/images/indexset_mbl/".$mbl : '';
-    $data['type'] = $xmlvo->value('/content/type'.$i);
-    $data['video'] = $xmlvo->value('/content/video'.$i);
+    $data['img_alt'] = $xmlvo->value('/content/dsk'.$i.'_alt');
+    $data['imgMbl_alt'] = $xmlvo->value('/content/mbl'.$i.'_alt');
 
   	$tpl->newBlock("banner");
   	$tpl->assign($data);
@@ -43,6 +46,7 @@ $data = array();
 for($i=1;$i<=3;$i++) {
     $img = $xmlvo->value('/content/s21data_img'.$i);
     $data['img'] = $img ? $CFG->url_web."archive/images/s21data_img/".$img : '';
+    $data['img_alt'] = $xmlvo->value('/content/s21data_img'.$i.'_alt');
 
   	$tpl->newBlock("s21data_img");
   	$tpl->assign($data);
@@ -68,6 +72,7 @@ while($row = @sql_fetch_assoc($res)){
   $data2 = [];
   for($i=1;$i<=5;$i++) {
       $data2["img"] = $CFG->url_web."archive/images/product_cate/".$xmlvo1->value('/content/cover'.$i);
+      $data2['img_alt'] = $xmlvo1->value('/content/cover'.$i.'_alt');
     	$tpl->newBlock("menus_imgs");
     	$tpl->assign($data2);
   }
@@ -93,6 +98,7 @@ while($row = @sql_fetch_assoc($res)){
             "note"=>$row2["note"],
             "price"=>$row2["price"],
             "img"=>!empty($cover) ? $CFG->url_web."archive/images/product/".$cover : '',
+            "img_alt"=>$xmlvo2->value('/content/cover'.'_alt'),
           );
           $tpl->newBlock("items");
           $tpl->assign($data);
@@ -114,6 +120,7 @@ while($row = @sql_fetch_assoc($res)){
         "note"=>$row2["note"],
         "price"=>$row2["price"],
         "img"=>!empty($cover) ? $CFG->url_web."archive/images/product/".$cover : '',
+        "img_alt"=>$xmlvo2->value('/content/cover'.'_alt'),
       );
       $tpl->newBlock("items");
       $tpl->assign($data);
@@ -128,6 +135,7 @@ $data = [
   's23data_title_ch' => nl2br($xmlvo->value('/content/s23data_title_ch')),
   's23data_popupNote' => nl2br($xmlvo->value('/content/s23data_popupNote')),
   's23data_popupNotenote' => nl2br($xmlvo->value('/content/s23data_popupNotenote')),
+  's23data_priceNote' => nl2br($xmlvo->value('/content/s23data_priceNote')),
 ];
 $tpl->assignGlobal($data);
 // 套餐
@@ -147,6 +155,7 @@ while($row = @sql_fetch_assoc($res)){
     "broth_items2"=>nl2br($xmlvo1->value('/content/broth_items2')),
     "broth_items3"=>nl2br($xmlvo1->value('/content/broth_items3')),
     "nameImg"=>!empty($cover) ? $CFG->url_web."archive/images/meal_cover/".$cover : '',
+    "nameImg_alt"=>$xmlvo1->value('/content/cover'.'_alt'),
   );
   $tpl->newBlock("meals");
   $tpl->assign($data);
@@ -156,6 +165,7 @@ while($row = @sql_fetch_assoc($res)){
     $cover = $xmlvo1->value('/content/cover'.$i);
     $data2 = array(
       "img"=>!empty($cover) ? $CFG->url_web."archive/images/meal/".$cover : '',
+      "img_alt"=>$xmlvo1->value('/content/cover'.$i.'_alt'),
     );
     $tpl->newBlock("meals_imgs");
     $tpl->assign($data2);
@@ -184,15 +194,19 @@ while($row = @sql_fetch_assoc($res)){
 
 
 // ENVIRONMENT 店內寫真
+$s3data_video_active = nl2br($xmlvo->value('/content/s3data_video_active'));
 $data = [
   's3data_title_en' => nl2br($xmlvo->value('/content/s3data_title_en')),
   's3data_title_ch' => nl2br($xmlvo->value('/content/s3data_title_ch')),
+  's3data_video_active' => !empty($s3data_video_active) ? 'true' : 'false',
+  's3data_video' => $xmlvo->value('/content/s3data_video'),
 ];
 $tpl->assignGlobal($data);
 // ENVIRONMENT IMG
 for($i=1;$i<=10;$i++) {
     $img = $xmlvo->value('/content/s3data_img'.$i);
     $data['img'] = $img ? $CFG->url_web."archive/images/s3data_img/".$img : '';
+    $data['img_alt'] = $xmlvo->value('/content/s3data_img'.$i.'_alt');
     $data['type'] = $xmlvo->value('/content/s3data_type'.$i);
     $data['video'] = $xmlvo->value('/content/s3data_video'.$i);
 
@@ -210,6 +224,7 @@ $tpl->assignGlobal($data);
 for($i=1;$i<=10;$i++) {
     $img = $xmlvo->value('/content/s4data_img'.$i);
     $data['img'] = $img ? $CFG->url_web."archive/images/s4data_img/".$img : '';
+    $data['img_alt'] = $xmlvo->value('/content/s4data_img'.$i.'_alt');
     $data['title'] = nl2br($xmlvo->value('/content/s4data_title'.$i));
     $data['content'] = nl2br($xmlvo->value('/content/s4data_content'.$i));
 
@@ -236,6 +251,7 @@ while($row = @sql_fetch_assoc($res)){
     // "catename"=>$row["catename"],
     "date"=>$row["createdate"],
     "img"=>$CFG->url_web."archive/images/news/".$xmlvo1->value('/content/cover'),
+    "img_alt"=>$xmlvo1->value('/content/cover'.'_alt'),
     "title"=>nl2br($row["title"]),
     "subtitle"=>nl2br($row["summary"]),
     "content"=>htmlSubString(strip_tags($row["content"],40)),

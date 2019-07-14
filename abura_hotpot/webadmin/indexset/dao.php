@@ -16,13 +16,16 @@ class main extends controller {
         // Banner
         $this->_xmls['s1data_title_en'] = array('type'=>'textarea', 'style'=>'textarea_small_height');
         // $this->_xmls['s1data_title_ch'] = array('type'=>'textarea', 'style'=>'textarea_small_height');
+        // Banner VIDEO
+        $this->_xmls['s1data_video_active'] = array('type'=>'checkbox');
+        $this->_xmls['s1data_video'] = array('type'=>'');
         // Banner IMG
         for($i=1;$i<=5;$i++) {
             $this->_xmls['s1_title'.$i] = array('type'=>'textarea', 'style'=>'');
             $this->_xmls['dsk'.$i] = array('type'=>'img','set'=> $CFG->indexset);
             $this->_xmls['mbl'.$i] = array('type'=>'img','set'=> $CFG->indexset_mbl);
-            $this->_xmls['type'.$i] = array('type'=>'checkbox');
-            $this->_xmls['video'.$i] = array('type'=>'');
+            $this->_xmls['dsk'.$i.'_alt'] = array('type'=>'');
+            $this->_xmls['mbl'.$i.'_alt'] = array('type'=>'');
         }
 
         // STORY 會社介紹
@@ -33,6 +36,7 @@ class main extends controller {
         $this->_xmls['s21data_intro_content'] = array('type'=>'textarea', 'style'=>'');
         for($i=1;$i<=3;$i++) {
             $this->_xmls['s21data_img'.$i] = array('type'=>'img','set'=> $CFG->s21data_img);
+            $this->_xmls['s21data_img'.$i.'_alt'] = array('type'=>'');
         }
 
         // MENU 味自慢集
@@ -44,13 +48,18 @@ class main extends controller {
         $this->_xmls['s23data_title_ch'] = array('type'=>'textarea', 'style'=>'textarea_small_height');
         $this->_xmls['s23data_popupNote'] = array('type'=>'');
         $this->_xmls['s23data_popupNotenote'] = array('type'=>'textarea', 'style'=>'textarea_small_height');
+        $this->_xmls['s23data_priceNote'] = array('type'=>'textarea', 'style'=>'textarea_small_height');
 
         // ENVIRONMENT 店內寫真
         $this->_xmls['s3data_title_en'] = array('type'=>'textarea', 'style'=>'textarea_small_height');
         $this->_xmls['s3data_title_ch'] = array('type'=>'textarea', 'style'=>'textarea_small_height');
+        // Banner VIDEO
+        $this->_xmls['s3data_video_active'] = array('type'=>'checkbox');
+        $this->_xmls['s3data_video'] = array('type'=>'');
         // ENVIRONMENT IMG
         for($i=1;$i<=10;$i++) {
             $this->_xmls['s3data_img'.$i] = array('type'=>'img','set'=> $CFG->s3data_img);
+            $this->_xmls['s3data_img'.$i.'_alt'] = array('type'=>'');
             $this->_xmls['s3data_type'.$i] = array('type'=>'checkbox');
             $this->_xmls['s3data_video'.$i] = array('type'=>'');
         }
@@ -62,6 +71,7 @@ class main extends controller {
         // ENVIRONMENT IMG
         for($i=1;$i<=5;$i++) {
             $this->_xmls['s4data_img'.$i] = array('type'=>'img','set'=> $CFG->s4data_img);
+            $this->_xmls['s4data_img'.$i.'_alt'] = array('type'=>'');
             $this->_xmls['s4data_title'.$i] = array('type'=>'textarea', 'style'=>'textarea_small_height');
             $this->_xmls['s4data_content'.$i] = array('type'=>'textarea', 'style'=>'');
         }

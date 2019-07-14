@@ -19,13 +19,15 @@
           {
             subtitle: `{subtitle}`,
             img: '{img}',
-            imgMbl: '{imgMbl}'
+            imgMbl: '{imgMbl}',
+            img_alt: '{img_alt}',
+            imgMbl_alt: '{imgMbl_alt}',
           },
           <!-- END BLOCK : banner -->
         ],
         video:{
-          active: true,
-          src: 'video/video.mp4'
+          active: {s1data_video_active},
+          src: '{s1data_video}'
         }
       };
 
@@ -61,6 +63,7 @@
                     <!-- START BLOCK : items -->
                     {
                       img: '{img}',
+                      img_alt: '{img_alt}',
                       name: `{name}`,
                       note: `{note}`,
                       price: `{price}`
@@ -79,12 +82,13 @@
           popupNote: {
             title: '{s23data_popupNote}',
             note: `{s23data_popupNotenote}`,
-            priceNote: `以上不含10%服務費`
+            priceNote: `{s23data_priceNote}`
           },
           swiper: [
             <!-- START BLOCK : meals -->
             {
               nameImg: '{nameImg}',
+              nameImg_alt: '{nameImg_alt}',
               name: '{name}',
               type: `{type}`,
               price: '{price}',
@@ -124,8 +128,8 @@
           <!-- END BLOCK : s3data_img -->
         ],
         video:{
-          active: true,
-          src: 'video/video.mp4'
+          active: {s3data_video_active},
+          src: '{s3data_video}'
         }
       };
 
@@ -135,6 +139,7 @@
           <!-- START BLOCK : s4data_img -->
           {
             img: '{img}',
+            img_alt: '{img_alt}',
             title: `{title}`,
             content: `{content}`
           },
@@ -149,6 +154,7 @@
           {
             date: '{date}',
             img: '{img}',
+            img_alt: '{img_alt}',
             title: `{title}`,
             subtitle: `{subtitle}`,
             content: `{content}`,

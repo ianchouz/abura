@@ -39,6 +39,7 @@ class news extends controller {
 
         ##XML欄位名稱=欄位性質(img/file;editor/textarea,空白表純文字)
         $this->_xmls['cover'] = array('type'=>'img','set'=> $this->cfg);
+        $this->_xmls['cover'.'_alt'] = array('type'=>'');
         //$this->_xmls['cover_large'] = array('type'=>'img','set'=> $this->cfg['cover_large']);
         //$this->_xmls['filename1'] = array('type'=>'file');
 

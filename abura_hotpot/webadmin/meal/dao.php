@@ -30,8 +30,10 @@ class meal extends controller {
         $this->_cols['type'] = array('d4'=> null, 'type'=>'textarea', 'style'=>'textarea_small_height');
         $this->_cols['price'] = array('d4'=> null, 'type'=>'');
         $this->_xmls['cover'] = array('type'=>'img','set'=> $CFG->meal_cover);
+        $this->_xmls['cover'.'_alt'] = array('type'=>'');
         for($i=1;$i<=5;$i++) {
             $this->_xmls['cover'.$i] = array('type'=>'img','set'=> $CFG->meal);
+            $this->_xmls['cover'.$i.'_alt'] = array('type'=>'');
         }
         $this->_xmls['broth'] = array('d4'=> null, 'type'=>'');
         for($i=1;$i<=3;$i++) {
