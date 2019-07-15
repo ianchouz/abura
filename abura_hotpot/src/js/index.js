@@ -63,7 +63,8 @@ const vm = new Vue({
       // console.log([...theSwiper.slides]);
       [...theSwiper.slides].forEach((item, index) => {
         item.querySelector('img').className = 'lazyload';
-        item.querySelector('img').dataset.src = theImgs[index];
+        item.querySelector('img').dataset.src = theImgs[index].img;
+        item.querySelector('img').alt = theImgs[index].img_alt;
       });
     }
   },
