@@ -486,22 +486,24 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper s4__swiper-wrapper">
               <!-- Slides -->
-              <div v-for="data in s4Data.swiper" class="swiper-slide s4__swiper-slide">
-                <div class="intro-item">
-                  <div class="img">
-                    <div class="img-inner">
-                      <img class="swiper-lazy" :data-src="data.img" :alt="data.img_alt" />
+              <template v-for="data in s4Data.swiper">
+                <div v-if="data.img" class="swiper-slide s4__swiper-slide">
+                  <div class="intro-item">
+                    <div class="img">
+                      <div class="img-inner">
+                        <img class="swiper-lazy" :data-src="data.img" :alt="data.img_alt" />
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="intro-wrapper">
-                    <div class="group">
-                      <div class="title fz-22 fz-mbl-14 ls-30 ls-mbl-20" v-html="data.title"></div>
-                      <div class="content fz-18 fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2" v-html="data.content"></div>
+                    <div class="intro-wrapper">
+                      <div class="group">
+                        <div class="title fz-22 fz-mbl-14 ls-30 ls-mbl-20" v-html="data.title"></div>
+                        <div class="content fz-18 fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2" v-html="data.content"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </template>
             </div>
 
             <!-- If we need navigation buttons -->
