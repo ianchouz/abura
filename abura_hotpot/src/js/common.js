@@ -24,6 +24,15 @@ const vueMixins = {
   data: {
     targetOffsetTop: 0
   },
+  computed: {
+    windowSize() {
+      if (window.matchMedia(bkpDsk).matches) {
+        return 'dsk';
+      } else {
+        return 'mbl';
+      }
+    }
+  },
   methods: {
     showNavMenu() {
       // $id('commonHeader').classList.toggle('nav-menu-open');
@@ -47,7 +56,10 @@ const vueMixins = {
       const t = document.documentElement.scrollTop || document.body.scrollTop;
 
       if (t < $id('scrollDownAnchor').offsetTop) {
-        window.scrollTo(0, t + Math.ceil(($id('scrollDownAnchor').offsetTop - t) / 8));
+        window.scrollTo(
+          0,
+          t + Math.ceil(($id('scrollDownAnchor').offsetTop - t) / 8)
+        );
         window.requestAnimationFrame(this.scrollToNext);
       }
     },
@@ -78,14 +90,9 @@ const vueMixins = {
       return value.replace('<br />', ' ');
     }
   },
-  computed: {
-    windowSize() {
-      if (window.matchMedia(bkpDsk).matches) {
-        return 'dsk';
-      } else {
-        return 'mbl';
-      }
-    }
+
+  mounted() {
+    changeLogo();
   }
 };
 
@@ -102,7 +109,8 @@ const changeLogo = function() {
 };
 
 window.addEventListener('load', function() {
-  changeLogo();
+  // changeLogo();
+  $id('fadeInMask').classList.add('loaded');
 });
 window.addEventListener('scroll', function() {
   changeLogo();

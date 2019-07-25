@@ -193,14 +193,27 @@
         </div>
 
         <!-- Slider main container -->
-        <div :class="['swiper-container s1__swiper-container', {'d-n': s1Data.video.active && windowSize === 'dsk'}]">
+        <div
+          :class="['swiper-container s1__swiper-container', {'d-n': s1Data.video.active && windowSize === 'dsk'}]"
+        >
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper s1__swiper-wrapper">
             <!-- Slides -->
-            <div v-for="data in s1Data.swiper" class="swiper-slide s1__swiper-slide">
+            <div
+              v-for="data in s1Data.swiper"
+              class="swiper-slide s1__swiper-slide"
+            >
               <div class="bg">
-                <img class="swiper-lazy dsk" :data-src="data.img" :alt="data.img_alt" />
-                <img class="swiper-lazy mbl" :data-src="data.imgMbl" :alt="data.imgMbl_alt" />
+                <img
+                  class="swiper-lazy dsk"
+                  :data-src="data.img"
+                  :alt="data.img_alt"
+                />
+                <img
+                  class="swiper-lazy mbl"
+                  :data-src="data.imgMbl"
+                  :alt="data.imgMbl_alt"
+                />
               </div>
 
               <p
@@ -213,7 +226,10 @@
           <div class="swiper-pagination s1__swiper-pagination"></div>
         </div>
 
-        <h2 class="section1__title fz-80-vw fz-mbl-28-vw lh-11 c-p-1" v-html="s1Data.title"></h2>
+        <h2
+          class="section1__title fz-80-vw fz-mbl-28-vw lh-11 c-p-1"
+          v-html="s1Data.title"
+        ></h2>
 
         <div id="scrollDownBtn" class="scroll-down dsk" @click="scrollToNext">
           <div class="inner"></div>
@@ -239,10 +255,17 @@
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper s2-1__swiper-wrapper">
                 <!-- Slides -->
-                <div v-for="data in s2Data.row1.swiper" class="swiper-slide s2-1__swiper-slide">
+                <div
+                  v-for="data in s2Data.row1.swiper"
+                  class="swiper-slide s2-1__swiper-slide"
+                >
                   <div class="img">
                     <div class="img-inner">
-                      <img class="swiper-lazy" :data-src="data.img" :alt="data.img_alt" />
+                      <img
+                        class="swiper-lazy"
+                        :data-src="data.img"
+                        :alt="data.img_alt"
+                      />
                     </div>
                   </div>
                 </div>
@@ -259,7 +282,10 @@
                   class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
                   v-html="s2Data.row1.title.en"
                 ></div>
-                <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row1.title.ch"></div>
+                <div
+                  class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100"
+                  v-html="s2Data.row1.title.ch"
+                ></div>
               </div>
             </h2>
 
@@ -289,9 +315,16 @@
           <!-- ===== dsk ===== -->
           <div class="img-wrapper dsk">
             <template v-for="(img, index) in s2Data.row2.menus">
-              <div :class="['img', {active: s2row2ImgIndex === index}]" @click="showPopup('menu')">
+              <div
+                :class="['img', {active: s2row2ImgIndex === index}]"
+                @click="showPopup('menu')"
+              >
                 <div class="img-inner">
-                  <img class="lazyload" :data-src="img.imgs[0].img" :alt="img.imgs[0].img_alt" />
+                  <img
+                    class="lazyload"
+                    :data-src="img.imgs[0].img"
+                    :alt="img.imgs[0].img_alt"
+                  />
                 </div>
               </div>
             </template>
@@ -300,8 +333,14 @@
           <div class="title-wrapper dsk bc-g-3">
             <div class="title-wrapper-inner">
               <h2 class="title-group">
-                <div class="title-en fz-42 lh-12 ls-20 c-fff custom-underline" v-html="s2Data.row2.title.en"></div>
-                <div class="title-ch fz-22 c-fff ls-140" v-html="s2Data.row2.title.ch"></div>
+                <div
+                  class="title-en fz-42 lh-12 ls-20 c-fff custom-underline"
+                  v-html="s2Data.row2.title.en"
+                ></div>
+                <div
+                  class="title-ch fz-22 c-fff ls-140"
+                  v-html="s2Data.row2.title.ch"
+                ></div>
               </h2>
 
               <div class="js-scrollbar menu-name-group">
@@ -324,7 +363,10 @@
               class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
               v-html="s2Data.row2.title.en"
             ></div>
-            <div class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100" v-html="s2Data.row2.title.ch"></div>
+            <div
+              class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100"
+              v-html="s2Data.row2.title.ch"
+            ></div>
           </h2>
           <!-- Slider main container -->
           <div class="swiper-container s2-2__swiper-container mbl">
@@ -338,7 +380,11 @@
               >
                 <div class="img">
                   <div class="img-inner">
-                    <img class="swiper-lazy" :data-src="menu.imgs[0].img" :alt="menu.imgs[0].img_alt" />
+                    <img
+                      class="swiper-lazy"
+                      :data-src="menu.imgs[0].img"
+                      :alt="menu.imgs[0].img_alt"
+                    />
                   </div>
                 </div>
 
@@ -348,8 +394,12 @@
 
             <!-- If we need navigation buttons -->
             <div class="s2-2__swiper-button-group bc-g-3">
-              <div class="swiper-button-prev s2-2__swiper-button s2-2__swiper-button-prev"></div>
-              <div class="swiper-button-next s2-2__swiper-button s2-2__swiper-button-next"></div>
+              <div
+                class="swiper-button-prev s2-2__swiper-button s2-2__swiper-button-prev"
+              ></div>
+              <div
+                class="swiper-button-next s2-2__swiper-button s2-2__swiper-button-next"
+              ></div>
             </div>
           </div>
           <!-- ===== mbl ===== -->
@@ -364,7 +414,10 @@
               class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-10 custom-underline"
               v-html="s2Data.row3.title.en"
             ></div>
-            <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s2Data.row3.title.ch"></div>
+            <div
+              class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+              v-html="s2Data.row3.title.ch"
+            ></div>
           </h2>
 
           <div class="s2-3__swiper-outer">
@@ -373,7 +426,10 @@
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper s2-3__swiper-wrapper">
                 <!-- Slides -->
-                <div v-for="(set, index) in s2Data.row3.swiper" class="swiper-slide s2-3__swiper-slide">
+                <div
+                  v-for="(set, index) in s2Data.row3.swiper"
+                  class="swiper-slide s2-3__swiper-slide"
+                >
                   <div
                     :class="['set-item', {active: s2row3SwiperIndex === index}]"
                     @mouseenter="hoverChangeSet($event, index)"
@@ -381,13 +437,21 @@
                   >
                     <div class="group">
                       <div class="name-img">
-                        <img class="swiper-lazy" :data-src="set.nameImg" :alt="set.nameImg_alt" />
+                        <img
+                          class="swiper-lazy"
+                          :data-src="set.nameImg"
+                          :alt="set.nameImg_alt"
+                        />
                       </div>
 
-                      <div class="type fz-20 fz-mbl-14 ls-15 ls-mbl-10"><% `{ ${ set.type } }` %></div>
+                      <div class="type fz-20 fz-mbl-14 ls-15 ls-mbl-10">
+                        <% `{ ${ set.type } }` %>
+                      </div>
                     </div>
 
-                    <div class="price fz-32 fz-mbl-18 ls-15 ls-mbl-10 bc-fff"><% `NT.${ set.price }` %></div>
+                    <div class="price fz-32 fz-mbl-18 ls-15 ls-mbl-10 bc-fff">
+                      <% `NT.${ set.price }` %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -397,11 +461,17 @@
 
             <!-- If we need navigation buttons -->
             <div class="s2-3__swiper-button-group">
-              <div class="swiper-button-prev s2-3__swiper-button s2-3__swiper-button-prev"></div>
+              <div
+                class="swiper-button-prev s2-3__swiper-button s2-3__swiper-button-prev"
+              ></div>
               <div class="line mbl"></div>
-              <div class="swiper-button-next s2-3__swiper-button s2-3__swiper-button-next"></div>
+              <div
+                class="swiper-button-next s2-3__swiper-button s2-3__swiper-button-next"
+              ></div>
               <!-- If we need pagination -->
-              <div class="swiper-pagination s2-3__swiper-pagination mbl fz-mbl-14 ls-05 c-g-1"></div>
+              <div
+                class="swiper-pagination s2-3__swiper-pagination mbl fz-mbl-14 ls-05 c-g-1"
+              ></div>
             </div>
 
             <div id="s2_3BorderDecoration" class="border-decoration">
@@ -428,15 +498,24 @@
           </video>
         </div>
 
-        <div :class="['s3__swiper-outer', {'d-n': s3Data.video.active && windowSize === 'dsk'}]">
+        <div
+          :class="['s3__swiper-outer', {'d-n': s3Data.video.active && windowSize === 'dsk'}]"
+        >
           <!-- Slider main container -->
           <div class="swiper-container s3__swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper s3__swiper-wrapper">
               <!-- Slides -->
-              <div v-for="(img, index) in s3Data.swiper" class="swiper-slide s3__swiper-slide">
+              <div
+                v-for="(img, index) in s3Data.swiper"
+                class="swiper-slide s3__swiper-slide"
+              >
                 <div class="bg">
-                  <img class="swiper-lazy" :data-src="img.img" :alt="img.img_alt" />
+                  <img
+                    class="swiper-lazy"
+                    :data-src="img.img"
+                    :alt="img.img_alt"
+                  />
                 </div>
               </div>
             </div>
@@ -446,17 +525,25 @@
 
           <!-- If we need navigation buttons -->
           <div class="s3__swiper-button-group">
-            <div class="swiper-button-prev s3__swiper-button s3__swiper-button-prev"></div>
-            <div class="swiper-button-next s3__swiper-button s3__swiper-button-next"></div>
+            <div
+              class="swiper-button-prev s3__swiper-button s3__swiper-button-prev"
+            ></div>
+            <div
+              class="swiper-button-next s3__swiper-button s3__swiper-button-next"
+            ></div>
           </div>
         </div>
 
         <div class="title-wrapper">
-          <div :class="['num-wrapper fz-124 fz-mbl-26 c-p-1', {'d-n': s3Data.video.active && windowSize === 'dsk'}]">
+          <div
+            :class="['num-wrapper fz-124 fz-mbl-26 c-p-1', {'d-n': s3Data.video.active && windowSize === 'dsk'}]"
+          >
             <span>0</span>
             <div class="group">
               <div id="pageClock" class="group-inner">
-                <span v-for="(data, index) in s3Data.swiper" class="num"><% index + 1 %></span>
+                <span v-for="(data, index) in s3Data.swiper" class="num"
+                  ><% index + 1 %></span
+                >
               </div>
             </div>
           </div>
@@ -466,7 +553,10 @@
               class="title-en c-fff fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
               v-html="s3Data.title.en"
             ></div>
-            <div class="title-ch c-fff fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s3Data.title.ch"></div>
+            <div
+              class="title-ch c-fff fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+              v-html="s3Data.title.ch"
+            ></div>
           </h2>
         </div>
       </section>
@@ -476,8 +566,14 @@
 
       <section class="section4">
         <h2 class="title-wrapper">
-          <div class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline" v-html="s4Data.title.en"></div>
-          <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s4Data.title.ch"></div>
+          <div
+            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
+            v-html="s4Data.title.en"
+          ></div>
+          <div
+            class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+            v-html="s4Data.title.ch"
+          ></div>
         </h2>
 
         <div class="s4__swiper-outer">
@@ -491,14 +587,24 @@
                   <div class="intro-item">
                     <div class="img">
                       <div class="img-inner">
-                        <img class="swiper-lazy" :data-src="data.img" :alt="data.img_alt" />
+                        <img
+                          class="swiper-lazy"
+                          :data-src="data.img"
+                          :alt="data.img_alt"
+                        />
                       </div>
                     </div>
 
                     <div class="intro-wrapper">
                       <div class="group">
-                        <div class="title fz-22 fz-mbl-14 ls-30 ls-mbl-20" v-html="data.title"></div>
-                        <div class="content fz-18 fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2" v-html="data.content"></div>
+                        <div
+                          class="title fz-22 fz-mbl-14 ls-30 ls-mbl-20"
+                          v-html="data.title"
+                        ></div>
+                        <div
+                          class="content fz-18 fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2"
+                          v-html="data.content"
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -507,10 +613,14 @@
             </div>
 
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev s4__swiper-button s4__swiper-button-prev">
+            <div
+              class="swiper-button-prev s4__swiper-button s4__swiper-button-prev"
+            >
               <p class="text fz-16 fz-mbl-12 ls-25 ls-mbl-15 c-fff">PREV</p>
             </div>
-            <div class="swiper-button-next s4__swiper-button s4__swiper-button-next">
+            <div
+              class="swiper-button-next s4__swiper-button s4__swiper-button-next"
+            >
               <p class="text fz-16 fz-mbl-12 ls-25 ls-mbl-15 c-fff">NEXT</p>
             </div>
           </div>
@@ -531,8 +641,14 @@
 
       <section class="section5">
         <h2 class="title-wrapper">
-          <div class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline" v-html="s5Data.title.en"></div>
-          <div class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100" v-html="s5Data.title.ch"></div>
+          <div
+            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
+            v-html="s5Data.title.en"
+          ></div>
+          <div
+            class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+            v-html="s5Data.title.ch"
+          ></div>
         </h2>
 
         <div class="news-wrapper swiper-container s5__swiper-container">
@@ -558,15 +674,24 @@
                     <p class="text fz-14 ls-15 c-p-1">LEARN MORE</p>
                   </div>
 
-                  <div v-if="item.latestTag" class="latest-tag fz-20-vw fz-mbl-14 ls-20 ls-mbl-15 fw-200 bc-p-1 c-fff">
+                  <div
+                    v-if="item.latestTag"
+                    class="latest-tag fz-20-vw fz-mbl-14 ls-20 ls-mbl-15 fw-200 bc-p-1 c-fff"
+                  >
                     最新ニュース
                   </div>
                 </div>
 
                 <div class="intro-wrapper">
                   <div class="group">
-                    <p class="date fz-14 fz-mbl-12 ls-15 ls-mbl-10 c-p-1 fs-italic" v-html="item.date"></p>
-                    <h3 class="title fz-22 fz-mbl-14 ls-45 ls-mbl-25" v-html="item.title"></h3>
+                    <p
+                      class="date fz-14 fz-mbl-12 ls-15 ls-mbl-10 c-p-1 fs-italic"
+                      v-html="item.date"
+                    ></p>
+                    <h3
+                      class="title fz-22 fz-mbl-14 ls-45 ls-mbl-25"
+                      v-html="item.title"
+                    ></h3>
                   </div>
                   <p
                     class="subtitle js-clamp fz-18 fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2"
@@ -583,21 +708,36 @@
       </section>
 
       <!-- menuPopup -->
-      <popup-wrapper id="menuPopup" :menus="s2Data.row2.menus[s2row2ImgIndex]" class="menu-popup">
+      <popup-wrapper
+        id="menuPopup"
+        :menus="s2Data.row2.menus[s2row2ImgIndex]"
+        class="menu-popup"
+      >
         <template v-slot:menu-body-slot="parentProps">
           <menu-body :data-from-parent="parentProps"></menu-body>
         </template>
       </popup-wrapper>
 
       <!-- setPopup -->
-      <popup-wrapper id="setPopup" :menus="s2Data.row3.swiper[s2row3SwiperIndex]" class="set-popup">
+      <popup-wrapper
+        id="setPopup"
+        :menus="s2Data.row3.swiper[s2row3SwiperIndex]"
+        class="set-popup"
+      >
         <template v-slot:set-body-slot="parentProps">
-          <set-body :data-from-parent="parentProps" :popup-note="s2Data.row3.popupNote"></set-body>
+          <set-body
+            :data-from-parent="parentProps"
+            :popup-note="s2Data.row3.popupNote"
+          ></set-body>
         </template>
       </popup-wrapper>
 
       <!-- newsPopup -->
-      <popup-wrapper id="newsPopup" :news="s5DataNewsSwitch[newsIndex]" class="news-popup">
+      <popup-wrapper
+        id="newsPopup"
+        :news="s5DataNewsSwitch[newsIndex]"
+        class="news-popup"
+      >
         <template v-slot:news-body-slot="parentProps">
           <news-body :data-from-parent="parentProps"></news-body>
         </template>
@@ -606,6 +746,8 @@
       <!-- footer -->
       <div id="contactAnchor"></div>
       <!-- INCLUDESCRIPT BLOCK : common_footer.php -->
+
+      <div id="fadeInMask" class="fade-in-mask bc-g-6"></div>
     </main>
 
     <!-- INCLUDESCRIPT BLOCK : common_script.php -->
