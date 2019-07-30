@@ -69,10 +69,13 @@ while($row = @sql_fetch_assoc($res)){
 	$data["name"] = $row["catename"];
 	$tpl->newBlock("menus");
 	$tpl->assign($data);
-  $data2 = [];
   for($i=1;$i<=5;$i++) {
-      $data2["img"] = $CFG->url_web."archive/images/product_cate/".$xmlvo1->value('/content/cover'.$i);
+      $data2 = array();
+      $img = $xmlvo1->value('/content/cover'.$i);
+      $data2['img'] = $img ? $CFG->url_web."archive/images/product_cate/".$img : '';
       $data2['img_alt'] = $xmlvo1->value('/content/cover'.$i.'_alt');
+      if (!empty($img)) {
+      };
     	$tpl->newBlock("menus_imgs");
     	$tpl->assign($data2);
   }
@@ -160,7 +163,6 @@ while($row = @sql_fetch_assoc($res)){
   $tpl->newBlock("meals");
   $tpl->assign($data);
 
-  $data2 = [];
   for($i=1;$i<=5;$i++) {
     $cover = $xmlvo1->value('/content/cover'.$i);
     $data2 = array(
@@ -247,10 +249,11 @@ $res = @sql_query($sql);
 while($row = @sql_fetch_assoc($res)){
 	$xmlvo1 = new parseXML($row['imagexml']);
 
+  $img = $xmlvo1->value('/content/cover');
 	$data = array(
     // "catename"=>$row["catename"],
     "date"=>$row["createdate"],
-    "img"=>$CFG->url_web."archive/images/news/".$xmlvo1->value('/content/cover'),
+    "img"=>!empty($img) ? $CFG->url_web."archive/images/news/".$img : '',
     "img_alt"=>$xmlvo1->value('/content/cover'.'_alt'),
     "title"=>nl2br($row["title"]),
     "subtitle"=>nl2br($row["summary"]),

@@ -34,6 +34,29 @@ while($cate = @sql_fetch_assoc($resc)){
   }
 }
 
+//取得預設標題
+$nowpage = substr($_SERVER['PHP_SELF'],strrpos($_SERVER['PHP_SELF'], "/")+1);
+$sql = "select * from ".$CFG->tbext."webconfig where id='header_info'";
+$query = @sql_query($sql);
+if ($query != null){
+    $arr_header = @sql_fetch_array($query);
+    if ($arr_header!= null){
+        $xmlobj = new parseXML($arr_header["xmlcontent"]);
+        $default_endbodyscript = $xmlobj->value('/content/endbodyscript_tw');
+
+        if (!empty($pageid)){
+            $now_endbodyscript = $xmlobj->value('/content/'.$pageid.'/endbodyscript_tw');
+        }else if ($nowpage=="default.php" || $nowpage=="index.php"){
+            $now_endbodyscript = $xmlobj->value('/content/index_endbodyscript_tw');
+        }
+    }
+}
+
+$tpl -> assignGlobal(array(
+    "footerjs"=>$now_endbodyscript,
+    "default-footerjs"=>$default_endbodyscript,
+));
+
 
 $tpl -> printToScreen();
 ?>
