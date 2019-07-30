@@ -69,15 +69,24 @@ while($row = @sql_fetch_assoc($res)){
 	$data["name"] = $row["catename"];
 	$tpl->newBlock("menus");
 	$tpl->assign($data);
+  $hasimage = false;
   for($i=1;$i<=5;$i++) {
       $data2 = array();
       $img = $xmlvo1->value('/content/cover'.$i);
       $data2['img'] = $img ? $CFG->url_web."archive/images/product_cate/".$img : '';
       $data2['img_alt'] = $xmlvo1->value('/content/cover'.$i.'_alt');
       if (!empty($img)) {
+        	$tpl->newBlock("menus_imgs");
+        	$tpl->assign($data2);
+          $hasimage = true;
       };
-    	$tpl->newBlock("menus_imgs");
-    	$tpl->assign($data2);
+  }
+  if ($hasimage==false) {
+      $data2 = array();
+      $data2['img'] = '';
+      $data2['img_alt'] = '';
+      $tpl->newBlock("menus_imgs");
+      $tpl->assign($data2);
   }
   // 次分類 & 項目
   $sql = "SELECT * FROM ".$CFG->tbext."product_cate where inuse=1 and pid='$pid' order by seq asc";
