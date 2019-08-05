@@ -332,8 +332,9 @@ if (window.matchMedia(bkpMbl).matches) {
     },
     pagination: {
       el: '.s5__swiper-pagination',
-      type: 'bullets'
+      type: 'bullets',
       // dynamicBullets: true
+      clickable: true
     },
     spaceBetween: 100,
     // effect: 'fade',
