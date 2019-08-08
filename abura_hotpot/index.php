@@ -266,7 +266,8 @@ while($row = @sql_fetch_assoc($res)){
     "img_alt"=>$xmlvo1->value('/content/cover'.'_alt'),
     "title"=>nl2br($row["title"]),
     "subtitle"=>nl2br($row["summary"]),
-    "content"=>htmlSubString(strip_tags($row["content"],40)),
+    // "content"=>htmlSubString(strip_tags($row["content"],40)),
+    "content"=>$row["content"],
     "latestTag"=>!empty($row["latest"]) ? 'true' : 'false',
     "id"=>$row["id"],
 	);
