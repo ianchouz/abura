@@ -279,11 +279,11 @@
             <h2 class="main-title-wrapper bc-p-1">
               <div class="title-group">
                 <div
-                  class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
+                  class="title-en fz-42-vw fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
                   v-html="s2Data.row1.title.en"
                 ></div>
                 <div
-                  class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100"
+                  class="title-ch fz-22-vw fz-mbl-16 c-fff ls-140-vw ls-mbl-100"
                   v-html="s2Data.row1.title.ch"
                 ></div>
               </div>
@@ -291,11 +291,11 @@
 
             <div class="intro-wrapper">
               <h3
-                class="title fw-700 fz-30 fz-mbl-16 lh-17 lh-mbl-16 ls-20 ls-mbl-15"
+                class="title fw-700 fz-30-vw fz-mbl-16 lh-17 lh-mbl-16 ls-20 ls-mbl-15"
                 v-html="s2Data.row1.intro.title"
               ></h3>
               <p
-                class="content fz-18 fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2 ta-justify"
+                class="content fz-18-vw fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2 ta-justify"
                 v-html="s2Data.row1.intro.content"
               ></p>
             </div>
@@ -334,11 +334,11 @@
             <div class="title-wrapper-inner">
               <h2 class="title-group">
                 <div
-                  class="title-en fz-42 lh-12 ls-20 c-fff custom-underline"
+                  class="title-en fz-42-vw lh-12 ls-20 c-fff custom-underline"
                   v-html="s2Data.row2.title.en"
                 ></div>
                 <div
-                  class="title-ch fz-22 c-fff ls-140"
+                  class="title-ch fz-22-vw c-fff ls-140-vw"
                   v-html="s2Data.row2.title.ch"
                 ></div>
               </h2>
@@ -346,7 +346,7 @@
               <div class="js-scrollbar menu-name-group">
                 <div
                   v-for="(name, index) in s2Data.row2.menus"
-                  class="menu-name fz-20 ls-30"
+                  class="menu-name fz-20-vw ls-30"
                   @mouseenter="hoverChangeImg(index)"
                   @click="showPopup('menu')"
                 >
@@ -360,11 +360,11 @@
           <!-- ===== mbl ===== -->
           <h2 class="title-group mbl">
             <div
-              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
+              class="title-en fz-42-vw fz-mbl-24 lh-12 ls-20 ls-mbl-10 c-fff custom-underline"
               v-html="s2Data.row2.title.en"
             ></div>
             <div
-              class="title-ch fz-22 fz-mbl-16 c-fff ls-140 ls-mbl-100"
+              class="title-ch fz-22-vw fz-mbl-16 c-fff ls-140-vw ls-mbl-100"
               v-html="s2Data.row2.title.ch"
             ></div>
           </h2>
@@ -411,11 +411,11 @@
         <div class="section2__row-3">
           <h2 class="title-wrapper">
             <div
-              class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-10 custom-underline"
+              class="title-en fz-42-vw fz-mbl-24 lh-12 ls-20 ls-10 custom-underline"
               v-html="s2Data.row3.title.en"
             ></div>
             <div
-              class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+              class="title-ch fz-22-vw fz-mbl-16 ls-140-vw ls-mbl-100"
               v-html="s2Data.row3.title.ch"
             ></div>
           </h2>
@@ -449,7 +449,9 @@
                       </div>
                     </div>
 
-                    <div class="price fz-32 fz-mbl-18 ls-15 ls-mbl-10 bc-fff">
+                    <div
+                      class="price fz-32-vw fz-mbl-18 ls-15 ls-mbl-10 bc-fff"
+                    >
                       <% `NT.${ set.price }` %>
                     </div>
                   </div>
@@ -554,7 +556,7 @@
               v-html="s3Data.title.en"
             ></div>
             <div
-              class="title-ch c-fff fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+              class="title-ch c-fff fz-22 fz-mbl-16 ls-140-vw ls-mbl-100"
               v-html="s3Data.title.ch"
             ></div>
           </h2>
@@ -567,11 +569,11 @@
       <section class="section4">
         <h2 class="title-wrapper">
           <div
-            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
+            class="title-en fz-42-vw fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
             v-html="s4Data.title.en"
           ></div>
           <div
-            class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+            class="title-ch fz-22-vw fz-mbl-16 ls-140-vw ls-mbl-100"
             v-html="s4Data.title.ch"
           ></div>
         </h2>
@@ -598,11 +600,11 @@
                     <div class="intro-wrapper">
                       <div class="group">
                         <div
-                          class="title fz-22 fz-mbl-14 ls-30 ls-mbl-20"
+                          class="title fz-22-vw fz-mbl-14 ls-30 ls-mbl-20"
                           v-html="data.title"
                         ></div>
                         <div
-                          class="content fz-18 fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2"
+                          class="content fz-18-vw fz-mbl-14 lh-21 lh-14 ls-25 ls-40 c-g-2"
                           v-html="data.content"
                         ></div>
                       </div>
@@ -642,11 +644,11 @@
       <section class="section5">
         <h2 class="title-wrapper">
           <div
-            class="title-en fz-42 fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
+            class="title-en fz-42-vw fz-mbl-24 lh-12 ls-20 ls-mbl-10 custom-underline"
             v-html="s5Data.title.en"
           ></div>
           <div
-            class="title-ch fz-22 fz-mbl-16 ls-140 ls-mbl-100"
+            class="title-ch fz-22-vw fz-mbl-16 ls-140-vw ls-mbl-100"
             v-html="s5Data.title.ch"
           ></div>
         </h2>
@@ -689,12 +691,12 @@
                       v-html="item.date"
                     ></p>
                     <h3
-                      class="title fz-22 fz-mbl-14 ls-45 ls-mbl-25"
+                      class="title fz-22-vw fz-mbl-14 ls-45 ls-mbl-25"
                       v-html="item.title"
                     ></h3>
                   </div>
                   <p
-                    class="subtitle js-clamp fz-18 fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2"
+                    class="subtitle js-clamp fz-18-vw fz-mbl-14 lh-21 lh-mbl-14 ls-25 ls-mbl-40 c-g-2"
                     v-html="item.subtitle"
                   ></p>
                 </div>

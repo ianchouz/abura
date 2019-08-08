@@ -103,7 +103,7 @@
   <div class="popup__body popup__body-menu">
     <div :class="['tag-wrapper', {'d-n': tagQty === 1}]">
       <div v-for="(data, index) in dataFromParent.menus.menu"
-      :class="['tag-item fz-40 fz-mbl-20', {active: index === dataFromParent.popupTagIndex}]"
+      :class="['tag-item fz-40-vw fz-mbl-20', {active: index === dataFromParent.popupTagIndex}]"
       @click="dataFromParent.changeTagIndex(index)"
       v-html="data.tag"></div>
     </div>
@@ -166,14 +166,14 @@
       <div class="col-title">
         <div class="title-wrapper">
           <div class="set-name">
-            <p class="fz-50 fz-mbl-24 lh-12"><% dataFromParent.menus.name + dataFromParent.menus.type %></p>
+            <p class="fz-50-vw fz-mbl-24 lh-12"><% dataFromParent.menus.name + dataFromParent.menus.type %></p>
           </div>
           <div class="price-group">
             <div class="price">
-              <p class="fz-50 fz-mbl-28 ls-50 c-p-1"><% dataFromParent.menus.price %></p>
-              <span class="fz-30 fz-mbl-16 c-p-1">元</span>
+              <p class="fz-50-vw fz-mbl-28 ls-50 c-p-1"><% dataFromParent.menus.price %></p>
+              <span class="fz-30-vw fz-mbl-16 c-p-1">元</span>
             </div>
-            <p class="fz-22 fz-mbl-14 ls-65" v-html="popupNote.priceNote"></p>
+            <p class="fz-22-vw fz-mbl-14 ls-65" v-html="popupNote.priceNote"></p>
           </div>
         </div>
       </div>
@@ -182,8 +182,8 @@
           <!-- 湯底 -->
           <div class="content content-broth">
             <div class="content__title">
-              <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.broth.title %></p>
-              <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items.length | toChineseNum %>選一</p>
+              <p class="fz-40-vw fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.broth.title %></p>
+              <p class="note fz-24-vw fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items.length | toChineseNum %>選一</p>
             </div>
             <div class="item-wrapper">
 
@@ -206,12 +206,12 @@
 
           <div v-for="dish in dataFromParent.menus.otherDishes" class="content">
             <div class="content__title">
-              <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dish.title %></p>
+              <p class="fz-40-vw fz-mbl-16 ls-120 c-p-1"><% dish.title %></p>
               <p v-if="dish.chooseNum !== ''" class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dish.items.length | toChineseNum %>選<% dish.chooseNum | toChineseNum %></p>
             </div>
             <div class="item-wrapper">
               <div v-for="item in dish.items" class="item">
-                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
+                <h4 class="fz-24-vw fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
               </div>
             </div>
           </div>
@@ -251,8 +251,8 @@
         </div>
 
         <div class="note-wrapper">
-          <div class="title fz-34 fz-mbl-16 ls-100" v-html="popupNote.title"></div>
-          <div class="note fz-24 fz-mbl-12 ls-75 ls-mbl-25 lh-16" v-html="popupNote.note"></div>
+          <div class="title fz-34-vw fz-mbl-16 ls-100" v-html="popupNote.title"></div>
+          <div class="note fz-24-vw fz-mbl-12 ls-75 ls-mbl-25 lh-16" v-html="popupNote.note"></div>
         </div>
 
       </div>

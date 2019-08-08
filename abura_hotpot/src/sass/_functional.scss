@@ -60,7 +60,8 @@
   .fz-#{12 + $i * 2} {
     font-size: #{(12 + $i * 2) / 16}rem;
     &-vw {
-      font-size: #{(12 + $i * 2) / $vw-dsk * 100}vw;
+      // font-size: #{(12 + $i * 2) / $vw-dsk * 100}vw;
+      font-size: calc(12px + #{$i * 2 / $vw-dsk * 100}vw);
     }
   }
 }
@@ -145,6 +146,10 @@
 }
 .ls-140 {
   letter-spacing: 14px;
+
+  &-vw {
+    letter-spacing: 14 / $vw-dsk * 100vw;
+  }
 }
 .ls-300 {
   letter-spacing: 30px;

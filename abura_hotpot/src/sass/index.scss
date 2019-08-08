@@ -1638,8 +1638,9 @@
     top: calc(100% - #{vw-dsk(20)} - 5px);
     right: vw-dsk(-26);
 
-    width: vw-dsk(194);
-    height: vw-dsk(52);
+    // width: vw-dsk(194);
+    // height: vw-dsk(52);
+    padding: vw-dsk(16) vw-dsk(30);
   }
 
   // .section5
@@ -1713,11 +1714,12 @@
 
     .latest-tag {
       top: 100%;
-      right: vw-mbl(-20);
+      right: -20px;
       transform: translateY(-50%);
 
-      width: vw-mbl(130);
-      height: vw-mbl(34);
+      // width: vw-mbl(130);
+      // height: vw-mbl(34);
+      padding: 10px 16px;
     }
   }
 }

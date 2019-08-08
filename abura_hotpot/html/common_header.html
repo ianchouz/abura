@@ -2,7 +2,11 @@
   <a href="./" id="logo" class="logo">
     <h1>
       <img class="logo-main" src="images/logo.png" alt="{company_name}" />
-      <img class="logo-small" src="images/logo-small.png" alt="{company_name}" />
+      <img
+        class="logo-small"
+        src="images/logo-small.png"
+        alt="{company_name}"
+      />
     </h1>
   </a>
 
@@ -18,56 +22,98 @@
         <div class="icon">
           <img src="images/icon-menu.png" alt="" />
         </div>
-        <div class="title-en fz-38 fz-mbl-18-vw c-g-4" v-html="nowrap(s2Data.row1.title.en)"></div>
-        <div class="title-ch fz-18 fz-mbl-14 ls-25 c-p-1" v-html="s2Data.row1.title.ch"></div>
+        <div
+          class="title-en fz-38-vw fz-mbl-18-vw c-g-4"
+          v-html="nowrap(s2Data.row1.title.en)"
+        ></div>
+        <div
+          class="title-ch fz-18-vw fz-mbl-14 ls-25 c-p-1"
+          v-html="s2Data.row1.title.ch"
+        ></div>
       </h2>
 
       <h2 class="nav-item" @click="setTargetOffsetTop('menuAnchor')">
         <div class="icon">
           <img src="images/icon-menu.png" alt="" />
         </div>
-        <div class="title-en fz-38 fz-mbl-18-vw c-g-4" v-html="nowrap(s2Data.row2.title.en)"></div>
-        <div class="title-ch fz-18 fz-mbl-14 ls-25 c-p-1" v-html="s2Data.row2.title.ch"></div>
+        <div
+          class="title-en fz-38-vw fz-mbl-18-vw c-g-4"
+          v-html="nowrap(s2Data.row2.title.en)"
+        ></div>
+        <div
+          class="title-ch fz-18-vw fz-mbl-14 ls-25 c-p-1"
+          v-html="s2Data.row2.title.ch"
+        ></div>
       </h2>
 
       <h2 class="nav-item" @click="setTargetOffsetTop('setAnchor')">
         <div class="icon">
           <img src="images/icon-menu.png" alt="" />
         </div>
-        <div class="title-en fz-38 fz-mbl-18-vw c-g-4" v-html="nowrap(s2Data.row3.title.en)"></div>
-        <div class="title-ch fz-18 fz-mbl-14 ls-25 c-p-1" v-html="s2Data.row3.title.ch"></div>
+        <div
+          class="title-en fz-38-vw fz-mbl-18-vw c-g-4"
+          v-html="nowrap(s2Data.row3.title.en)"
+        ></div>
+        <div
+          class="title-ch fz-18-vw fz-mbl-14 ls-25 c-p-1"
+          v-html="s2Data.row3.title.ch"
+        ></div>
       </h2>
 
       <h2 class="nav-item" @click="setTargetOffsetTop('envAnchor')">
         <div class="icon">
           <img src="images/icon-menu.png" alt="" />
         </div>
-        <div class="title-en fz-38 fz-mbl-18-vw c-g-4" v-html="nowrap(s3Data.title.en)"></div>
-        <div class="title-ch fz-18 fz-mbl-14 ls-25 c-p-1" v-html="s3Data.title.ch"></div>
+        <div
+          class="title-en fz-38-vw fz-mbl-18-vw c-g-4"
+          v-html="nowrap(s3Data.title.en)"
+        ></div>
+        <div
+          class="title-ch fz-18-vw fz-mbl-14 ls-25 c-p-1"
+          v-html="s3Data.title.ch"
+        ></div>
       </h2>
 
       <h2 class="nav-item" @click="setTargetOffsetTop('recommendAnchor')">
         <div class="icon">
           <img src="images/icon-menu.png" alt="" />
         </div>
-        <div class="title-en fz-38 fz-mbl-18-vw c-g-4" v-html="nowrap(s4Data.title.en)"></div>
-        <div class="title-ch fz-18 fz-mbl-14 ls-25 c-p-1" v-html="s4Data.title.ch"></div>
+        <div
+          class="title-en fz-38-vw fz-mbl-18-vw c-g-4"
+          v-html="nowrap(s4Data.title.en)"
+        ></div>
+        <div
+          class="title-ch fz-18-vw fz-mbl-14 ls-25 c-p-1"
+          v-html="s4Data.title.ch"
+        ></div>
       </h2>
 
       <h2 class="nav-item" @click="setTargetOffsetTop('newsAnchor')">
         <div class="icon">
           <img src="images/icon-menu.png" alt="" />
         </div>
-        <div class="title-en fz-38 fz-mbl-18-vw c-g-4" v-html="nowrap(s5Data.title.en)"></div>
-        <div class="title-ch fz-18 fz-mbl-14 ls-25 c-p-1" v-html="s5Data.title.ch"></div>
+        <div
+          class="title-en fz-38-vw fz-mbl-18-vw c-g-4"
+          v-html="nowrap(s5Data.title.en)"
+        ></div>
+        <div
+          class="title-ch fz-18-vw fz-mbl-14 ls-25 c-p-1"
+          v-html="s5Data.title.ch"
+        ></div>
       </h2>
 
       <h2 class="nav-item" @click="setTargetOffsetTop('contactAnchor')">
         <div class="icon">
           <img src="images/icon-menu.png" alt="" />
         </div>
-        <div class="title-en fz-38 fz-mbl-18-vw c-g-4" v-html="nowrap(footerData.title.en)"></div>
-        <div class="title-ch fz-18 fz-mbl-14 ls-25 c-p-1" v-html="footerData.title.ch"></div>
+        <div
+          class="title-en fz-38-vw fz-mbl-18-vw c-g-4"
+          v-html="nowrap(footerData.title.en)"
+        ></div>
+        <div
+          class="title-ch fz-18-vw fz-mbl-14 ls-25 c-p-1"
+          v-html="footerData.title.ch"
+        ></div>
       </h2>
     </div>
   </nav>
