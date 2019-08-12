@@ -217,9 +217,29 @@
     }
   }
 
+  .btn-home {
+    display: flex;
+    align-items: center;
+
+    width: 190px;
+    height: 50px;
+
+    padding: 0 16px;
+
+    .icon-home {
+      margin-right: 12px;
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
   .copyright {
     color: rgba(#fff, 0.25);
     margin-top: 50px;
+
+    margin-bottom: 130px;
   }
 
   .go-top {
@@ -243,9 +263,9 @@
       }
     }
 
-    .copyright {
-      margin-top: 10px;
-    }
+    // .copyright {
+    //   margin-top: 10px;
+    // }
   }
   @include mq(mbl) {
     margin-right: initial;
@@ -318,6 +338,7 @@
 
     .copyright {
       margin-top: 16px;
+      margin-bottom: 50px;
     }
 
     .go-top {

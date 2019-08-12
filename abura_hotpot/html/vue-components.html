@@ -120,7 +120,7 @@
 
             <div class="title-wrapper">
               <p class="name fz-32-vw fz-mbl-18 lh-12" v-html="item.name"></p>
-              <p v-if="item.note !== ''" class="note fz-18-vw fz-mbl-14 c-g-2 lh-12 ls-40" v-html="item.note"></p>
+              <p v-if="item.note !== ''" class="note fz-18-vw fz-mbl-14 c-g-2 lh-15 ls-40" v-html="item.note"></p>
             </div>
 
             <div class="price-wrapper">
@@ -183,7 +183,7 @@
           <div class="content content-broth">
             <div class="content__title">
               <p class="fz-40-vw fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.broth.title %></p>
-              <p class="note fz-24-vw fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items.length | toChineseNum %>選一</p>
+              <p class="note fz-24-vw fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items | removeEmpty | toChineseNum %>選一</p>
             </div>
             <div class="item-wrapper">
 
@@ -216,38 +216,6 @@
             </div>
           </div>
 
-          <!-- <div class="content content-main">
-            <div class="content__title">
-              <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.main.title %></p>
-              <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.main.items.length | toChineseNum %>選一</p>
-            </div>
-            <div class="item-wrapper">
-              <div v-for="item in dataFromParent.menus.main.items" class="item">
-                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="content content-appetizer">
-            <div class="content__title fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.appetizer.title %></div>
-            <div class="item-wrapper">
-              <div v-for="item in dataFromParent.menus.appetizer.items" class="item">
-                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="content content-rice">
-            <div class="content__title">
-              <p class="fz-40 fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.rice.title %></p>
-              <p class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.rice.items.length | toChineseNum %>選一</p>
-            </div>
-            <div class="item-wrapper">
-              <div v-for="item in dataFromParent.menus.rice.items" class="item">
-                <h4 class="fz-24 fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
-              </div>
-            </div>
-          </div> -->
         </div>
 
         <div class="note-wrapper">
@@ -266,6 +234,15 @@
     template: '#set-body-template',
     props: { dataFromParent: Object, popupNote: Object },
     filters: {
+      removeEmpty(arr) {
+        arr.forEach((item, index) => {
+          if (item === '') {
+            // console.log(index);
+            arr.splice(index, 1);
+          }
+        });
+        return arr.length;
+      },
       toChineseNum(value) {
         // console.log(typeof value);
         switch (value.toString()) {

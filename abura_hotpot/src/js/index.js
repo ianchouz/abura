@@ -31,7 +31,9 @@ const vm = new Vue({
       this.newsIndex = index;
     },
     setTargetLeft() {
-      const targetLeft = document.querySelector('.set-item.active').getBoundingClientRect().left;
+      const targetLeft = document
+        .querySelector('.set-item.active')
+        .getBoundingClientRect().left;
       $id('s2_3BorderDecoration').style.left = `${targetLeft}px`;
     },
     showPopup(popupType) {
@@ -39,13 +41,17 @@ const vm = new Vue({
       if (popupType === 'menu') {
         $id('menuPopup').classList.add('active');
 
-        const nowSwiper = $id('menuPopup').querySelector('.popup-header__swiper-container').swiper;
+        const nowSwiper = $id('menuPopup').querySelector(
+          '.popup-header__swiper-container'
+        ).swiper;
         const nowImgs = this.s2Data.row2.menus[this.s2row2ImgIndex].imgs;
         this.changePopupSlidesImg(nowSwiper, nowImgs);
       } else if (popupType === 'set') {
         $id('setPopup').classList.add('active');
 
-        const nowSwiper = $id('setPopup').querySelector('.popup-header__swiper-container').swiper;
+        const nowSwiper = $id('setPopup').querySelector(
+          '.popup-header__swiper-container'
+        ).swiper;
         const nowImgs = this.s2Data.row3.swiper[this.s2row3SwiperIndex].imgs;
         // console.log(nowImgs);
 
@@ -126,6 +132,10 @@ const s2_1Swiper = new Swiper('.s2-1__swiper-container', {
     el: '.s2-1__swiper-pagination',
     type: 'bullets',
     clickable: true
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
   },
   speed: 1000,
   on: {
@@ -218,8 +228,12 @@ if (window.matchMedia(bkpDsk).matches) {
 
   // ======================================
   const s2_3SlideChange = function() {
-    const currentPagi = document.querySelector('.s2-3__swiper-pagination .swiper-pagination-current');
-    const totalPagi = document.querySelector('.s2-3__swiper-pagination .swiper-pagination-total');
+    const currentPagi = document.querySelector(
+      '.s2-3__swiper-pagination .swiper-pagination-current'
+    );
+    const totalPagi = document.querySelector(
+      '.s2-3__swiper-pagination .swiper-pagination-total'
+    );
 
     const arr = [currentPagi, totalPagi];
 
@@ -238,7 +252,9 @@ if (window.matchMedia(bkpDsk).matches) {
 
     // duplicate
     // console.log(document.querySelectorAll('.swiper-slide-duplicate'));
-    const duplicateSlides = document.querySelectorAll('.swiper-slide-duplicate');
+    const duplicateSlides = document.querySelectorAll(
+      '.swiper-slide-duplicate'
+    );
     duplicateSlides.forEach(item => {
       item.addEventListener('click', function() {
         vm.showPopup('set');
@@ -256,7 +272,8 @@ if (window.matchMedia(bkpDsk).matches) {
 // s3
 // swiper
 if (!s3Data.video.active || window.matchMedia(bkpMbl).matches) {
-  let pageClockOffsetTop = 0;
+  let unitsPageClockOffsetTop = 0,
+    tensPageClockOffsetTop = 0;
 
   const s3Swiper = new Swiper('.s3__swiper-container', {
     // Disable preloading of all images
@@ -280,15 +297,23 @@ if (!s3Data.video.active || window.matchMedia(bkpMbl).matches) {
     },
     speed: 800,
     on: {
-      init: function() {
-        // console.log('swiper initialized');
-        pageClockOffsetTop = $id('pageClock').children[this.activeIndex].offsetTop;
-        $id('pageClock').style.transform = `translateY(-${pageClockOffsetTop}px)`;
-      },
       slideChange: function() {
         // console.log('slideChange');
-        pageClockOffsetTop = $id('pageClock').children[this.activeIndex].offsetTop;
-        $id('pageClock').style.transform = `translateY(-${pageClockOffsetTop}px)`;
+        unitsPageClockOffsetTop = $id('pageClockUnits').children[
+          this.activeIndex
+        ].offsetTop;
+
+        tensPageClockOffsetTop = $id('pageClockTens').children[
+          Math.floor(this.activeIndex / 9)
+        ].offsetTop;
+
+        $id(
+          'pageClockUnits'
+        ).style.transform = `translateY(-${unitsPageClockOffsetTop}px)`;
+
+        $id(
+          'pageClockTens'
+        ).style.transform = `translateY(-${tensPageClockOffsetTop}px)`;
       }
     }
   });
@@ -368,9 +393,11 @@ if (window.matchMedia(bkpDsk).matches) {
 
   // ===================== s1
   const s1Tl = new TimelineMax({});
-  s1Tl.to('.section2__row-1 .main-title-wrapper', 0.001, { className: '+=show' }).to('#scrollDownBtn', 0.001, {
-    className: '+=hide'
-  });
+  s1Tl
+    .to('.section2__row-1 .main-title-wrapper', 0.001, { className: '+=show' })
+    .to('#scrollDownBtn', 0.001, {
+      className: '+=hide'
+    });
 
   new ScrollMagic.Scene({
     triggerElement: '#storyAnchor',
@@ -395,7 +422,13 @@ if (window.matchMedia(bkpDsk).matches) {
 
   // ===================== s4
   const s4Tl = new TimelineMax({});
-  s4Tl.fromTo('.bg-decoration-3 .img-2', 1, { yPercent: 10 }, { yPercent: -10 }, 0);
+  s4Tl.fromTo(
+    '.bg-decoration-3 .img-2',
+    1,
+    { yPercent: 10 },
+    { yPercent: -10 },
+    0
+  );
 
   new ScrollMagic.Scene({
     duration: '200%',
@@ -407,7 +440,13 @@ if (window.matchMedia(bkpDsk).matches) {
 
   // ===================== footer
   const footerTl = new TimelineMax({});
-  footerTl.fromTo('.bg-decoration-4-1 .img-2', 1, { yPercent: 10 }, { yPercent: 0 }, 0);
+  footerTl.fromTo(
+    '.bg-decoration-4-1 .img-2',
+    1,
+    { yPercent: 10 },
+    { yPercent: 0 },
+    0
+  );
 
   new ScrollMagic.Scene({
     duration: 400 + $id('commonFooter').offsetHeight,

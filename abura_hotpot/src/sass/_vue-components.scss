@@ -9,7 +9,10 @@
 
   padding: 120px 0;
   z-index: 1000;
-  overflow-y: auto;
+
+  // overflow-y: auto;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   //
   opacity: 0;
@@ -183,15 +186,22 @@
 
   .tag-wrapper {
     display: flex;
+    flex-wrap: wrap;
     padding-top: 140px;
-    padding-bottom: 90px;
+    padding-bottom: 90px - 50;
     border-bottom: 2px solid #000;
   }
 
   .tag-item {
-    width: 0;
-    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 33.333333%;
+    margin-bottom: 50px;
+
     text-align: center;
+
     cursor: pointer;
     //
     transition: 0.3s;
@@ -200,7 +210,12 @@
       color: $c-p-1;
     }
 
-    & + .tag-item {
+    // & + .tag-item {
+    //   border-left: 2px solid $c-g-5;
+    // }
+
+    &:nth-child(3n + 2),
+    &:nth-child(3n) {
       border-left: 2px solid $c-g-5;
     }
   }
@@ -403,14 +418,18 @@
             justify-content: space-between;
             text-align: center;
 
-            height: vw-dsk(190);
             width: 0;
             flex-grow: 1;
             padding: 0 vw-dsk(25);
           }
 
           .icon {
+            padding-bottom: vw-dsk(30);
+
             &.reverse {
+              padding-bottom: initial;
+              padding-top: vw-dsk(30);
+
               img {
                 transform: rotate(180deg);
               }
@@ -499,7 +518,7 @@
             }
 
             .item {
-              height: vw-mbl(100);
+              // height: vw-mbl(100);
               flex-grow: initial;
               width: 50%;
               padding: 0 vw-mbl(15);

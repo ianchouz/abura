@@ -199,28 +199,27 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper s1__swiper-wrapper">
             <!-- Slides -->
-            <div
-              v-for="data in s1Data.swiper"
-              class="swiper-slide s1__swiper-slide"
-            >
-              <div class="bg">
-                <img
-                  class="swiper-lazy dsk"
-                  :data-src="data.img"
-                  :alt="data.img_alt"
-                />
-                <img
-                  class="swiper-lazy mbl"
-                  :data-src="data.imgMbl"
-                  :alt="data.imgMbl_alt"
-                />
-              </div>
+            <template v-for="data in s1Data.swiper">
+              <div v-if="data.img" class="swiper-slide s1__swiper-slide">
+                <div class="bg">
+                  <img
+                    class="swiper-lazy dsk"
+                    :data-src="data.img"
+                    :alt="data.img_alt"
+                  />
+                  <img
+                    class="swiper-lazy mbl"
+                    :data-src="data.imgMbl"
+                    :alt="data.imgMbl_alt"
+                  />
+                </div>
 
-              <p
-                class="subtitle fw-200 fz-18-vw fz-mbl-14 lh-21 lh-mbl-14 ls-50 ls-mbl-40 c-fff ta-justify"
-                v-html="data.subtitle"
-              ></p>
-            </div>
+                <p
+                  class="subtitle fw-200 fz-18-vw fz-mbl-14 lh-21 lh-mbl-14 ls-50 ls-mbl-40 c-fff ta-justify"
+                  v-html="data.subtitle"
+                ></p>
+              </div>
+            </template>
           </div>
           <!-- If we need pagination -->
           <div class="swiper-pagination s1__swiper-pagination"></div>
@@ -346,7 +345,7 @@
               <div class="js-scrollbar menu-name-group">
                 <div
                   v-for="(name, index) in s2Data.row2.menus"
-                  class="menu-name fz-20-vw ls-30"
+                  class="menu-name fz-20-vw ls-30 c-fff"
                   @mouseenter="hoverChangeImg(index)"
                   @click="showPopup('menu')"
                 >
@@ -388,7 +387,10 @@
                   </div>
                 </div>
 
-                <p class="menu-name fz-mbl-14 ls-20" v-html="menu.name"></p>
+                <p
+                  class="menu-name fz-mbl-16 ls-20 c-fff"
+                  v-html="menu.name"
+                ></p>
               </div>
             </div>
 
@@ -508,18 +510,17 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper s3__swiper-wrapper">
               <!-- Slides -->
-              <div
-                v-for="(img, index) in s3Data.swiper"
-                class="swiper-slide s3__swiper-slide"
-              >
-                <div class="bg">
-                  <img
-                    class="swiper-lazy"
-                    :data-src="img.img"
-                    :alt="img.img_alt"
-                  />
+              <template v-for="(img, index) in s3Data.swiper">
+                <div v-if="img.img" class="swiper-slide s3__swiper-slide">
+                  <div class="bg">
+                    <img
+                      class="swiper-lazy"
+                      :data-src="img.img"
+                      :alt="img.img_alt"
+                    />
+                  </div>
                 </div>
-              </div>
+              </template>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination s3__swiper-pagination dsk"></div>
@@ -540,11 +541,19 @@
           <div
             :class="['num-wrapper fz-124 fz-mbl-26 c-p-1', {'d-n': s3Data.video.active && windowSize === 'dsk'}]"
           >
-            <span>0</span>
-            <div class="group">
-              <div id="pageClock" class="group-inner">
+            <div class="group group-tens">
+              <div id="pageClockTens" class="group-inner">
+                <span
+                  v-for="n in (1 + Math.floor(s3Data.swiper.length / 10))"
+                  class="num"
+                  ><% n - 1 %></span
+                >
+              </div>
+            </div>
+            <div class=" group group-units">
+              <div id="pageClockUnits" class="group-inner">
                 <span v-for="(data, index) in s3Data.swiper" class="num"
-                  ><% index + 1 %></span
+                  ><% (index + 1) % 10 %></span
                 >
               </div>
             </div>
