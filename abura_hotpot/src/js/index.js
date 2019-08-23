@@ -198,6 +198,7 @@ const s2_3ParamDsk = {
   }
 };
 // mbl
+// console.log(s2Data.row3.swiper.length);
 const s2_3ParamMbl = {
   init: false,
   // Disable preloading of all images
@@ -216,15 +217,16 @@ const s2_3ParamMbl = {
   slidesPerView: 'auto',
   centeredSlides: true,
   loop: true,
-  loopedSlides: 5
+  loopedSlides: s2Data.row3.swiper.length
 };
 
+let s2_3Swiper;
 if (window.matchMedia(bkpDsk).matches) {
   // dsk
-  const s2_3Swiper = new Swiper('.s2-3__swiper-container', s2_3ParamDsk);
+  s2_3Swiper = new Swiper('.s2-3__swiper-container', s2_3ParamDsk);
 } else {
   // mbl
-  const s2_3Swiper = new Swiper('.s2-3__swiper-container', s2_3ParamMbl);
+  s2_3Swiper = new Swiper('.s2-3__swiper-container', s2_3ParamMbl);
 
   // ======================================
   const s2_3SlideChange = function() {
@@ -321,6 +323,7 @@ if (!s3Data.video.active || window.matchMedia(bkpMbl).matches) {
 
 // s4
 // swiper
+// console.log(s4Data.swiper.length);
 const s4Swiper = new Swiper('.s4__swiper-container', {
   // Disable preloading of all images
   preloadImages: false,
@@ -333,7 +336,7 @@ const s4Swiper = new Swiper('.s4__swiper-container', {
   },
   slidesPerView: 'auto',
   loop: true,
-  loopedSlides: 4,
+  loopedSlides: s4Data.swiper.length,
   centeredSlides: true,
   speed: 800
 });
