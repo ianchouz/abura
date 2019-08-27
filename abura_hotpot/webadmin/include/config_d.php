@@ -195,8 +195,8 @@ $CFG->s4data_img["path"] = "s4data_img/";
 __chkdir($CFG->root_user.$CFG->s4data_img["path"]);
 
 // NEWS 揭示板
-$CFG->news["w"]= 1505;
-$CFG->news["h"]= 812;
+$CFG->news["w"]= 440;
+$CFG->news["h"]= 352;
 $CFG->news["noneW"]= 'Y';
 $CFG->news["noneH"]= 'N';
 $CFG->news["path"] = "news/";

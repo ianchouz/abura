@@ -268,7 +268,7 @@ while($row = @sql_fetch_assoc($res)){
     "subtitle"=>nl2br($row["summary"]),
     // "content"=>htmlSubString(strip_tags($row["content"],40)),
     "content"=>$row["content"],
-    "latestTag"=>!empty($row["latest"]) ? 'true' : 'false',
+    "latestTag"=>$row["latest"]=='Y' ? 'true' : 'false',
     "id"=>$row["id"],
 	);
 	$tpl->newBlock("news");
