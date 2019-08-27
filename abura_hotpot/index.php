@@ -43,13 +43,24 @@ $data = [
 $tpl->assignGlobal($data);
 // STORY INTRO
 $data = array();
+$hasimage = false;
 for($i=1;$i<=3;$i++) {
     $img = $xmlvo->value('/content/s21data_img'.$i);
     $data['img'] = $img ? $CFG->url_web."archive/images/s21data_img/".$img : '';
     $data['img_alt'] = $xmlvo->value('/content/s21data_img'.$i.'_alt');
 
-  	$tpl->newBlock("s21data_img");
-  	$tpl->assign($data);
+    if (!empty($img)) {
+        $tpl->newBlock("s21data_img");
+        $tpl->assign($data);;
+        $hasimage = true;
+    };
+}
+if ($hasimage==false) {
+    $data2 = array();
+    $data2['img'] = '';
+    $data2['img_alt'] = '';
+    $tpl->newBlock("s21data_img");
+    $tpl->assign($data2);
 }
 
 
@@ -172,14 +183,25 @@ while($row = @sql_fetch_assoc($res)){
   $tpl->newBlock("meals");
   $tpl->assign($data);
 
+  $hasimage = false;
   for($i=1;$i<=5;$i++) {
     $cover = $xmlvo1->value('/content/cover'.$i);
     $data2 = array(
       "img"=>!empty($cover) ? $CFG->url_web."archive/images/meal/".$cover : '',
       "img_alt"=>$xmlvo1->value('/content/cover'.$i.'_alt'),
     );
-    $tpl->newBlock("meals_imgs");
-    $tpl->assign($data2);
+    if (!empty($cover)) {
+        $tpl->newBlock("meals_imgs");
+        $tpl->assign($data2);
+        $hasimage = true;
+    };
+  }
+  if ($hasimage==false) {
+      $data2 = array();
+      $data2['img'] = '';
+      $data2['img_alt'] = '';
+      $tpl->newBlock("meals_imgs");
+      $tpl->assign($data2);
   }
 
   // 菜單
