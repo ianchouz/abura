@@ -26,7 +26,8 @@
 }
 
 .popup-wrapper {
-  width: 76%;
+  // width: 76%;
+  width: 60%;
   background-color: #fff;
   margin: auto;
 
@@ -43,6 +44,11 @@
     left: 0;
     right: 0;
     text-align: center;
+
+    &.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   @include mq(mbl) {
@@ -267,6 +273,8 @@
       margin-right: 2vw;
       padding-top: 100px;
       padding-bottom: 80px;
+
+      max-width: 400px;
     }
 
     .note {
@@ -310,6 +318,8 @@
         padding-bottom: initial;
         margin-right: initial;
         margin-bottom: 30px;
+
+        max-width: initial;
       }
 
       .note {
@@ -340,7 +350,8 @@
 
   .col {
     &-title {
-      width: 38%;
+      // width: 38%;
+      width: 34%;
 
       .title-wrapper {
         display: flex;
@@ -382,7 +393,8 @@
     &-content {
       width: 0;
       flex-grow: 1;
-      padding-right: vw-dsk(230);
+      // padding-right: vw-dsk(230);
+      padding-right: vw-dsk(150);
 
       .content {
         &__title {

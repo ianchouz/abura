@@ -25,7 +25,7 @@
             </div>
           </div>
           <!-- If we need pagination -->
-          <div class="swiper-pagination popup-header__swiper-pagination"></div>
+          <div :class="['swiper-pagination popup-header__swiper-pagination', {hide: menus.imgs.length <= 1}]"></div>
         </div>
 
         <div v-if="menus" class="menu-name fz-50 lh-12 c-fff" v-html="menus.name"></div>
@@ -83,6 +83,11 @@
         this.popupTagIndex = 0;
 
         document.documentElement.classList.remove('hide-scrollbar');
+
+        // autoplay stop
+        popupSwiper.forEach(item => {
+          item.autoplay.stop();
+        });
       },
       closePopupClickOutside(e) {
         // console.log(e.target);
@@ -91,6 +96,11 @@
           this.popupTagIndex = 0;
 
           document.documentElement.classList.remove('hide-scrollbar');
+
+          // autoplay stop
+          popupSwiper.forEach(item => {
+            item.autoplay.stop();
+          });
         }
       }
     }
@@ -103,7 +113,7 @@
   <div class="popup__body popup__body-menu">
     <div :class="['tag-wrapper', {'d-n': tagQty === 1}]">
       <div v-for="(data, index) in dataFromParent.menus.menu"
-      :class="['tag-item fz-40-vw fz-mbl-20', {active: index === dataFromParent.popupTagIndex}]"
+      :class="['tag-item fz-32-vw fz-mbl-20', {active: index === dataFromParent.popupTagIndex}]"
       @click="dataFromParent.changeTagIndex(index)"
       v-html="data.tag"></div>
     </div>
@@ -119,7 +129,7 @@
             </div>
 
             <div class="title-wrapper">
-              <p class="name fz-32-vw fz-mbl-18 lh-12" v-html="item.name"></p>
+              <p class="name fz-26-vw fz-mbl-18 lh-12" v-html="item.name"></p>
               <p v-if="item.note !== ''" class="note fz-18-vw fz-mbl-14 c-g-2 lh-15 ls-40" v-html="item.note"></p>
             </div>
 
@@ -133,7 +143,7 @@
                 <div class="dot"></div>
               </div>
 
-              <div class="price fz-32-vw fz-mbl-18 ls-40 c-p-1">
+              <div class="price fz-26-vw fz-mbl-18 ls-40 c-p-1">
                 <p><% `NT.${ item.price }` %></p>
               </div>
             </div>
@@ -166,12 +176,12 @@
       <div class="col-title">
         <div class="title-wrapper">
           <div class="set-name">
-            <p class="fz-50-vw fz-mbl-24 lh-12"><% dataFromParent.menus.name + dataFromParent.menus.type %></p>
+            <p class="fz-40-vw fz-mbl-24 lh-12"><% dataFromParent.menus.name + dataFromParent.menus.type %></p>
           </div>
           <div class="price-group">
             <div class="price">
-              <p class="fz-50-vw fz-mbl-28 ls-50 c-p-1"><% dataFromParent.menus.price %></p>
-              <span class="fz-30-vw fz-mbl-16 c-p-1">元</span>
+              <p class="fz-40-vw fz-mbl-28 ls-50 c-p-1"><% dataFromParent.menus.price %></p>
+              <span class="fz-24-vw fz-mbl-16 c-p-1">元</span>
             </div>
             <p class="fz-22-vw fz-mbl-14 ls-65" v-html="popupNote.priceNote"></p>
           </div>
@@ -182,8 +192,8 @@
           <!-- 湯底 -->
           <div class="content content-broth">
             <div class="content__title">
-              <p class="fz-40-vw fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.broth.title %></p>
-              <p class="note fz-24-vw fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items | removeEmpty | toChineseNum %>選一</p>
+              <p class="fz-30-vw fz-mbl-16 ls-120 c-p-1"><% dataFromParent.menus.broth.title %></p>
+              <p class="note fz-20-vw fz-mbl-14 ls-75 c-g-6"><% dataFromParent.menus.broth.items | removeEmpty | toChineseNum %>選一</p>
             </div>
             <div class="item-wrapper">
 
@@ -193,7 +203,7 @@
                     <img class="lazyload" data-src="images/icon-deco.png" alt="">
                   </div>
 
-                  <h4 class="fz-30-vw fz-mbl-14-vw lh-12 c-g-6" v-html="item"></h4>
+                  <h4 class="fz-22-vw fz-mbl-14-vw lh-12 c-g-6" v-html="item"></h4>
 
                   <div class="icon reverse">
                     <img class="lazyload" data-src="images/icon-deco.png" alt="">
@@ -206,12 +216,12 @@
 
           <div v-for="dish in dataFromParent.menus.otherDishes" class="content">
             <div class="content__title">
-              <p class="fz-40-vw fz-mbl-16 ls-120 c-p-1"><% dish.title %></p>
+              <p class="fz-30-vw fz-mbl-16 ls-120 c-p-1"><% dish.title %></p>
               <p v-if="dish.chooseNum !== ''" class="note fz-24 fz-mbl-14 ls-75 c-g-6"><% dish.items.length | toChineseNum %>選<% dish.chooseNum | toChineseNum %></p>
             </div>
             <div class="item-wrapper">
               <div v-for="item in dish.items" class="item">
-                <h4 class="fz-24-vw fz-mbl-14 lh-16 ls-75 ls-mbl-25 c-g-6" v-html="item"></h4>
+                <h4 class="fz-22-vw fz-mbl-14 lh-16 ls-50-vw ls-mbl-25 c-g-6" v-html="item"></h4>
               </div>
             </div>
           </div>
@@ -219,8 +229,8 @@
         </div>
 
         <div class="note-wrapper">
-          <div class="title fz-34-vw fz-mbl-16 ls-100" v-html="popupNote.title"></div>
-          <div class="note fz-24-vw fz-mbl-12 ls-75 ls-mbl-25 lh-16" v-html="popupNote.note"></div>
+          <div class="title fz-30-vw fz-mbl-16 ls-100" v-html="popupNote.title"></div>
+          <div class="note fz-22-vw fz-mbl-12 ls-50-vw ls-mbl-25 lh-16" v-html="popupNote.note"></div>
         </div>
 
       </div>
@@ -295,8 +305,8 @@
   <!-- body -->
   <div class="popup__body popup__body-news">
     <div class="title-wrapper">
-      <p class="date fz-18 fz-mbl-14 ls-15 c-p-1 fs-italic" v-html="dataFromParent.news.date"></p>
-      <h3 class="title fz-32 fz-mbl-20 ls-45" v-html="dataFromParent.news.title"></h3>
+      <p class="date fz-18-vw fz-mbl-14 ls-15 c-p-1 fs-italic" v-html="dataFromParent.news.date"></p>
+      <h3 class="title fz-32-vw fz-mbl-20 ls-45" v-html="dataFromParent.news.title"></h3>
     </div>
 
     <p class="content fz-mbl-14 lh-21 lh-mbl-18 ls-25 c-g-2 ta-justify" v-html="dataFromParent.news.content"></p>

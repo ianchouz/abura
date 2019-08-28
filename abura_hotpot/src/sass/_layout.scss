@@ -512,14 +512,14 @@
   display: flex;
 
   .dot {
-    height: 5px;
-    width: 5px;
+    height: vw-dsk(5);
+    width: vw-dsk(5);
     background-color: #000;
     transform-origin: 0 100%;
     transform: rotate(45deg);
 
     & + .dot {
-      margin-left: 6px;
+      margin-left: vw-dsk(6);
     }
   }
 

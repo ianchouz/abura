@@ -123,6 +123,10 @@
   .ls-#{$i * 5} {
     letter-spacing: #{$i * 5 / 10}px;
   }
+
+  .ls-#{$i * 5}-vw {
+    letter-spacing: #{$i * 5 / 10 / $vw-dsk * 100}vw;
+  }
 }
 
 @include mq(mbl) {

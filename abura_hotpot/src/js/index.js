@@ -39,24 +39,29 @@ const vm = new Vue({
     showPopup(popupType) {
       // console.log(popupType);
       if (popupType === 'menu') {
+        $id('menuPopup').scrollTop = 0;
         $id('menuPopup').classList.add('active');
 
         const nowSwiper = $id('menuPopup').querySelector(
           '.popup-header__swiper-container'
         ).swiper;
+
         const nowImgs = this.s2Data.row2.menus[this.s2row2ImgIndex].imgs;
         this.changePopupSlidesImg(nowSwiper, nowImgs);
       } else if (popupType === 'set') {
+        $id('setPopup').scrollTop = 0;
         $id('setPopup').classList.add('active');
 
         const nowSwiper = $id('setPopup').querySelector(
           '.popup-header__swiper-container'
         ).swiper;
+
         const nowImgs = this.s2Data.row3.swiper[this.s2row3SwiperIndex].imgs;
         // console.log(nowImgs);
 
         this.changePopupSlidesImg(nowSwiper, nowImgs);
       } else if (popupType === 'news') {
+        $id('newsPopup').scrollTop = 0;
         $id('newsPopup').classList.add('active');
       }
 
@@ -64,7 +69,10 @@ const vm = new Vue({
     },
     changePopupSlidesImg(theSwiper, theImgs) {
       theSwiper.update();
+      // 回到第一張
       theSwiper.slideTo(0, 0);
+      // autoplay.start
+      theSwiper.autoplay.start();
 
       // console.log([...theSwiper.slides]);
       [...theSwiper.slides].forEach((item, index) => {
@@ -384,7 +392,16 @@ const popupSwiper = new Swiper('.popup-header__swiper-container', {
     el: '.popup-header__swiper-pagination',
     type: 'bullets',
     clickable: true
+  },
+  speed: 800,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
   }
+});
+
+popupSwiper.forEach(item => {
+  item.autoplay.stop();
 });
 
 // scrollmagic
