@@ -33,6 +33,12 @@ const vueMixins = {
       }
     }
   },
+
+  mounted() {
+    // console.log('mounted');
+    changeLogo();
+    // $id('fadeInMask').classList.add('loaded');
+  },
   methods: {
     showNavMenu() {
       // $id('commonHeader').classList.toggle('nav-menu-open');
@@ -89,10 +95,6 @@ const vueMixins = {
       // console.log(value);
       return value.replace('<br />', ' ');
     }
-  },
-
-  mounted() {
-    changeLogo();
   }
 };
 
@@ -108,10 +110,19 @@ const changeLogo = function() {
   }
 };
 
-window.addEventListener('load', function() {
-  // changeLogo();
-  $id('fadeInMask').classList.add('loaded');
-});
 window.addEventListener('scroll', function() {
   changeLogo();
 });
+
+// 開場
+if (window.matchMedia(bkpDsk).matches) {
+  window.addEventListener('load', () => {
+    // console.log('load');
+    $id('fadeInMask').classList.add('loaded');
+  });
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    // console.log('DOMContentLoaded');
+    $id('fadeInMask').classList.add('loaded');
+  });
+}

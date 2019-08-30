@@ -298,8 +298,22 @@
     padding: 0 vw-mbl(30) 74px;
 
     .tag-wrapper {
+      flex-wrap: initial;
+
       padding-top: 24px;
       padding-bottom: 24px;
+    }
+
+    .tag-item {
+      justify-content: flex-start;
+      writing-mode: vertical-rl;
+      margin-bottom: initial;
+
+      padding: 4px 0;
+
+      &:nth-child(n + 2) {
+        border-left: 2px solid $c-g-5;
+      }
     }
 
     .menu-item {
