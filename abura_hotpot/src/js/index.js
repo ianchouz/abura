@@ -306,15 +306,15 @@ if (!s3Data.video.active || window.matchMedia(bkpMbl).matches) {
       disableOnInteraction: false
     },
     speed: 800,
+    loop: true,
     on: {
       slideChange: function() {
         // console.log('slideChange');
-        unitsPageClockOffsetTop = $id('pageClockUnits').children[
-          this.activeIndex
-        ].offsetTop;
+        unitsPageClockOffsetTop = $id('pageClockUnits').children[this.realIndex]
+          .offsetTop;
 
         tensPageClockOffsetTop = $id('pageClockTens').children[
-          Math.floor(this.activeIndex / 9)
+          Math.floor(this.realIndex / 9)
         ].offsetTop;
 
         $id(

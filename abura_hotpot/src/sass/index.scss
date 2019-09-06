@@ -1082,7 +1082,7 @@
 
     margin-top: initial;
     padding-top: 70px;
-    padding-bottom: vw-mbl(30);
+    // padding-bottom: vw-mbl(30);
 
     background-color: $c-g-3;
 
@@ -1156,10 +1156,10 @@
   }
 
   @include mq(mbl) {
-    &-outer {
-      padding-left: vw-mbl(30);
-      padding-right: vw-mbl(30);
-    }
+    // &-outer {
+    //   padding-left: vw-mbl(30);
+    //   padding-right: vw-mbl(30);
+    // }
 
     &-container {
       height: initial;

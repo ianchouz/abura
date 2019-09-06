@@ -25,13 +25,23 @@ const vueMixins = {
     targetOffsetTop: 0
   },
   computed: {
+    // windowSize
     windowSize() {
-      if (window.matchMedia(bkpDsk).matches) {
-        return 'dsk';
-      } else {
-        return 'mbl';
-      }
+      return window.matchMedia(bkpDsk).matches ? 'dsk' : 'mbl';
     }
+  },
+
+  created() {
+    // windowSize
+    window.addEventListener(
+      'resize',
+      _.debounce(() => {
+        let wsz = window.matchMedia(bkpDsk).matches ? 'dsk' : 'mbl';
+        if (this.windowSize !== wsz) {
+          location.reload();
+        }
+      }, 150)
+    );
   },
 
   mounted() {
