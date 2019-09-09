@@ -125,14 +125,10 @@ window.addEventListener('scroll', function() {
 });
 
 // 開場
-if (window.matchMedia(bkpDsk).matches) {
-  window.addEventListener('load', () => {
-    // console.log('load');
-    $id('fadeInMask').classList.add('loaded');
-  });
-} else {
-  document.addEventListener('DOMContentLoaded', () => {
-    // console.log('DOMContentLoaded');
-    $id('fadeInMask').classList.add('loaded');
-  });
-}
+document.addEventListener('DOMContentLoaded', () => {
+  // console.log('DOMContentLoaded');
+  // $id('fadeInMask').classList.add('loaded');
+  setTimeout(() => {
+    $id('loading').classList.add('loaded');
+  }, 3300);
+});

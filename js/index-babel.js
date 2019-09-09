@@ -1,0 +1,2 @@
+"use strict";var $id=function(id){return document.getElementById(id)};document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){$id("loading").classList.add("loaded")},2500)});
+//# sourceMappingURL=index-babel.js.map

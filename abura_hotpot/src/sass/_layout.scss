@@ -2,6 +2,146 @@
   overflow: hidden;
 }
 
+.loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+
+  z-index: 1000;
+  //
+  transition: 0.5s;
+
+  &.loaded {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .load {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    animation-duration: 3s;
+    // animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+
+    &-1 {
+      animation-name: load1;
+    }
+
+    &-2 {
+      animation-name: load2;
+    }
+
+    &-3 {
+      animation-name: load3;
+    }
+
+    &-4 {
+      animation-name: load4;
+    }
+
+    &-5 {
+      animation-name: load5;
+    }
+  }
+}
+
+@keyframes load1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes load2 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes load3 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes load4 {
+  0% {
+    opacity: 0;
+    transform: translateX(10px) scale(1);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes load5 {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px) scale(1);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 // header
 .common-header {
   position: fixed;
