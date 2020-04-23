@@ -10,15 +10,15 @@ $CFG = new object;
 $CFG->sessionname = 'nell'; //請使用英文字就好,不要帶有其他符號
 //資料庫連線設定
 $CFG->dbhost = 'localhost';//
-$CFG->dbname = 'cosmo_abura';//資料庫名稱
-$CFG->dbuser = 'cosmo_abura';//資料庫帳號
+$CFG->dbname = 'cosmo_souchang';//資料庫名稱
+$CFG->dbuser = 'cosmo_souchang';//資料庫帳號
 $CFG->dbpass = '8Sw0%9gg';//資料庫密碼
 //==========================================
 //網站檔案資料夾名稱
 $CFG->doc_web = '';//以IP瀏覽的時候帶的資料夾目錄
-$CFG->real_domain = 'abura.cosmo-br.tw';//真實域名，不帶有 http 喔!!
-$CFG->full_domain = 'http://abura.cosmo-br.tw/abura_hotpot/'; //程式用的網站路徑，包含完成的http及域名或IP+目錄
-$CFG->base_domain = 'http://abura.cosmo-br.tw/abura_hotpot/';//用在後台登入預設語言位置60.249.71.45/
+$CFG->real_domain = 'souchang.cosmo-br.tw';//真實域名，不帶有 http 喔!!
+$CFG->full_domain = 'http://souchang.cosmo-br.tw/'; //程式用的網站路徑，包含完成的http及域名或IP+目錄
+$CFG->base_domain = 'http://souchang.cosmo-br.tw/';//用在後台登入預設語言位置60.249.71.45/
 //==========================================
 //後台語言版本設定
 //==========================================

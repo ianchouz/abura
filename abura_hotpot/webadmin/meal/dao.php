@@ -36,9 +36,9 @@ class meal extends controller {
             $this->_xmls['cover'.$i.'_alt'] = array('type'=>'');
         }
         $this->_xmls['broth'] = array('d4'=> null, 'type'=>'');
-        for($i=1;$i<=3;$i++) {
-          $this->_xmls['broth_items'.$i] = array('d4'=> null, 'type'=>'textarea', 'style'=>'textarea_small_height');
-        }
+        // for($i=1;$i<=4;$i++) {
+        //   $this->_xmls['broth_items'.$i] = array('d4'=> null, 'type'=>'textarea', 'style'=>'textarea_small_height');
+        // }
 
         $this->dbrowDefault();
 

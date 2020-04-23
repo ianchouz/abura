@@ -49,7 +49,8 @@
           menus: [
             <!-- START BLOCK : menus -->
             {
-              name: '{name}',
+                name: '{name}',
+                id: 'menu_{name}',
               imgs: [
                 <!-- START BLOCK : menus_imgs -->
                 {img: '{img}', img_alt: '{img_alt}'},
@@ -89,7 +90,8 @@
             {
               nameImg: '{nameImg}',
               nameImg_alt: '{nameImg_alt}',
-              name: '{name}',
+                name: '{name}',
+                id: 'meals_{name}',
               type: `{type}`,
               price: '{price}',
               imgs: [
@@ -99,7 +101,15 @@
               ],
               broth: {
                 title: '{broth}',
-                items: [`{broth_items1}`, `{broth_items2}`, `{broth_items3}`]
+                items: [
+                  <!-- START BLOCK : broths -->
+                  `{text}`, 
+                  <!-- END BLOCK : broths -->
+                  // `{broth_items1}`,
+                  // `{broth_items2}`,
+                  // `{broth_items3}`,
+                  // `{broth_items4}`
+                ]
               },
               otherDishes: [
                 <!-- START BLOCK : otherDishes -->
@@ -156,6 +166,7 @@
             img: '{img}',
             img_alt: '{img_alt}',
             title: `{title}`,
+              id: `news_{title}`,
             subtitle: `{subtitle}`,
             content: `{content}`,
             latestTag: {latestTag}
@@ -164,9 +175,20 @@
         ]
       };
     </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5VJ79Z8');</script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VJ79Z8"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <main id="mainContainer" class="main-container">
       <div class="main-container__bg main-container__bg-1">
         <img class="lazyload" data-src="images/main-bg.png" alt="" />
@@ -349,7 +371,7 @@
                   @mouseenter="hoverChangeImg(index)"
                   @click="showPopup('menu')"
                 >
-                  <p v-html="name.name"></p>
+                  <p :id="name.id" v-html="name.name"></p>
                 </div>
               </div>
             </div>
@@ -437,7 +459,7 @@
                     @mouseenter="hoverChangeSet($event, index)"
                     @click="showPopup('set')"
                   >
-                    <div class="group">
+                    <div class="group" :id="set.id">
                       <div class="name-img">
                         <img
                           class="swiper-lazy"
@@ -679,7 +701,7 @@
                     />
                   </div>
 
-                  <div class="border-decoration">
+                  <div :id="item.id" class="border-decoration">
                     <div class="border border-tb"></div>
                     <div class="border border-lr"></div>
                     <p class="text fz-14 ls-15 c-p-1">LEARN MORE</p>

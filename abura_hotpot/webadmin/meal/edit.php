@@ -108,13 +108,55 @@ if($mod == "edit") {
             <tr class="x-tr1">
                 <th class="x-th">菜單</th>
                 <td class="x-td" colspan="3">
+                    <?php
+                    $subkey= 'stand0';
+                    ?>
                     <table class="x-table" style=" border-collapse: collapse;">
+                        <tr class="x-tr1">
+                            <th class="x-th" colspan="5" style="text-align:left;">菜單</th>
+                        </tr>
+                        <tr class="x-tr1">
+                            <th class="x-th"></th>
+                            <td class="x-td modifyArea" colspan="3">
+                                <div class="btnList">
+                                    <div class="btn_panel"><Button type="button" title="新增列" class="button" ><div class="btn_add">新增列</div></Button></div>
+                                    <div class="btn_panel"><Button type="button" title="刪除" class="button" ><div class="btn_del">刪除</div></Button></div>
+                                </div>
+                                <table class="x-table modifyTable" style=" border-collapse: collapse;">
+                                    <tr class="x-tr1">
+                                        <th class="x-th" style="width:50px;text-align:center;" >全選 <input type="checkbox" name="" class="ckb_list" value="ckbox"></th>
+                                        <th class="x-th" style="text-align:center;">湯底</th>
+                                        <th class="x-th" style="text-align:center;"></th>
+                                    </tr>
+                                    <tr class="templeteRow listRow" valign="top">
+                                        <td align="center"><input type="checkbox" name="ckbox[]" value=""></td>
+                                        <td><textarea name="subs[<?=$subkey?>][column1][]" class="textarea_small_height"></textarea></td>
+                                        <!-- <td><input type="checkbox" name="subs[<?=$subkey?>][column3][]" value="1" checked />二選一</td> -->
+                                    </tr>
+                                    <?php
+                                    $sql = "SELECT * FROM ".$CFG->tbext."product_rel where typeid='$id' AND subkey='$subkey' order by id";
+                                    $rs = @sql_query($sql);
+                                    while ($item = @sql_fetch_assoc($rs)) {
+                                    ?>
+                                    <tr class="listRow" valign="top">
+                                        <td align="center"><input type="checkbox" name="ckbox[]" ></td>
+                                        <td><textarea name="subs[<?=$subkey?>][column1][]" class="textarea_small_height"><?=htmlentities($item['column1'], ENT_QUOTES, "UTF-8");?></textarea></td>
+                                        <!-- <td><input type="checkbox" name="subs[<?=$subkey?>][column3][]" value="1" <?=!empty($item['column3']) ? 'checked' : ''?> />二選一</td> -->
+                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- <table class="x-table" style=" border-collapse: collapse;">
                         <tr class="x-tr1" valign="top">
-                            <?php for($i=1;$i<=3;$i++) {?>
+                            <?php for($i=1;$i<=4;$i++) {?>
                             <td><?=$dao->html('broth_items'.$i)?></td>
                             <?php }?>
                         </tr>
-                    </table>
+                    </table> -->
                 </td>
             </tr>
         </table>

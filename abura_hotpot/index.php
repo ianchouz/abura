@@ -77,7 +77,8 @@ $res = @sql_query($sql);
 while($row = @sql_fetch_assoc($res)){
 	$xmlvo1 = new parseXML($row['imagexml']);
   $pid = $row['id'];
-	$data["name"] = $row["catename"];
+    $data["name"] = $row["catename"];
+    $data["id"] = $row["id"];
 	$tpl->newBlock("menus");
 	$tpl->assign($data);
   $hasimage = false;
@@ -174,9 +175,10 @@ while($row = @sql_fetch_assoc($res)){
     "type"=>nl2br($row["type"]),
     "price"=>$row["price"],
     "broth"=>$xmlvo1->value('/content/broth'),
-    "broth_items1"=>nl2br($xmlvo1->value('/content/broth_items1')),
-    "broth_items2"=>nl2br($xmlvo1->value('/content/broth_items2')),
-    "broth_items3"=>nl2br($xmlvo1->value('/content/broth_items3')),
+    // "broth_items1"=>nl2br($xmlvo1->value('/content/broth_items1')),
+    // "broth_items2"=>nl2br($xmlvo1->value('/content/broth_items2')),
+    // "broth_items3"=>nl2br($xmlvo1->value('/content/broth_items3')),
+    // "broth_items4"=>nl2br($xmlvo1->value('/content/broth_items4')),
     "nameImg"=>!empty($cover) ? $CFG->url_web."archive/images/meal_cover/".$cover : '',
     "nameImg_alt"=>$xmlvo1->value('/content/cover'.'_alt'),
   );
@@ -204,6 +206,17 @@ while($row = @sql_fetch_assoc($res)){
       $tpl->assign($data2);
   }
 
+  // 湯底
+  $subkey = 'stand0';
+  $sql = "SELECT * FROM ".$CFG->tbext."product_rel where typeid='$id' AND subkey='$subkey' order by id";
+  $rs = @sql_query($sql);
+  while ($item = @sql_fetch_assoc($rs)) {
+  	$data2 = array(
+      "text" => nl2br($item['column1']),
+  	);
+  	$tpl->newBlock("broths");
+  	$tpl->assign($data2);
+  }
   // 菜單
   $subkey = 'stand1';
   $sql = "SELECT * FROM ".$CFG->tbext."product_rel where typeid='$id' AND subkey='$subkey' order by id";
