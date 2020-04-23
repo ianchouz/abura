@@ -435,6 +435,8 @@
 
           .item-wrapper {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin: 0 vw-dsk(-25) 50px;
           }
 
@@ -444,9 +446,10 @@
             justify-content: space-between;
             text-align: center;
 
-            width: 0;
-            flex-grow: 1;
+            width: 33.3333333%;
+            // flex-grow: 1;
             padding: 0 vw-dsk(25);
+            margin-bottom: vw-dsk(20);
           }
 
           .icon {
@@ -538,14 +541,14 @@
             padding-bottom: 10px;
 
             .item-wrapper {
-              flex-wrap: wrap;
-              justify-content: center;
+              // flex-wrap: wrap;
+              // justify-content: center;
               margin: 0 vw-mbl(-15);
             }
 
             .item {
               // height: vw-mbl(100);
-              flex-grow: initial;
+              // flex-grow: initial;
               width: 50%;
               padding: 0 vw-mbl(15);
               margin-bottom: 20px;
